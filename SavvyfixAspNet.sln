@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{2F5023A4-096A-4F9B-AE19-E83DB1554E7A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{5FC6100E-F78D-4BD7-8215-5EA0EEA0343E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SavvyfixAspNet.Domain", "SavvyfixAspNet.Domain\SavvyfixAspNet.Domain.csproj", "{42A84C5E-00E6-4C10-AD1B-12F411F4DE33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SavvyfixAspNet.Api", "SavvyfixAspNet.Api\SavvyfixAspNet.Api.csproj", "{4550AA23-2703-4CC8-A2EC-086030EA0EFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42A84C5E-00E6-4C10-AD1B-12F411F4DE33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42A84C5E-00E6-4C10-AD1B-12F411F4DE33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42A84C5E-00E6-4C10-AD1B-12F411F4DE33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42A84C5E-00E6-4C10-AD1B-12F411F4DE33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4550AA23-2703-4CC8-A2EC-086030EA0EFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4550AA23-2703-4CC8-A2EC-086030EA0EFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4550AA23-2703-4CC8-A2EC-086030EA0EFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4550AA23-2703-4CC8-A2EC-086030EA0EFC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{42A84C5E-00E6-4C10-AD1B-12F411F4DE33} = {2F5023A4-096A-4F9B-AE19-E83DB1554E7A}
+		{4550AA23-2703-4CC8-A2EC-086030EA0EFC} = {5FC6100E-F78D-4BD7-8215-5EA0EEA0343E}
+	EndGlobalSection
+EndGlobal
