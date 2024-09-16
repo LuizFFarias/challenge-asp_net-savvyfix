@@ -30,25 +30,24 @@
 
 <br>
 
+## Design Patterns - Service Layer
+<p>A Service Layer (Camada de Serviço) é um padrão arquitetural que separa a lógica de negócios da lógica de apresentação e de persistência de dados. Ela centraliza a lógica de operações do sistema em classes de serviços, facilitando a manutenção e escalabilidade do código.</p>
+<p>Em nosso projeto foi criada uma camada Service para o tratamento de precificação e manipulação dos dados antes de serem registrados em nosso banco de dados, garantindo assim uma organização do código e
+segurança no tratamento das informações passadas pelo usuário</p>
+
+
 ## Instruções para rodar a API
 
 ### Realizar o clone do projeto 
 
-<p>O primeiro passoa para testar a apliação é realizar o git clone do nosso projeto através do linK:</p>
-https://github.com/LuizFFarias/challenge-asp_net-savvyfix.git
+#### <p>O primeiro passoa para testar a apliação é realizar o git clone do nosso projeto através do linK: https://github.com/LuizFFarias/challenge-asp_net-savvyfix.git</p>
+
 
 <p>1. Abra um terminal e digite: git clone https://github.com/LuizFFarias/challenge-asp_net-savvyfix.git</p>
 <p>2. Abra o projeto em uma IDE destinada para C#/.NET como Rider ou Visual Studio</p>
 <p>3. Inicie o projeto SavvyfixAspNet.Api como http</p>
 <p>4. Após iniciar, entre no link abaixo para testar a aplicação através do Swagger UI: </p>
 http://localhost:5255/swagger/index.html
-
-<br>
-
-## Design Patterns - Service Layer
-<p>A Service Layer (Camada de Serviço) é um padrão arquitetural que separa a lógica de negócios da lógica de apresentação e de persistência de dados. Ela centraliza a lógica de operações do sistema em classes de serviços, facilitando a manutenção e escalabilidade do código.</p>
-<p>Em nosso projeto foi criada uma camada Service para o tratamento de precificação e manipulação dos dados antes de serem registrados em nosso banco de dados garantindo assim uma organização do código e
-segurança no tratamento das informações passadas pelo usuário</p>
 
 <br>
 
