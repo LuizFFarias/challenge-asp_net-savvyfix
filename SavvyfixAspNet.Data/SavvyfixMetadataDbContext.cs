@@ -10,6 +10,7 @@ public class SavvyfixMetadataDbContext : DbContext
     public DbSet<Endereco> Enderecos { get; set; }
     public DbSet<Cliente> Clientes { get; set; }
     public DbSet<Atividades> Atividades { get; set; }
+    public DbSet<Compra> Compras { get; set; }
  
     public SavvyfixMetadataDbContext(DbContextOptions<SavvyfixMetadataDbContext> options) : base(options)
     {

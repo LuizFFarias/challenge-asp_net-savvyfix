@@ -51,6 +51,7 @@ app.MapProdutoEndpoints();
 app.MapEnderecoEndpoints();
 app.MapClienteEndpoints();
 app.MapAtividadesEndpoints();
+app.MapCompraEndpoint();
 
 app.Run();
 

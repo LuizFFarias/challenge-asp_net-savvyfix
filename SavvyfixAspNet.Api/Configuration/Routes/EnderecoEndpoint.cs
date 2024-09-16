@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SavvyfixAspNet.Api.Models;
+using SavvyfixAspNet.Api.Service;
 using SavvyfixAspNet.Data;
 using SavvyfixAspNet.Domain.Entities;
 
@@ -48,21 +49,10 @@ public static class EnderecoEndpoint
             // POST: Adiciona um novo endereço
             enderecosGroup.MapPost("/", async (EnderecoAddOrUpdateModel enderecoModel, SavvyfixMetadataDbContext dbContext) =>
             {
-                var endereco = new Endereco
-                {
-                    CepEndereco = enderecoModel.CepEndereco,
-                    RuaEndereco = enderecoModel.RuaEndereco,
-                    NumEndereco = enderecoModel.NumEndereco,
-                    BairroEndeereco = enderecoModel.BairroEndeereco,
-                    CidadeEndereco = enderecoModel.CidadeEndereco,
-                    EstadoEndereco = enderecoModel.EstadoEndereco,
-                    PaisEndereco = enderecoModel.PaisEndereco
-                };
-
-                dbContext.Enderecos.Add(endereco);
+                dbContext.Enderecos.Add(enderecoModel.MapToEndereco());
                 await dbContext.SaveChangesAsync();
 
-                return Results.Created("/enderecos", endereco);
+                return Results.Created("/enderecos", enderecoModel);
             })
             .WithName("Adicionar novo endereço")
             .WithOpenApi(operation => new(operation)
