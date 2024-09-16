@@ -13,6 +13,7 @@ public static class ProdutoEndpoint
     {
         var produtosGroup = app.MapGroup("/produtos");
 
+        // GET: Retorna todas os produtos
         produtosGroup.MapGet("/", async (SavvyfixMetadataDbContext dbcontext) =>
             {
                 var produtos = await dbcontext.Produtos.ToListAsync();
@@ -29,6 +30,7 @@ public static class ProdutoEndpoint
             .Produces<List<Produto>>()
             .Produces(StatusCodes.Status404NotFound);
 
+        // GET: Retorna um produto pelo ID
         produtosGroup.MapGet("/{id:long}", async (long id, SavvyfixMetadataDbContext dbContext) =>
             {
                 var produto = await dbContext.Produtos.FindAsync(id);
@@ -46,10 +48,9 @@ public static class ProdutoEndpoint
             .Produces<Produto>()
             .Produces(StatusCodes.Status404NotFound);
         
+        // POST: Adiciona um novo produto
         produtosGroup.MapPost("/", async (ProdutoAddOrUpdateModel produtoModel, SavvyfixMetadataDbContext dbContext) =>
             {
-                
-                
                 dbContext.Produtos.Add(produtoModel.MapToPro());
                 await dbContext.SaveChangesAsync();
                 
@@ -66,7 +67,7 @@ public static class ProdutoEndpoint
             .Accepts<Produto>("application/json")
             .Produces<Produto>(StatusCodes.Status201Created);
         
-        
+        // PUT: Atualiza um endereço existente
         produtosGroup.MapPut("/{id:long}", async (long id, ProdutoAddOrUpdateModel updateModel, SavvyfixMetadataDbContext dbContext) =>
             {
                
@@ -99,6 +100,7 @@ public static class ProdutoEndpoint
             .Produces<Produto>(StatusCodes.Status200OK)
             .Produces(StatusCodes.Status404NotFound);
         
+        // DELETE: Deleta um endereço existente
         produtosGroup.MapDelete("/{id:long}", async (long id, SavvyfixMetadataDbContext dbContext) =>
             {
                 var produto = await dbContext.Produtos.FindAsync(id);
