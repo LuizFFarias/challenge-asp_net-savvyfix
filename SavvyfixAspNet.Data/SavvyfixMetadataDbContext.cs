@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using SavvyfixAspNet.Domain.Entities;
 
+
 namespace SavvyfixAspNet.Data;
 
 public class SavvyfixMetadataDbContext : DbContext

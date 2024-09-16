@@ -18,6 +18,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\SavvyfixAspNet.Data\SavvyfixAspNet.Data.csproj" />
       <ProjectReference Include="..\SavvyfixAspNet.Domain\SavvyfixAspNet.Domain.csproj" />
     </ItemGroup>
 
