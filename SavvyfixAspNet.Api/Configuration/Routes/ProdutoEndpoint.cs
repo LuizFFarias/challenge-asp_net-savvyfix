@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.WebEncoders.Testing;
+using SavvyfixAspNet.Api.Models;
+using SavvyfixAspNet.Api.Service;
 using SavvyfixAspNet.Data;
 using SavvyfixAspNet.Domain.Entities;
 
@@ -26,6 +28,104 @@ public static class ProdutoEndpoint
             })
             .Produces<List<Produto>>()
             .Produces(StatusCodes.Status404NotFound);
+
+        produtosGroup.MapGet("/{id:long}", async (long id, SavvyfixMetadataDbContext dbContext) =>
+            {
+                var produto = await dbContext.Produtos.FindAsync(id);
+
+                return produto is not null ? Results.Ok(produto) : Results.NotFound();
+            })
+            .WithName("Buscar produtos pelo id")
+            .WithOpenApi(operation => new(operation)
+            {
+                OperationId = "GetProdutosById",
+                Summary = "Retorna o produto buscado pelo id",
+                Description = "Retorna o produto buscado pelo id",
+                Deprecated = false
+            })
+            .Produces<Produto>()
+            .Produces(StatusCodes.Status404NotFound);
+        
+        produtosGroup.MapPost("/", async (ProdutoAddOrUpdateModel produtoModel, SavvyfixMetadataDbContext dbContext) =>
+            {
+                
+                
+                dbContext.Produtos.Add(produtoModel.MapToPro());
+                await dbContext.SaveChangesAsync();
+                
+                return Results.Created("/produtos", produtoModel);
+            })
+            .WithName("Adicionar novo produto")
+            .WithOpenApi(operation => new(operation)
+            {
+                OperationId = "AddProduto",
+                Summary = "Adiciona um novo produto",
+                Description = "Adiciona um novo produto ao banco de dados",
+                Deprecated = false
+            })
+            .Accepts<Produto>("application/json")
+            .Produces<Produto>(StatusCodes.Status201Created);
+        
+        
+        produtosGroup.MapPut("/{id:long}", async (long id, ProdutoAddOrUpdateModel updateModel, SavvyfixMetadataDbContext dbContext) =>
+            {
+               
+                var existingProduto = await dbContext.Produtos.FindAsync(id);
+
+                if (existingProduto is null)
+                {
+                    return Results.NotFound();
+                }
+                
+                existingProduto.NmProd = updateModel.NmProd ?? existingProduto.NmProd;
+                existingProduto.DescProd = updateModel.DescProd ?? existingProduto.DescProd;
+                existingProduto.MarcaProd = updateModel.MarcaProd ?? existingProduto.MarcaProd;
+                existingProduto.PrecoFixo = updateModel.PrecoFixo != 0 ? updateModel.PrecoFixo : existingProduto.PrecoFixo;
+                existingProduto.Img = updateModel.Img ?? existingProduto.Img;
+                
+                await dbContext.SaveChangesAsync();
+                
+                return Results.Ok(existingProduto);
+            })
+            .WithName("Atualizar produto")
+            .WithOpenApi(operation => new(operation)
+            {
+                OperationId = "UpdateProduto",
+                Summary = "Atualiza um produto existente",
+                Description = "Atualiza um produto existente no banco de dados pelo ID",
+                Deprecated = false
+            })
+            .Accepts<ProdutoAddOrUpdateModel>("application/json")
+            .Produces<Produto>(StatusCodes.Status200OK)
+            .Produces(StatusCodes.Status404NotFound);
+        
+        produtosGroup.MapDelete("/{id:long}", async (long id, SavvyfixMetadataDbContext dbContext) =>
+            {
+                var produto = await dbContext.Produtos.FindAsync(id);
+
+                if (produto is null)
+                {
+                    return Results.NotFound();
+                }
+                dbContext.Produtos.Remove(produto);
+                await dbContext.SaveChangesAsync();
+                
+                return Results.NoContent();
+            })
+            .WithName("Deletar produto")
+            .WithOpenApi(operation => new(operation)
+            {
+                OperationId = "DeleteProduto",
+                Summary = "Deleta um produto existente",
+                Description = "Deleta um produto existente no banco de dados pelo ID",
+                Deprecated = false
+            })
+            .Produces(StatusCodes.Status204NoContent)
+            .Produces(StatusCodes.Status404NotFound);
+
+
+
+
 
 
 
