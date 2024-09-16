@@ -19,6 +19,13 @@ public class Atividades
     public decimal PrecoVariado { get; set; }
 
     public int QntdProcura { get; set; }
+    
+    [Required(ErrorMessage = "O cliente é obrigatório.")]
+    public long? IdCliente { get; set; }
+    
+    public Cliente Cliente { get; set; }
+    
+    public ICollection<Compra> Compras { get; set; }
 
     
 

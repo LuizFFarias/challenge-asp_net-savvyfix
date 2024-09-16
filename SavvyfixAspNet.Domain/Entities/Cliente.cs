@@ -17,4 +17,13 @@ public class Cliente
     [Required(ErrorMessage = "A senha é obrigatória.")]
     public string SenhaClie { get; set; } = null!;
     
+    [Required(ErrorMessage = "O endereco é obrigatório.")]
+    public long? IdEndereco { get; set; }
+    
+    
+    public Endereco Endereco { get; set; }
+    
+    public ICollection<Compra> Compras { get; set; }
+    
+    public ICollection<Atividades> Atividades { get; set; }
 }

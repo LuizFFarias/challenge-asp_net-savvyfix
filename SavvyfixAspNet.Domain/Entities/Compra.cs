@@ -15,10 +15,23 @@ public class Compra
     
     [Required(ErrorMessage = "O produto é obrigatório.")]
     public long? IdProd { get; set; }
+    
+    [Required(ErrorMessage = "O cliente é obrigatório.")]
+    public long? IdCliente { get; set; }
+    
+    public long? IdAtividades { get; set; }
 
     [Required(ErrorMessage = "O nome do produto é obrigatório.")]
     public string NmProd { get; set; }
     
     [Required(ErrorMessage = "As especificações do produto são é obrigatórias.")]
     public string EspcificacoesProd { get; set; }
+    
+    
+    public Produto Produto { get; set; }
+    
+    
+    public Cliente Cliente { get; set; }
+    
+    public Atividades Atividades { get; set; }
 }

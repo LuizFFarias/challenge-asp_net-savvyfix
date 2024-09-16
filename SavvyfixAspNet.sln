@@ -8,6 +8,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SavvyfixAspNet.Domain", "Sa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SavvyfixAspNet.Api", "SavvyfixAspNet.Api\SavvyfixAspNet.Api.csproj", "{4550AA23-2703-4CC8-A2EC-086030EA0EFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SavvyfixAspNet.Data", "SavvyfixAspNet.Data\SavvyfixAspNet.Data.csproj", "{ADAFA465-FF20-4F9A-BBF1-CE575245BDB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SavvyfixAspNet.Service", "SavvyfixAspNet.Service\SavvyfixAspNet.Service.csproj", "{26FE7AD2-C988-4C5F-AD51-97D65A816476}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,9 +26,19 @@ Global
 		{4550AA23-2703-4CC8-A2EC-086030EA0EFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4550AA23-2703-4CC8-A2EC-086030EA0EFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4550AA23-2703-4CC8-A2EC-086030EA0EFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADAFA465-FF20-4F9A-BBF1-CE575245BDB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADAFA465-FF20-4F9A-BBF1-CE575245BDB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADAFA465-FF20-4F9A-BBF1-CE575245BDB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADAFA465-FF20-4F9A-BBF1-CE575245BDB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26FE7AD2-C988-4C5F-AD51-97D65A816476}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26FE7AD2-C988-4C5F-AD51-97D65A816476}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26FE7AD2-C988-4C5F-AD51-97D65A816476}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26FE7AD2-C988-4C5F-AD51-97D65A816476}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{42A84C5E-00E6-4C10-AD1B-12F411F4DE33} = {2F5023A4-096A-4F9B-AE19-E83DB1554E7A}
 		{4550AA23-2703-4CC8-A2EC-086030EA0EFC} = {5FC6100E-F78D-4BD7-8215-5EA0EEA0343E}
+		{ADAFA465-FF20-4F9A-BBF1-CE575245BDB8} = {2F5023A4-096A-4F9B-AE19-E83DB1554E7A}
+		{26FE7AD2-C988-4C5F-AD51-97D65A816476} = {2F5023A4-096A-4F9B-AE19-E83DB1554E7A}
 	EndGlobalSection
 EndGlobal

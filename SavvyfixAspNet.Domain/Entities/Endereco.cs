@@ -30,4 +30,5 @@ public class Endereco
     [Required(ErrorMessage = "O pais é obrigatório.")]
     public string PaisEndereco { get; set; }
     
+    public ICollection<Cliente> Clientes { get; set; }
 }

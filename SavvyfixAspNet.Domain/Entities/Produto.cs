@@ -21,4 +21,6 @@ public class Produto
     
     [Required(ErrorMessage = "A imagem do produto é obrigatória.")]
     public string Img { get; set; } 
+    
+    public ICollection<Compra> Compras { get; set; }
 }
