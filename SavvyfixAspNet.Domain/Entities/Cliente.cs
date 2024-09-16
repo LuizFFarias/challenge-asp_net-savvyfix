@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace SavvyfixAspNet.Domain.Entities;
 
@@ -29,7 +30,9 @@ public class Cliente
     
     public Endereco Endereco { get; set; }
     
+    [JsonIgnore]
     public ICollection<Compra> Compras { get; set; }
     
+    [JsonIgnore]
     public ICollection<Atividades> Atividades { get; set; }
 }

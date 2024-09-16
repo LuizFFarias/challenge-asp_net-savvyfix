@@ -50,6 +50,7 @@ app.UseHttpsRedirection();
 app.MapProdutoEndpoints();
 app.MapEnderecoEndpoints();
 app.MapClienteEndpoints();
+app.MapAtividadesEndpoints();
 
 app.Run();
 

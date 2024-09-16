@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace SavvyfixAspNet.Domain.Entities;
 
@@ -39,5 +40,6 @@ public class Endereco
     [Column("pais")]
     public string PaisEndereco { get; set; }
     
+    [JsonIgnore]
     public ICollection<Cliente> Clientes { get; set; }
 }

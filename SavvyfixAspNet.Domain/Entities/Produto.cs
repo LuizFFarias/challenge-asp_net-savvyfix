@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace SavvyfixAspNet.Domain.Entities;
 
@@ -29,5 +30,6 @@ public class Produto
     [Column("img_prod")]
     public string Img { get; set; } 
     
+    [JsonIgnore]
     public ICollection<Compra> Compras { get; set; }
 }

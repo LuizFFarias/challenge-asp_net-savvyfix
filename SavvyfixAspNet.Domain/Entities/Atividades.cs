@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace SavvyfixAspNet.Domain.Entities;
 
@@ -34,6 +35,7 @@ public class Atividades
     
     public Cliente Cliente { get; set; }
     
+    [JsonIgnore]
     public ICollection<Compra> Compras { get; set; }
 
     
