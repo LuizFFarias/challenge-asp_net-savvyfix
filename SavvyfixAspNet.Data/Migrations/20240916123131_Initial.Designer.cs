@@ -12,7 +12,7 @@ using SavvyfixAspNet.Data;
 namespace SavvyfixAspNet.Data.Migrations
 {
     [DbContext(typeof(SavvyfixMetadataDbContext))]
-    [Migration("20240916023943_Initial")]
+    [Migration("20240916123131_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -29,32 +29,40 @@ namespace SavvyfixAspNet.Data.Migrations
                 {
                     b.Property<long>("IdAtividades")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(19)");
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("id_atividades");
 
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdAtividades"));
 
                     b.Property<string>("ClimaAtual")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("NVARCHAR2(2000)")
+                        .HasColumnName("clima_atual");
 
                     b.Property<string>("DemandaProduto")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("NVARCHAR2(2000)")
+                        .HasColumnName("demanda_produto");
 
                     b.Property<DateTime?>("HorarioAtual")
-                        .HasColumnType("TIMESTAMP(7)");
+                        .HasColumnType("TIMESTAMP(7)")
+                        .HasColumnName("horario_atual");
 
                     b.Property<long?>("IdCliente")
                         .IsRequired()
-                        .HasColumnType("NUMBER(19)");
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("id_cliente");
 
                     b.Property<string>("LocalizacaoAtual")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("NVARCHAR2(2000)")
+                        .HasColumnName("localizacao_atual");
 
                     b.Property<decimal>("PrecoVariado")
-                        .HasColumnType("DECIMAL(18, 2)");
+                        .HasColumnType("DECIMAL(18, 2)")
+                        .HasColumnName("preco_variado");
 
                     b.Property<int>("QntdProcura")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("qntd_procura");
 
                     b.HasKey("IdAtividades");
 
@@ -66,26 +74,36 @@ namespace SavvyfixAspNet.Data.Migrations
             modelBuilder.Entity("SavvyfixAspNet.Domain.Entities.Cliente", b =>
                 {
                     b.Property<long>("IdCliente")
-                        .HasColumnType("NUMBER(19)");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("id_cliente");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdCliente"));
 
                     b.Property<string>("CpfClie")
                         .IsRequired()
                         .HasMaxLength(11)
-                        .HasColumnType("NVARCHAR2(11)");
+                        .HasColumnType("NVARCHAR2(11)")
+                        .HasColumnName("cpf_clie");
 
                     b.Property<long?>("IdEndereco")
                         .IsRequired()
-                        .HasColumnType("NUMBER(19)");
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("id_endereco");
 
                     b.Property<string>("NmClie")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("NVARCHAR2(2000)")
+                        .HasColumnName("nm_clie");
 
                     b.Property<string>("SenhaClie")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("NVARCHAR2(2000)")
+                        .HasColumnName("senha_clie");
 
                     b.HasKey("IdCliente");
+
+                    b.HasIndex("IdEndereco");
 
                     b.ToTable("Clientes");
                 });
@@ -94,34 +112,42 @@ namespace SavvyfixAspNet.Data.Migrations
                 {
                     b.Property<long>("IdCompra")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(19)");
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("id_compra");
 
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdCompra"));
 
                     b.Property<string>("EspcificacoesProd")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("NVARCHAR2(2000)")
+                        .HasColumnName("especificacao_prod");
 
                     b.Property<long?>("IdAtividades")
-                        .HasColumnType("NUMBER(19)");
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("id_atividades");
 
                     b.Property<long?>("IdCliente")
                         .IsRequired()
-                        .HasColumnType("NUMBER(19)");
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("id_cliente");
 
                     b.Property<long?>("IdProd")
                         .IsRequired()
-                        .HasColumnType("NUMBER(19)");
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("id_produto");
 
                     b.Property<string>("NmProd")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("NVARCHAR2(2000)")
+                        .HasColumnName("nm_prod");
 
                     b.Property<int>("QntdProd")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("qntd_prod");
 
                     b.Property<decimal>("ValorCompra")
-                        .HasColumnType("DECIMAL(18, 2)");
+                        .HasColumnType("DECIMAL(18, 2)")
+                        .HasColumnName("valor_compra");
 
                     b.HasKey("IdCompra");
 
@@ -138,39 +164,47 @@ namespace SavvyfixAspNet.Data.Migrations
                 {
                     b.Property<long>("IdEndereco")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(19)");
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("id_endereco");
 
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdEndereco"));
 
                     b.Property<string>("BairroEndeereco")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("NVARCHAR2(2000)")
+                        .HasColumnName("bairro_endereco");
 
                     b.Property<string>("CepEndereco")
                         .IsRequired()
                         .HasMaxLength(8)
-                        .HasColumnType("NVARCHAR2(8)");
+                        .HasColumnType("NVARCHAR2(8)")
+                        .HasColumnName("cep_endereco");
 
                     b.Property<string>("CidadeEndereco")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("NVARCHAR2(2000)")
+                        .HasColumnName("cidade_endereco");
 
                     b.Property<string>("EstadoEndereco")
                         .IsRequired()
                         .HasMaxLength(2)
-                        .HasColumnType("NVARCHAR2(2)");
+                        .HasColumnType("NVARCHAR2(2)")
+                        .HasColumnName("estado_endereco");
 
                     b.Property<string>("NumEndereco")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("NVARCHAR2(2000)")
+                        .HasColumnName("num_endereco");
 
                     b.Property<string>("PaisEndereco")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("NVARCHAR2(2000)")
+                        .HasColumnName("pais");
 
                     b.Property<string>("RuaEndereco")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("NVARCHAR2(2000)")
+                        .HasColumnName("rua_endereco");
 
                     b.HasKey("IdEndereco");
 
@@ -181,28 +215,34 @@ namespace SavvyfixAspNet.Data.Migrations
                 {
                     b.Property<long>("IdProd")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(19)");
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("id_prod");
 
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdProd"));
 
                     b.Property<string>("DescProd")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("NVARCHAR2(2000)")
+                        .HasColumnName("desc_proc");
 
                     b.Property<string>("Img")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("NVARCHAR2(2000)")
+                        .HasColumnName("img_prod");
 
                     b.Property<string>("MarcaProd")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("NVARCHAR2(2000)")
+                        .HasColumnName("marca_prod");
 
                     b.Property<string>("NmProd")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("NVARCHAR2(2000)")
+                        .HasColumnName("nm_prod");
 
                     b.Property<decimal>("PrecoFixo")
-                        .HasColumnType("DECIMAL(18, 2)");
+                        .HasColumnType("DECIMAL(18, 2)")
+                        .HasColumnName("preco_fixo");
 
                     b.HasKey("IdProd");
 
@@ -224,7 +264,7 @@ namespace SavvyfixAspNet.Data.Migrations
                 {
                     b.HasOne("SavvyfixAspNet.Domain.Entities.Endereco", "Endereco")
                         .WithMany("Clientes")
-                        .HasForeignKey("IdCliente")
+                        .HasForeignKey("IdEndereco")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

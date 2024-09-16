@@ -40,7 +40,7 @@ public class SavvyfixMetadataDbContext : DbContext
         modelBuilder.Entity<Cliente>()
             .HasOne(c => c.Endereco)           
             .WithMany(p => p.Clientes)          
-            .HasForeignKey(c => c.IdCliente); 
+            .HasForeignKey(c => c.IdEndereco); 
         
         
     }

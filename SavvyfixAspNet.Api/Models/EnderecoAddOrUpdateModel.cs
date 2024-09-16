@@ -1,5 +1,6 @@
 namespace SavvyfixAspNet.Api.Models;
 
+[Serializable]
 public record EnderecoAddOrUpdateModel
 {
     public string CepEndereco { get; set; }

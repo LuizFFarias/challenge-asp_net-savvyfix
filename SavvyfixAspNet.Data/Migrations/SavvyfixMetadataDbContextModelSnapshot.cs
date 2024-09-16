@@ -71,8 +71,11 @@ namespace SavvyfixAspNet.Data.Migrations
             modelBuilder.Entity("SavvyfixAspNet.Domain.Entities.Cliente", b =>
                 {
                     b.Property<long>("IdCliente")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("NUMBER(19)")
                         .HasColumnName("id_cliente");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdCliente"));
 
                     b.Property<string>("CpfClie")
                         .IsRequired()
@@ -96,6 +99,8 @@ namespace SavvyfixAspNet.Data.Migrations
                         .HasColumnName("senha_clie");
 
                     b.HasKey("IdCliente");
+
+                    b.HasIndex("IdEndereco");
 
                     b.ToTable("Clientes");
                 });
@@ -256,7 +261,7 @@ namespace SavvyfixAspNet.Data.Migrations
                 {
                     b.HasOne("SavvyfixAspNet.Domain.Entities.Endereco", "Endereco")
                         .WithMany("Clientes")
-                        .HasForeignKey("IdCliente")
+                        .HasForeignKey("IdEndereco")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

@@ -62,7 +62,7 @@ public static class EnderecoEndpoint
                 dbContext.Enderecos.Add(endereco);
                 await dbContext.SaveChangesAsync();
 
-                return Results.Created($"/enderecos/{endereco.IdEndereco}", endereco);
+                return Results.Created("/enderecos", endereco);
             })
             .WithName("Adicionar novo endereço")
             .WithOpenApi(operation => new(operation)
