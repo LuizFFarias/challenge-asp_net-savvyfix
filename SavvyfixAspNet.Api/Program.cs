@@ -48,6 +48,7 @@ app.UseHttpsRedirection();
 // .WithOpenApi();
 
 app.MapProdutoEndpoints();
+app.MapEnderecoEndpoints();
 
 app.Run();
 
