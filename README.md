@@ -27,3 +27,56 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;3. As funcionalidades desenvolvidas não possuem divisão de responsabilidade entre os serviços, pois as operações convergem para o banco de dados e o serviço de aplicativo. Como o projeto é pequeno, isso é importante para diminuir a sobrecarga de comunicação entre muitos sistemas via APIs.</p>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;4. Caso haja uma alteração em uma aplicação, todas as outras aplicações são impactadas e devem ser recompiladas por estarem conectadas e dividirem a mesma modelagem. Essa abordagem garante a consistência entre todos os sistemas, pois, ao ser realizado uma alteração, será necessário conferir em todas as outras aplicações se não há mais codificações inconsistentes.</p>
+
+<br>
+
+## Instruções para rodar a API
+
+### Realizar o clone do projeto 
+
+<p>O primeiro passoa para testar a apliação é realizar o git clone do nosso projeto através do linK:</p>
+https://github.com/LuizFFarias/challenge-asp_net-savvyfix.git
+
+<p>1. Abra um terminal e digite: git clone https://github.com/LuizFFarias/challenge-asp_net-savvyfix.git</p>
+<p>2. Abra o projeto em uma IDE destinada para C#/.NET como Rider ou Visual Studio</p>
+<p>3. Inicie o projeto SavvyfixAspNet.Api como http</p>
+<p>4. Após iniciar, entre no link abaixo para testar a aplicação através do Swagger UI: </p>
+http://localhost:5255/swagger/index.html
+
+<br>
+
+## Teste da API
+
+![image](https://github.com/user-attachments/assets/ab5e23eb-8813-431c-b073-2a93d63fbf68)
+
+<p>Essa é a página inicial da documentação do projeto, para realizar testes basta apenas clicar na seta </p>
+
+![image](https://github.com/user-attachments/assets/f59d75ba-beb7-4e33-b76b-d4e2b95735a8)
+
+<p>Depois em "Try it out" </p>
+
+![image](https://github.com/user-attachments/assets/a8b7eceb-a5ba-481d-9cc3-7153338cd470)
+
+<p>Execute e temos nossa resposta da API</p>
+
+![image](https://github.com/user-attachments/assets/72b8137e-0b6c-4c92-bda8-07b00eff68ca)
+
+<p>Para fazer uma inserção, vá em POST e altere o JSON para inserir as informações que deseja cadastrar no banco de dados</p>
+
+![image](https://github.com/user-attachments/assets/7183eeee-d834-470f-8af5-ee600f31862b)
+
+<p>Para editar, vá em PUT e informe o id e os dados que serão alterados </p>
+
+![image](https://github.com/user-attachments/assets/47cb5a01-3935-463b-8503-663631a530f3)
+
+<p>Para deletar, vá em DELETE e informe o id</p>
+
+![image](https://github.com/user-attachments/assets/0c45ac38-3412-469a-ae3f-9d6b584545f3)
+
+
+
+
+
+
+
+
