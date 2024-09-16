@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SavvyfixAspNet.Api.Models;
+using SavvyfixAspNet.Api.Service;
 using SavvyfixAspNet.Data;
 using SavvyfixAspNet.Domain.Entities;
 
@@ -53,21 +54,11 @@ public static class AtividadesEndpoint
         // POST: Adiciona uma nova atividade
         atividadesGroup.MapPost("/", async (AtividadesAddOrUpdateModel atividadeModel, SavvyfixMetadataDbContext dbContext) =>
         {
-            var atividade = new Atividades
-            {
-                ClimaAtual = atividadeModel.ClimaAtual,
-                DemandaProduto = atividadeModel.DemandaProduto,
-                HorarioAtual = atividadeModel.HorarioAtual,
-                LocalizacaoAtual = atividadeModel.LocalizacaoAtual,
-                PrecoVariado = atividadeModel.PrecoVariado,
-                QntdProcura = atividadeModel.QntdProcura,
-                IdCliente = atividadeModel.IdCliente
-            };
 
-            dbContext.Atividades.Add(atividade);
+            dbContext.Atividades.Add(atividadeModel.MapToAtv());
             await dbContext.SaveChangesAsync();
 
-            return Results.Created($"/atividades", atividade);
+            return Results.Created($"/atividades", atividadeModel);
         })
         .WithName("Adicionar nova atividade")
         .WithOpenApi(operation => new(operation)

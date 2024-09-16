@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SavvyfixAspNet.Api.Models;
+using SavvyfixAspNet.Api.Service;
 using SavvyfixAspNet.Data;
 using SavvyfixAspNet.Domain.Entities;
 
@@ -53,18 +54,10 @@ public static class ClienteEndpoint
             // POST: Adiciona um novo cliente
             clientesGroup.MapPost("/", async (ClienteAddOrUpdateModel clienteModel, SavvyfixMetadataDbContext dbContext) =>
             {
-                var cliente = new Cliente
-                {
-                    CpfClie = clienteModel.CpfClie,
-                    NmClie = clienteModel.NmClie,
-                    SenhaClie = clienteModel.SenhaClie,
-                    IdEndereco = clienteModel.IdEndereco
-                };
-
-                dbContext.Clientes.Add(cliente);
+                dbContext.Clientes.Add(clienteModel.MapToCliente());
                 await dbContext.SaveChangesAsync();
 
-                return Results.Created($"/clientes", cliente);
+                return Results.Created($"/clientes", clienteModel);
             })
             .WithName("Adicionar novo cliente")
             .WithOpenApi(operation => new(operation)

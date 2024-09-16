@@ -3,8 +3,6 @@ namespace SavvyfixAspNet.Api.Models;
 public record CompraAddOrUpdateModel
 {
     public int QntdProd { get; set; }
-   
-    public decimal ValorCompra { get; set; }
     
     public long? IdProd { get; set; }
 

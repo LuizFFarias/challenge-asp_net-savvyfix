@@ -59,10 +59,11 @@ public static class CompraEndpoint
         // POST: Adiciona uma nova compra
         comprasGroup.MapPost("/", async (CompraAddOrUpdateModel compraModel, SavvyfixMetadataDbContext dbContext) =>
         {
-            dbContext.Compras.Add(compraModel.MapToCompra());
+            var compra = await compraModel.MapToCompra(dbContext);
+            dbContext.Compras.Add(compra);
             await dbContext.SaveChangesAsync();
 
-            return Results.Created($"/compras", compraModel);
+            return Results.Created($"/compras", compra);
         })
         .WithName("Adicionar nova compra")
         .WithOpenApi(operation => new(operation)
@@ -84,14 +85,36 @@ public static class CompraEndpoint
             {
                 return Results.NotFound();
             }
+            
+            Atividades atividades = await dbContext.Atividades.FindAsync(updateModel.IdAtividades);
+            var precoVariado = atividades.PrecoVariado;
 
-            existingCompra.QntdProd = updateModel.QntdProd;
-            existingCompra.ValorCompra = updateModel.ValorCompra;
-            existingCompra.IdProd = updateModel.IdProd;
-            existingCompra.IdCliente = updateModel.IdCliente;
-            existingCompra.IdAtividades = updateModel.IdAtividades;
-            existingCompra.NmProd = updateModel.NmProd;
-            existingCompra.EspcificacoesProd = updateModel.EspcificacoesProd;
+            Produto produto = await dbContext.Produtos.FindAsync(updateModel.IdProd);
+            var valorProd = produto.PrecoFixo;
+            
+            if (atividades != null)
+            {
+                var valorTotal = precoVariado * updateModel.QntdProd;
+                
+                existingCompra.QntdProd = updateModel.QntdProd;
+                existingCompra.ValorCompra = valorTotal;
+                existingCompra.IdProd = updateModel.IdProd;
+                existingCompra.IdCliente = updateModel.IdCliente;
+                existingCompra.IdAtividades = updateModel.IdAtividades;
+                existingCompra.NmProd = updateModel.NmProd;
+                existingCompra.EspcificacoesProd = updateModel.EspcificacoesProd;
+                
+            }
+            else
+            {
+                existingCompra.QntdProd = updateModel.QntdProd;
+                existingCompra.ValorCompra = valorProd * updateModel.QntdProd;
+                existingCompra.IdProd = updateModel.IdProd;
+                existingCompra.IdCliente = updateModel.IdCliente;
+                existingCompra.IdAtividades = updateModel.IdAtividades;
+                existingCompra.NmProd = updateModel.NmProd;
+                existingCompra.EspcificacoesProd = updateModel.EspcificacoesProd;
+            }
 
             await dbContext.SaveChangesAsync();
 
