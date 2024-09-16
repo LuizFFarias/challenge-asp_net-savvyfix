@@ -45,6 +45,13 @@ http://localhost:5255/swagger/index.html
 
 <br>
 
+## Design Patterns - Service Layer
+<p>A Service Layer (Camada de Serviço) é um padrão arquitetural que separa a lógica de negócios da lógica de apresentação e de persistência de dados. Ela centraliza a lógica de operações do sistema em classes de serviços, facilitando a manutenção e escalabilidade do código.</p>
+<p>Em nosso projeto foi criada uma camada Service para o tratamento de precificação e manipulação dos dados antes de serem registrados em nosso banco de dados garantindo assim uma organização do código e
+segurança no tratamento das informações passadas pelo usuário</p>
+
+<br>
+
 ## Teste da API
 
 ![image](https://github.com/user-attachments/assets/ab5e23eb-8813-431c-b073-2a93d63fbf68)
