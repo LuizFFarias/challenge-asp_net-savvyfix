@@ -53,7 +53,19 @@ public static class ClienteEndpoint
 
             // POST: Adiciona um novo cliente
             clientesGroup.MapPost("/", async (ClienteAddOrUpdateModel clienteModel, SavvyfixMetadataDbContext dbContext) =>
-            {
+                {
+                    // Verifica se o modelo é válido
+                    if (!clienteModel.IsValid(out var validationErrors))
+                    {
+                        return Results.BadRequest(validationErrors); // Retorna os erros de validação
+                    }
+                    
+                    Endereco endereco = await dbContext.Enderecos.FindAsync(clienteModel.IdEndereco);
+                    if (endereco is null)
+                    {
+                        return Results.BadRequest("Endereço não encontrado");
+                    }
+                
                 dbContext.Clientes.Add(clienteModel.MapToCliente());
                 await dbContext.SaveChangesAsync();
 

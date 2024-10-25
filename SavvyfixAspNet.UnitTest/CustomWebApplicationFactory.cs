@@ -78,6 +78,22 @@ public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<TStar
                 EstadoEndereco = "SP",
                 PaisEndereco = "Brasil"
             });
+            dbContext.Clientes.Add(new Cliente()
+            {
+                IdCliente = 1,
+                NmClie = "Luiz Teste",
+                CpfClie = "83320946900",
+                SenhaClie = "12345678",
+                IdEndereco = 1
+            });
+            dbContext.Clientes.Add(new Cliente()
+            {
+                IdCliente = 2,
+                NmClie = "Ronaldo Teste",
+                CpfClie = "24192979381",
+                SenhaClie = "12345678",
+                IdEndereco = 2
+            });
             dbContext.SaveChanges();
         }
     }
