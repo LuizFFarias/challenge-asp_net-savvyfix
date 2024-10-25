@@ -24,6 +24,7 @@ public class Atividades
     public string? LocalizacaoAtual { get; set; }
 
     [Column("preco_variado")]
+    [Range(0.01, double.MaxValue, ErrorMessage = "O preço deve ser maior que zero.")]
     public decimal PrecoVariado { get; set; }
 
     [Column("qntd_procura")]

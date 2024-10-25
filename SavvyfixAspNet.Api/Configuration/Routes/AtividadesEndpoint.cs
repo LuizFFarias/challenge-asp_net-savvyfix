@@ -55,6 +55,18 @@ public static class AtividadesEndpoint
         atividadesGroup.MapPost("/", async (AtividadesAddOrUpdateModel atividadeModel, SavvyfixMetadataDbContext dbContext) =>
         {
 
+            // Verifica se o modelo é válido
+            if (!atividadeModel.IsValid(out var validationErrors))
+            {
+                return Results.BadRequest(validationErrors); // Retorna os erros de validação
+            }
+
+            Cliente cliente = await dbContext.Clientes.FindAsync(atividadeModel.IdCliente);
+            if (cliente is null)
+            {
+                return Results.BadRequest("Cliente não encontrado");
+            }
+            
             dbContext.Atividades.Add(atividadeModel.MapToAtv());
             await dbContext.SaveChangesAsync();
 

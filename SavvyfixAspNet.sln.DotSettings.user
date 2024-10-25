@@ -11,6 +11,14 @@
     &lt;TestId&gt;xUnit::215BFCCA-D9D8-41A3-9D98-34C91306A724::net8.0::SavvyfixAspNet.UnitTest.ClienteTest.AtualizaCliente_RetornaStatus404_SeClienteNaoExiste&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::215BFCCA-D9D8-41A3-9D98-34C91306A724::net8.0::SavvyfixAspNet.UnitTest.ClienteTest.DeletaCliente_RetornaNoContent_SeClienteExiste&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::215BFCCA-D9D8-41A3-9D98-34C91306A724::net8.0::SavvyfixAspNet.UnitTest.ClienteTest.DeletaCliente_RetornaStatus404_SeClienteNaoExiste&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::215BFCCA-D9D8-41A3-9D98-34C91306A724::net8.0::SavvyfixAspNet.UnitTest.AtividadeTest.GetAtividades_RetornaListaDeAtividades&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::215BFCCA-D9D8-41A3-9D98-34C91306A724::net8.0::SavvyfixAspNet.UnitTest.AtividadeTest.GetAtividadeById_RetornaAtividade_SeAtividadeExiste&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::215BFCCA-D9D8-41A3-9D98-34C91306A724::net8.0::SavvyfixAspNet.UnitTest.AtividadeTest.GetAtividadeById_RetornaStatus404_SeAtividadeNaoExiste&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::215BFCCA-D9D8-41A3-9D98-34C91306A724::net8.0::SavvyfixAspNet.UnitTest.AtividadeTest.CriaAtividade_RetornaAtividadeCadastrada&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::215BFCCA-D9D8-41A3-9D98-34C91306A724::net8.0::SavvyfixAspNet.UnitTest.AtividadeTest.CriaAtividade_RetornaErro_SeVariosAtributosInvalidos&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::215BFCCA-D9D8-41A3-9D98-34C91306A724::net8.0::SavvyfixAspNet.UnitTest.AtividadeTest.AtualizaAtividade_RetornaAtividadeAtualizada_SeAtividadeExiste&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::215BFCCA-D9D8-41A3-9D98-34C91306A724::net8.0::SavvyfixAspNet.UnitTest.AtividadeTest.DeletaAtividade_RetornaNoContent_SeAtividadeExiste&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::215BFCCA-D9D8-41A3-9D98-34C91306A724::net8.0::SavvyfixAspNet.UnitTest.AtividadeTest.DeletaAtividade_RetornaStatus404_SeAtividadeNaoExiste&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	

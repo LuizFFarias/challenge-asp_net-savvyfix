@@ -94,6 +94,30 @@ public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<TStar
                 SenhaClie = "12345678",
                 IdEndereco = 2
             });
+            dbContext.Atividades.Add(new Atividades()
+            {
+                IdAtividades = 1,
+                DemandaProduto = "Al",
+                QntdProcura = 12,
+                PrecoVariado = 233,
+                ClimaAtual = "Calor",
+                HorarioAtual = DateTime.Now,
+                LocalizacaoAtual = "Av Paulista",
+                IdCliente = 1
+                
+            });
+            dbContext.Atividades.Add(new Atividades()
+            {
+                IdAtividades = 2, 
+                DemandaProduto = "Al",
+                QntdProcura = 25,
+                PrecoVariado = 150.50m, 
+                ClimaAtual = "Frio",
+                HorarioAtual = DateTime.Now, 
+                LocalizacaoAtual = "Rua da Consolação",
+                IdCliente = 2 
+            });
+
             dbContext.SaveChanges();
         }
     }
