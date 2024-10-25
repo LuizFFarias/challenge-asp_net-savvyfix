@@ -55,6 +55,29 @@ public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<TStar
                 PrecoFixo = 750,
                 Img = "tenis_nike_teste"
             });
+
+            dbContext.Enderecos.Add(new Endereco()
+            {
+                IdEndereco = 1,
+                CepEndereco = "06414025", 
+                RuaEndereco = "Av Paulista",
+                NumEndereco = "123",
+                BairroEndeereco = "Paulista",
+                CidadeEndereco = "São Paulo",
+                EstadoEndereco = "SP",
+                PaisEndereco = "Brasil"
+            });
+            dbContext.Enderecos.Add(new Endereco()
+            {
+                IdEndereco = 2,
+                CepEndereco = "01001000", 
+                RuaEndereco = "Rua da Consolação",
+                NumEndereco = "456",
+                BairroEndeereco = "Centro",
+                CidadeEndereco = "São Paulo",
+                EstadoEndereco = "SP",
+                PaisEndereco = "Brasil"
+            });
             dbContext.SaveChanges();
         }
     }

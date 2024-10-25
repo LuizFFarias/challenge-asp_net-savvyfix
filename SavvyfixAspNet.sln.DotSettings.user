@@ -6,6 +6,15 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=0d27463d_002D713b_002D4f5f_002D83ff_002D4f6d5682fc4f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ProdutosUnitTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::215BFCCA-D9D8-41A3-9D98-34C91306A724::net8.0::ProdutosUnitTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::215BFCCA-D9D8-41A3-9D98-34C91306A724::net8.0::SavvyfixAspNet.UnitTest.EnderecoTest.GetEnderecos_ReturnsListaEnderecos&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::215BFCCA-D9D8-41A3-9D98-34C91306A724::net8.0::SavvyfixAspNet.UnitTest.EnderecoTest.GetEnderecoById_RetornaEndereco_SeEnderecoExiste&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::215BFCCA-D9D8-41A3-9D98-34C91306A724::net8.0::SavvyfixAspNet.UnitTest.EnderecoTest.GetEnderecoById_RetornaStatus404_SeEnderecoNaoExiste&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::215BFCCA-D9D8-41A3-9D98-34C91306A724::net8.0::SavvyfixAspNet.UnitTest.EnderecoTest.CriaEndereco_RetornaEnderecoCadastrado&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::215BFCCA-D9D8-41A3-9D98-34C91306A724::net8.0::SavvyfixAspNet.UnitTest.EnderecoTest.CriaEndereco_RetornaErro_SeVariosAtributosInvalidos&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::215BFCCA-D9D8-41A3-9D98-34C91306A724::net8.0::SavvyfixAspNet.UnitTest.EnderecoTest.AtualizaEndereco_RetornaEnderecoAtualizado_SeEnderecoExiste&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::215BFCCA-D9D8-41A3-9D98-34C91306A724::net8.0::SavvyfixAspNet.UnitTest.EnderecoTest.AtualizaEndereco_RetornaEnderecoStatus404_SeEnderecoNaoExiste&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::215BFCCA-D9D8-41A3-9D98-34C91306A724::net8.0::SavvyfixAspNet.UnitTest.EnderecoTest.DeletaEndereco_RetornaNoContent_SeEnderecoExiste&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::215BFCCA-D9D8-41A3-9D98-34C91306A724::net8.0::SavvyfixAspNet.UnitTest.EnderecoTest.DeletaEndereco_RetornaStatus404_SeEnderecoNaoExiste&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=31796fc6_002Ddd8f_002D4785_002D9779_002D33d4c18cfcc4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from &amp;lt;Test&amp;gt;\&amp;lt;SavvyfixAspNet.Test&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;

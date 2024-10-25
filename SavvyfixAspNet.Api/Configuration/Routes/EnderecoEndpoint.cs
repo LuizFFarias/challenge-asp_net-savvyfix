@@ -48,22 +48,42 @@ public static class EnderecoEndpoint
 
             // POST: Adiciona um novo endereço
             enderecosGroup.MapPost("/", async (EnderecoAddOrUpdateModel enderecoModel, SavvyfixMetadataDbContext dbContext) =>
-            {
-                dbContext.Enderecos.Add(enderecoModel.MapToEndereco());
-                await dbContext.SaveChangesAsync();
+                {
+                    // Verifica se o modelo é válido
+                    if (!enderecoModel.IsValid( out var validationErrors))
+                    {
+                        return Results.BadRequest(validationErrors);
+                    }
 
-                return Results.Created("/enderecos", enderecoModel);
-            })
-            .WithName("Adicionar novo endereço")
-            .WithOpenApi(operation => new(operation)
-            {
-                OperationId = "AddEndereco",
-                Summary = "Adiciona um novo endereço",
-                Description = "Adiciona um novo endereço ao banco de dados",
-                Deprecated = false
-            })
-            .Accepts<EnderecoAddOrUpdateModel>("application/json")
-            .Produces<Endereco>(StatusCodes.Status201Created);
+                    // Mapeia o modelo de adição para a entidade
+                    var endereco = new Endereco
+                    {
+                        CepEndereco = enderecoModel.CepEndereco,
+                        RuaEndereco = enderecoModel.RuaEndereco,
+                        NumEndereco = enderecoModel.NumEndereco,
+                        BairroEndeereco = enderecoModel.BairroEndeereco,
+                        CidadeEndereco = enderecoModel.CidadeEndereco,
+                        EstadoEndereco = enderecoModel.EstadoEndereco,
+                        PaisEndereco = enderecoModel.PaisEndereco
+                    };
+
+                    // Adiciona o novo endereço ao contexto do banco de dados
+                    dbContext.Enderecos.Add(endereco);
+                    await dbContext.SaveChangesAsync();
+
+                    // Retorna a resposta de criação com o novo endereço
+                    return Results.Created($"/enderecos/{endereco.IdEndereco}", endereco);
+                })
+                .WithName("Adicionar novo endereço")
+                .WithOpenApi(operation => new(operation)
+                {
+                    OperationId = "AddEndereco",
+                    Summary = "Adiciona um novo endereço",
+                    Description = "Adiciona um novo endereço ao banco de dados",
+                    Deprecated = false
+                })
+                .Accepts<EnderecoAddOrUpdateModel>("application/json")
+                .Produces<Endereco>(StatusCodes.Status201Created);
 
             // PUT: Atualiza um endereço existente
             enderecosGroup.MapPut("/{id:long}", async (long id, EnderecoAddOrUpdateModel updateModel, SavvyfixMetadataDbContext dbContext) =>
