@@ -13,11 +13,6 @@ public static class CompraService
 
         Produto produto = await dbContext.Produtos.FindAsync(compraModel.IdProd);
         var valorProd = produto.PrecoFixo;
-
-        if (produto == null)
-        {
-            throw new Exception("Produto não encontrado.");
-        }
         
         if (atividades != null)
         {

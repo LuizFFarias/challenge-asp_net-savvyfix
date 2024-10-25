@@ -117,7 +117,30 @@ public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<TStar
                 LocalizacaoAtual = "Rua da Consolação",
                 IdCliente = 2 
             });
-
+            dbContext.Compras.Add(new Compra()
+            {
+                IdCompra = 1,
+                NmProd = "Tenis Adidas",
+                EspcificacoesProd = "Tenis para corrida",
+                QntdProd = 2,
+                ValorCompra = 900,
+                IdProd = 1,
+                IdCliente = 1,
+                IdAtividades = 1
+                
+            });
+            dbContext.Compras.Add(new Compra()
+            {
+                IdCompra = 2,
+                NmProd = "Tenis Nike",
+                EspcificacoesProd = "Tenis esportivo de alto performance",
+                QntdProd = 1,
+                ValorCompra = 750,
+                IdProd = 2,
+                IdCliente = 2,
+                IdAtividades = 2
+                
+            });
             dbContext.SaveChanges();
         }
     }

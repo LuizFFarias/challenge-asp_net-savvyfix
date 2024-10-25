@@ -10,6 +10,7 @@ public class Compra
     public long IdCompra { get; set; }
     
     [Required(ErrorMessage = "A quantidade de procura é obrigatória.")]
+    [Range(0.01, double.MaxValue, ErrorMessage = "O valor deve ser maior que 0.")]
     [Column("qntd_prod")]
     public int QntdProd { get; set; }
     
