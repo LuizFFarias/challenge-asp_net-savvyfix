@@ -7,7 +7,7 @@ using SavvyfixAspNet.Domain.Entities;
 
 namespace SavvyfixAspNet.Api.Configuration.Routes;
 
-public static class ProdutoEndpoint
+public static class  ProdutoEndpoint
 {
     public static void MapProdutoEndpoints(this WebApplication app)
     {
@@ -51,9 +51,17 @@ public static class ProdutoEndpoint
         // POST: Adiciona um novo produto
         produtosGroup.MapPost("/", async (ProdutoAddOrUpdateModel produtoModel, SavvyfixMetadataDbContext dbContext) =>
             {
-                dbContext.Produtos.Add(produtoModel.MapToPro());
+                // Verifica se o modelo é válido
+                if (!produtoModel.IsValid(out var validationErrors))
+                {
+                    return Results.BadRequest(validationErrors); // Retorna os erros de validação
+                }
+
+                // Mapeia o modelo para a entidade Produto e adiciona ao contexto
+                var produto = produtoModel.MapToPro();
+                await dbContext.Produtos.AddAsync(produto);
                 await dbContext.SaveChangesAsync();
-                
+    
                 return Results.Created("/produtos", produtoModel);
             })
             .WithName("Adicionar novo produto")
@@ -66,7 +74,7 @@ public static class ProdutoEndpoint
             })
             .Accepts<Produto>("application/json")
             .Produces<Produto>(StatusCodes.Status201Created);
-        
+
         // PUT: Atualiza um endereço existente
         produtosGroup.MapPut("/{id:long}", async (long id, ProdutoAddOrUpdateModel updateModel, SavvyfixMetadataDbContext dbContext) =>
             {
