@@ -8,9 +8,11 @@ public class Produto
 {
     [Key]
     [Column("id_prod")]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public long IdProd { get; set; }
     
-    [Required]
+    [Required(ErrorMessage = "O preço fixo é obrigatório")]
+    [Range(0.01, double.MaxValue, ErrorMessage = "O preço deve ser maior que zero.")]
     [Column("preco_fixo")]
     public decimal PrecoFixo { get; set; }
     

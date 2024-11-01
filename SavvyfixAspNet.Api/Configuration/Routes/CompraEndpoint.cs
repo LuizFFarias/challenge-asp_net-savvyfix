@@ -59,6 +59,29 @@ public static class CompraEndpoint
         // POST: Adiciona uma nova compra
         comprasGroup.MapPost("/", async (CompraAddOrUpdateModel compraModel, SavvyfixMetadataDbContext dbContext) =>
         {
+            // Verifica se o modelo é válido
+            if (!compraModel.IsValid( out var validationErrors))
+            {
+                return Results.BadRequest(validationErrors);
+            }
+            
+            Cliente cliente = await dbContext.Clientes.FindAsync(compraModel.IdCliente);
+            Produto produto = await dbContext.Produtos.FindAsync(compraModel.IdProd);
+            Atividades atividades = await dbContext.Atividades.FindAsync(compraModel.IdAtividades);
+            
+            if (cliente is null)
+            {
+                return Results.BadRequest("Cliente não encontrado");
+            }
+            else if (produto is null)
+            {
+                return Results.BadRequest("Produto não encontrado");
+            }
+            else if (atividades is null)
+            {
+                return Results.BadRequest("Atividade não encontrado");
+            }
+            
             var compra = await compraModel.MapToCompra(dbContext);
             dbContext.Compras.Add(compra);
             await dbContext.SaveChangesAsync();
