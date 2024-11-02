@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using SavvyfixAspNet.Api.Models;
 using SavvyfixAspNet.Api.Service;
@@ -20,12 +21,13 @@ public static class AtividadesEndpoint
                 .ToListAsync();
             return atividades.Any() ? Results.Ok(atividades) : Results.NotFound();
         })
+        .RequireAuthorization(new AuthorizeAttribute(){Roles = "ROLE_ADMIN"})
         .WithName("Buscar atividades")
         .WithOpenApi(operation => new(operation)
         {
             OperationId = "GetAtividades",
             Summary = "Retorna todas as atividades",
-            Description = "Retorna todas as atividades do banco de dados",
+            Description = "Retorna todas as atividades do banco de dados. **É necessário ser um administrador**",
             Deprecated = false
         })
         .Produces<List<Atividades>>()
@@ -40,12 +42,13 @@ public static class AtividadesEndpoint
 
             return atividade is not null ? Results.Ok(atividade) : Results.NotFound();
         })
+        .RequireAuthorization(new AuthorizeAttribute(){Roles = "ROLE_ADMIN"})
         .WithName("Buscar atividade pelo id")
         .WithOpenApi(operation => new(operation)
         {
             OperationId = "GetAtividadesById",
             Summary = "Retorna uma atividade pelo ID",
-            Description = "Retorna a atividade pelo ID do banco de dados",
+            Description = "Retorna a atividade pelo ID do banco de dados. **É necessário ser um administrador**",
             Deprecated = false
         })
         .Produces<Atividades>()
@@ -72,12 +75,13 @@ public static class AtividadesEndpoint
 
             return Results.Created($"/atividades", atividadeModel);
         })
+        .RequireAuthorization()
         .WithName("Adicionar nova atividade")
         .WithOpenApi(operation => new(operation)
         {
             OperationId = "AddAtividades",
             Summary = "Adiciona uma nova atividade",
-            Description = "Adiciona uma nova atividade ao banco de dados",
+            Description = "Adiciona uma nova atividade ao banco de dados. **É necessário estar autenticado**",
             Deprecated = false
         })
         .Accepts<AtividadesAddOrUpdateModel>("application/json")
@@ -113,12 +117,13 @@ public static class AtividadesEndpoint
 
             return Results.Ok(existingAtividade);
         })
+        .RequireAuthorization(new AuthorizeAttribute(){Roles = "ROLE_ADMIN"})
         .WithName("Atualizar atividade")
         .WithOpenApi(operation => new(operation)
         {
             OperationId = "UpdateAtividades",
             Summary = "Atualiza uma atividade existente",
-            Description = "Atualiza uma atividade existente no banco de dados pelo ID",
+            Description = "Atualiza uma atividade existente no banco de dados pelo ID. **É necessário ser um administrador**",
             Deprecated = false
         })
         .Accepts<AtividadesAddOrUpdateModel>("application/json")
@@ -140,12 +145,13 @@ public static class AtividadesEndpoint
 
             return Results.NoContent();
         })
+        .RequireAuthorization(new AuthorizeAttribute(){Roles = "ROLE_ADMIN"})
         .WithName("Deletar atividade")
         .WithOpenApi(operation => new(operation)
         {
             OperationId = "DeleteAtividades",
             Summary = "Deleta uma atividade existente",
-            Description = "Deleta uma atividade existente no banco de dados pelo ID",
+            Description = "Deleta uma atividade existente no banco de dados pelo ID. **É necessário ser um administrador**",
             Deprecated = false
         })
         .Produces(StatusCodes.Status204NoContent)

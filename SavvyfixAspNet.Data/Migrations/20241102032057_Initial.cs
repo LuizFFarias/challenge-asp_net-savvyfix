@@ -48,6 +48,19 @@ namespace SavvyfixAspNet.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Roles",
+                columns: table => new
+                {
+                    id_role = table.Column<long>(type: "NUMBER(19)", nullable: false)
+                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
+                    NomeRole = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Roles", x => x.id_role);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Clientes",
                 columns: table => new
                 {
@@ -56,6 +69,7 @@ namespace SavvyfixAspNet.Data.Migrations
                     cpf_clie = table.Column<string>(type: "NVARCHAR2(11)", maxLength: 11, nullable: false),
                     nm_clie = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     senha_clie = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
+                    role_clie = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     id_endereco = table.Column<long>(type: "NUMBER(19)", nullable: false)
                 },
                 constraints: table =>
@@ -95,7 +109,31 @@ namespace SavvyfixAspNet.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Compra",
+                name: "ClienteRoles",
+                columns: table => new
+                {
+                    IdCliete = table.Column<long>(type: "NUMBER(19)", nullable: false),
+                    IdRole = table.Column<long>(type: "NUMBER(19)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ClienteRoles", x => new { x.IdCliete, x.IdRole });
+                    table.ForeignKey(
+                        name: "FK_ClienteRoles_Clientes_IdCliete",
+                        column: x => x.IdCliete,
+                        principalTable: "Clientes",
+                        principalColumn: "id_cliente",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ClienteRoles_Roles_IdRole",
+                        column: x => x.IdRole,
+                        principalTable: "Roles",
+                        principalColumn: "id_role",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Compras",
                 columns: table => new
                 {
                     id_compra = table.Column<long>(type: "NUMBER(19)", nullable: false)
@@ -110,20 +148,20 @@ namespace SavvyfixAspNet.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Compra", x => x.id_compra);
+                    table.PrimaryKey("PK_Compras", x => x.id_compra);
                     table.ForeignKey(
-                        name: "FK_Compra_Atividades_id_atividades",
+                        name: "FK_Compras_Atividades_id_atividades",
                         column: x => x.id_atividades,
                         principalTable: "Atividades",
                         principalColumn: "id_atividades");
                     table.ForeignKey(
-                        name: "FK_Compra_Clientes_id_cliente",
+                        name: "FK_Compras_Clientes_id_cliente",
                         column: x => x.id_cliente,
                         principalTable: "Clientes",
                         principalColumn: "id_cliente",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Compra_Produtos_id_produto",
+                        name: "FK_Compras_Produtos_id_produto",
                         column: x => x.id_produto,
                         principalTable: "Produtos",
                         principalColumn: "id_prod",
@@ -136,23 +174,28 @@ namespace SavvyfixAspNet.Data.Migrations
                 column: "id_cliente");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ClienteRoles_IdRole",
+                table: "ClienteRoles",
+                column: "IdRole");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Clientes_id_endereco",
                 table: "Clientes",
                 column: "id_endereco");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Compra_id_atividades",
-                table: "Compra",
+                name: "IX_Compras_id_atividades",
+                table: "Compras",
                 column: "id_atividades");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Compra_id_cliente",
-                table: "Compra",
+                name: "IX_Compras_id_cliente",
+                table: "Compras",
                 column: "id_cliente");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Compra_id_produto",
-                table: "Compra",
+                name: "IX_Compras_id_produto",
+                table: "Compras",
                 column: "id_produto");
         }
 
@@ -160,7 +203,13 @@ namespace SavvyfixAspNet.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Compra");
+                name: "ClienteRoles");
+
+            migrationBuilder.DropTable(
+                name: "Compras");
+
+            migrationBuilder.DropTable(
+                name: "Roles");
 
             migrationBuilder.DropTable(
                 name: "Atividades");

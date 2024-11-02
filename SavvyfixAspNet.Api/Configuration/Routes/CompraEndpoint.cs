@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using SavvyfixAspNet.Api.Models;
 using SavvyfixAspNet.Api.Service;
@@ -23,12 +24,13 @@ public static class CompraEndpoint
                 
             return compras.Any() ? Results.Ok(compras) : Results.NotFound();
         })
+        .RequireAuthorization()
         .WithName("Buscar compras")
         .WithOpenApi(operation => new(operation)
         {
             OperationId = "GetCompras",
             Summary = "Retorna todas as compras",
-            Description = "Retorna todas as compras do banco de dados",
+            Description = "Retorna todas as compras do banco de dados. **É necessário estar autenticado**",
             Deprecated = false
         })
         .Produces<List<Compra>>()
@@ -45,12 +47,13 @@ public static class CompraEndpoint
 
             return compra is not null ? Results.Ok(compra) : Results.NotFound();
         })
+        .RequireAuthorization()
         .WithName("Buscar compra pelo id")
         .WithOpenApi(operation => new(operation)
         {
             OperationId = "GetCompraById",
             Summary = "Retorna a compra buscada pelo ID",
-            Description = "Retorna a compra buscada pelo ID do banco de dados",
+            Description = "Retorna a compra buscada pelo ID do banco de dados. **É necessário estar autenticado**",
             Deprecated = false
         })
         .Produces<Compra>()
@@ -88,12 +91,13 @@ public static class CompraEndpoint
 
             return Results.Created($"/compras", compra);
         })
+        .RequireAuthorization()
         .WithName("Adicionar nova compra")
         .WithOpenApi(operation => new(operation)
         {
             OperationId = "AddCompra",
             Summary = "Adiciona uma nova compra",
-            Description = "Adiciona uma nova compra ao banco de dados",
+            Description = "Adiciona uma nova compra ao banco de dados. **É necessário estar autenticado**",
             Deprecated = false
         })
         .Accepts<CompraAddOrUpdateModel>("application/json")
@@ -143,12 +147,13 @@ public static class CompraEndpoint
 
             return Results.Ok(existingCompra);
         })
+        .RequireAuthorization(new AuthorizeAttribute(){Roles = "ROLE_ADMIN"})
         .WithName("Atualizar compra")
         .WithOpenApi(operation => new(operation)
         {
             OperationId = "UpdateCompra",
             Summary = "Atualiza uma compra existente",
-            Description = "Atualiza uma compra existente no banco de dados pelo ID",
+            Description = "Atualiza uma compra existente no banco de dados pelo ID. **É necessário ser um administrador**",
             Deprecated = false
         })
         .Accepts<CompraAddOrUpdateModel>("application/json")
@@ -170,12 +175,13 @@ public static class CompraEndpoint
 
             return Results.NoContent();
         })
+        .RequireAuthorization(new AuthorizeAttribute(){Roles = "ROLE_ADMIN"})
         .WithName("Deletar compra")
         .WithOpenApi(operation => new(operation)
         {
             OperationId = "DeleteCompra",
             Summary = "Deleta uma compra existente",
-            Description = "Deleta uma compra existente no banco de dados pelo ID",
+            Description = "Deleta uma compra existente no banco de dados pelo ID. **É necessário ser um administrador**",
             Deprecated = false
         })
         .Produces(StatusCodes.Status204NoContent)

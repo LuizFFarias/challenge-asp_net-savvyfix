@@ -14,6 +14,7 @@ public record ClienteAddOrUpdateModel
     
     public long? IdEndereco { get; set; }
     
+    
     // Validação do modelo
     public bool IsValid(out List<string> validationErrors)
     {
