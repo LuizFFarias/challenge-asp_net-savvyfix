@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Net;
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using SavvyfixAspNet.Domain.Entities;
 using Xunit;
 
@@ -10,15 +13,25 @@ namespace SavvyfixAspNet.UnitTest;
 public class EnderecoTest  
 {
     private readonly HttpClient _client;
+    private readonly IConfiguration? _config;
+    private readonly TokenService _tokenService;
 
     public EnderecoTest(CustomWebApplicationFactory<Program> factory)
     {
         _client = factory.CreateClient();
+        _config = factory.Services.GetService<IConfiguration>();
+        _tokenService = new TokenService(_config);
     }
     
       [Fact]
     public async Task GetEnderecos_ReturnsListaEnderecos()
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenUserJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
         // Act
         var response = await _client.GetAsync("/enderecos");
 
@@ -33,6 +46,12 @@ public class EnderecoTest
     [Fact]
     public async Task GetEnderecoById_RetornaEndereco_SeEnderecoExiste()
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenUserJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
         // Arrange
         int enderecoId = 1;
 
@@ -49,6 +68,12 @@ public class EnderecoTest
     [Fact]
     public async Task GetEnderecoById_RetornaStatus404_SeEnderecoNaoExiste()
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenUserJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
         // Arrange
         int enderecoId = 999; 
 
@@ -62,6 +87,12 @@ public class EnderecoTest
     [Fact]
     public async Task CriaEndereco_RetornaEnderecoCadastrado()
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenUserJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
         // Arrange
         var novoEndereco = new Endereco()
         {
@@ -103,6 +134,12 @@ public class EnderecoTest
     [InlineData("06414025", "Av Paulista", "123", "Paulista", "São Paulo", "SP", null)] // País nulo
     public async Task CriaEndereco_RetornaErro_SeVariosAtributosInvalidos(string cep, string rua, string numero, string bairro, string cidade, string estado, string pais)
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenUserJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+        
         // Arrange
         var novoEndereco = new Endereco()
         {
@@ -126,6 +163,12 @@ public class EnderecoTest
     [Fact]
     public async Task AtualizaEndereco_RetornaEnderecoAtualizado_SeEnderecoExiste()
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenAdminJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
         // Arrange
         int enderecoId = 1;
         var atualizarEndereco = new Endereco()
@@ -160,6 +203,12 @@ public class EnderecoTest
     [Fact]
     public async Task AtualizaEndereco_RetornaEnderecoStatus404_SeEnderecoNaoExiste()
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenAdminJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+        
         // Arrange
         int enderecoId = 999; // ID que não existe
         var atualizarEndereco = new Endereco()
@@ -185,6 +234,12 @@ public class EnderecoTest
     [Fact]
     public async Task DeletaEndereco_RetornaNoContent_SeEnderecoExiste()
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenAdminJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
         // Arrange
         int enderecoId = 2; 
 
@@ -198,6 +253,12 @@ public class EnderecoTest
     [Fact]
     public async Task DeletaEndereco_RetornaStatus404_SeEnderecoNaoExiste()
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenAdminJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
         // Arrange
         int enderecoId = 999; 
 

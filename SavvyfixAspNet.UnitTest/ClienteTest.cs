@@ -1,5 +1,12 @@
+using System.IdentityModel.Tokens.Jwt;
 using System.Net;
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
+using System.Security.Claims;
+using System.Text;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using SavvyfixAspNet.Domain.Entities;
 using Xunit;
 
@@ -9,15 +16,25 @@ namespace SavvyfixAspNet.UnitTest;
 public class ClienteTest
 {
     private readonly HttpClient _client;
+    private readonly IConfiguration? _config;
+    private readonly TokenService _tokenService;
 
     public ClienteTest(CustomWebApplicationFactory<Program> factory)
     {
         _client = factory.CreateClient();
+        _config = factory.Services.GetService<IConfiguration>();
+        _tokenService = new TokenService(_config);
     }
     
     [Fact]
     public async Task GetClientes_RetornaListaDeClientes()
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenUserJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+        
         // Act
         var response = await _client.GetAsync("/clientes");
 
@@ -32,6 +49,12 @@ public class ClienteTest
     [Fact]
     public async Task GetClienteById_RetornaCliente_SeClienteExiste()
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenUserJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+        
         // Arrange
         long clienteId = 1;
 
@@ -49,6 +72,12 @@ public class ClienteTest
     [Fact]
     public async Task GetClienteById_RetornaStatus404_SeClienteNaoExiste()
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenUserJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+        
         // Arrange
         long clienteId = 999; 
 
@@ -63,6 +92,14 @@ public class ClienteTest
     [Fact]
     public async Task CriaCliente_RetornaClienteCadastrado()
     {
+        
+        // Gera o token
+        string userToken = _tokenService.GerarTokenUserJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
+        
         // Arrange
         var novoCliente = new Cliente()
         {
@@ -97,6 +134,13 @@ public class ClienteTest
     [InlineData("12345678909", "João Silva", "SenhaSegura123", 999L)] // ID de endereço inexistente
     public async Task CriaCliente_RetornaErro_SeVariosAtributosInvalidos(string cpf, string nome, string senha, long? idEndereco)
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenUserJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
+        
         // Arrange
         var novoCliente = new Cliente()
         {
@@ -117,6 +161,13 @@ public class ClienteTest
     [Fact]
     public async Task AtualizaCliente_RetornaClienteAtualizado_SeClienteExiste()
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenAdminJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
+        
         // Arrange
         int clienteId = 1; 
         var atualizarCliente = new Cliente()
@@ -144,6 +195,13 @@ public class ClienteTest
     [Fact]
     public async Task AtualizaCliente_RetornaStatus404_SeClienteNaoExiste()
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenAdminJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
+        
         // Arrange
         int clienteId = 999; 
         var atualizarCliente = new Cliente()
@@ -165,6 +223,12 @@ public class ClienteTest
     [Fact]
     public async Task DeletaCliente_RetornaNoContent_SeClienteExiste()
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenAdminJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+        
         // Arrange
         int clienteId = 1; 
 
@@ -179,6 +243,12 @@ public class ClienteTest
     [Fact]
     public async Task DeletaCliente_RetornaStatus404_SeClienteNaoExiste()
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenAdminJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
         // Arrange
         int clienteId = 999; 
 

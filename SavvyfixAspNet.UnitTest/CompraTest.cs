@@ -1,6 +1,9 @@
 using System.Net;
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using SavvyfixAspNet.Domain.Entities;
 using Xunit;
 
@@ -9,15 +12,26 @@ namespace SavvyfixAspNet.UnitTest;
 public class CompraTest : IClassFixture<CustomWebApplicationFactory<Program>>
 {
     private readonly HttpClient _client;
+    private readonly IConfiguration? _config;
+    private readonly TokenService _tokenService;
 
     public CompraTest(CustomWebApplicationFactory<Program> factory)
     {
         _client = factory.CreateClient();
+        _config = factory.Services.GetService<IConfiguration>();
+        _tokenService = new TokenService(_config);
     }
     
     [Fact]
     public async Task GetCompras_RetornaListaDeCompras()
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenUserJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
+        
         // Act
         var response = await _client.GetAsync("/compras");
 
@@ -32,6 +46,12 @@ public class CompraTest : IClassFixture<CustomWebApplicationFactory<Program>>
     [Fact]
     public async Task GetCompraById_RetornaCompra_SeCompraExiste()
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenUserJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+        
         // Arrange
         int compraId = 1;
 
@@ -48,6 +68,13 @@ public class CompraTest : IClassFixture<CustomWebApplicationFactory<Program>>
     [Fact]
     public async Task GetCompraById_RetornaStatus404_SeCompraNaoExiste()
     {
+        
+        // Gera o token
+        string userToken = _tokenService.GerarTokenUserJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
         // Arrange
         int compraId = 999; 
 
@@ -62,6 +89,14 @@ public class CompraTest : IClassFixture<CustomWebApplicationFactory<Program>>
     [Fact]
     public async Task CriaCompra_RetornaCompraCadastrada()
     {
+        
+        // Gera o token
+        string userToken = _tokenService.GerarTokenUserJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
+        
         // Arrange
         var novaCompra = new Compra()
         {
@@ -101,6 +136,14 @@ public class CompraTest : IClassFixture<CustomWebApplicationFactory<Program>>
     [InlineData("Tenis Nike", "Tenis para corrida", 0, 1, 1, 999)]  // Cliente inexistente
     public async Task CriaCompra_RetornaErro_SeVariosAtributosInvalidos(string nomeProduto, string especificacoes, int quantidade, long idProduto, long idAtividades, long idCliente )
     {
+        
+        // Gera o token
+        string userToken = _tokenService.GerarTokenUserJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
+        
         // Arrange
         var novaCompra = new Compra()
         {
@@ -123,6 +166,14 @@ public class CompraTest : IClassFixture<CustomWebApplicationFactory<Program>>
     [Fact]
     public async Task AtualizaCompra_RetornaCompraAtualizada_SeCompraExiste()
     {
+        
+        // Gera o token
+        string userToken = _tokenService.GerarTokenAdminJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
+        
         // Arrange
         int compraId = 1; 
         var atualizarCompra = new Compra()
@@ -156,6 +207,13 @@ public class CompraTest : IClassFixture<CustomWebApplicationFactory<Program>>
     [Fact]
     public async Task AtualizaCompra_RetornaCompraStatus404_SeCompraNaoExiste()
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenAdminJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
+        
         // Arrange
         int compraId = 999; 
         var atualizaCompra = new Compra()
@@ -180,6 +238,12 @@ public class CompraTest : IClassFixture<CustomWebApplicationFactory<Program>>
     [Fact]
     public async Task DeletaCompra_RetornaNoContent_SeCompraExiste()
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenAdminJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+        
         // Arrange
         int compraId = 2; 
 
@@ -193,6 +257,12 @@ public class CompraTest : IClassFixture<CustomWebApplicationFactory<Program>>
     [Fact]
     public async Task DeletaCompra_RetornaStatus404_SeCompraNaoExiste()
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenAdminJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+        
         // Arrange
         int compraId = 999; 
 
