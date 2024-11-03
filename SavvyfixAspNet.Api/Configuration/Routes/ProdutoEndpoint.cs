@@ -8,7 +8,7 @@ using SavvyfixAspNet.Domain.Entities;
 
 namespace SavvyfixAspNet.Api.Configuration.Routes;
 
-public static class  ProdutoEndpoint
+public static class  ProdutoEndpoint 
 {
     public static void MapProdutoEndpoints(this WebApplication app)
     {
