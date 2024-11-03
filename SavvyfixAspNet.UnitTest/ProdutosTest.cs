@@ -43,6 +43,16 @@ public class ProdutosUnitTest
     }
     
     [Fact]
+    public async Task GetProdutosSemAutorizacao_RetornaUnauthorized()
+    {
+        // Act
+        var response = await _client.GetAsync("/produtos");
+
+        // Assert
+        Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
+    }
+    
+    [Fact]
     public async Task GetProdutoById_RetornaProduct_SeProdutoExiste()
     {
         // Gera o token
@@ -250,6 +260,25 @@ public class ProdutosUnitTest
 
         // Assert
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+    }
+    
+    [Fact]
+    public async Task DeletaProduto_RetornaForbidden_SeNaoForAdmin()
+    {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenUserJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
+        // Arrange
+        int produtoId = 999;
+
+        // Act
+        var response = await _client.DeleteAsync($"/produtos/{produtoId}");
+
+        // Assert
+        Assert.Equal(HttpStatusCode.Forbidden, response.StatusCode);
     }
 
 }

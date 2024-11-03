@@ -42,6 +42,16 @@ public class AtividadeTest
         Assert.NotNull(atividades);
         Assert.NotEmpty(atividades);
     }
+    
+    [Fact]
+    public async Task GetAtividadesSemAutorizacao_RetornaUnauthorized()
+    {
+        // Act
+        var response = await _client.GetAsync("/atividades");
+
+        // Assert
+        Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
+    }
 
     
     [Fact]
@@ -280,6 +290,26 @@ public class AtividadeTest
         // Assert
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
     }
+    
+    [Fact]
+    public async Task DeletaAtividade_RetornaForbidden_SeNaoForAdmin()
+    {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenUserJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+        
+        // Arrange
+        int atividadeId = 999;
+
+        // Act
+        var response = await _client.DeleteAsync($"/atividades/{atividadeId}");
+
+        // Assert
+        Assert.Equal(HttpStatusCode.Forbidden, response.StatusCode);
+    }
+    
 
 
 }

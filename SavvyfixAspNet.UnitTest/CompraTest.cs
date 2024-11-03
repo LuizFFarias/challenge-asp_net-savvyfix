@@ -42,6 +42,16 @@ public class CompraTest : IClassFixture<CustomWebApplicationFactory<Program>>
         Assert.NotNull(compras);
         Assert.NotEmpty(compras);
     }
+    
+    [Fact]
+    public async Task GetComprasSemAutorizacao_RetornaUnauthorized()
+    {
+        // Act
+        var response = await _client.GetAsync("/compras");
+
+        // Assert
+        Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
+    }
 
     [Fact]
     public async Task GetCompraById_RetornaCompra_SeCompraExiste()
@@ -271,6 +281,25 @@ public class CompraTest : IClassFixture<CustomWebApplicationFactory<Program>>
 
         // Assert
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+    }
+    
+    [Fact]
+    public async Task DeletaCompra_RetornaForbidden_SeNaoForAdmin()
+    {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenUserJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+        
+        // Arrange
+        int compraId = 999; 
+
+        // Act
+        var response = await _client.DeleteAsync($"/compras/{compraId}");
+
+        // Assert
+        Assert.Equal(HttpStatusCode.Forbidden, response.StatusCode);
     }
 
 }

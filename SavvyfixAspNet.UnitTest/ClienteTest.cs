@@ -47,6 +47,16 @@ public class ClienteTest
     }
     
     [Fact]
+    public async Task GetClientesSemAutorizacao_RetornaUnauthorized()
+    {
+        // Act
+        var response = await _client.GetAsync("/clientes");
+
+        // Assert
+        Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
+    }
+    
+    [Fact]
     public async Task GetClienteById_RetornaCliente_SeClienteExiste()
     {
         // Gera o token
@@ -257,6 +267,25 @@ public class ClienteTest
 
         // Assert
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+    }
+    
+    [Fact]
+    public async Task DeletaCliente_RetornaForbidden_SeNaoForAdmin()
+    {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenUserJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
+        // Arrange
+        int clienteId = 999; 
+
+        // Act
+        var response = await _client.DeleteAsync($"/clientes/{clienteId}");
+
+        // Assert
+        Assert.Equal(HttpStatusCode.Forbidden, response.StatusCode);
     }
 
 

@@ -44,6 +44,16 @@ public class EnderecoTest
     }
     
     [Fact]
+    public async Task GetEnderecosSemAutorizacao_ReturnsUnauthorized()
+    {
+        // Act
+        var response = await _client.GetAsync("/enderecos");
+
+        // Assert
+        Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
+    }
+    
+    [Fact]
     public async Task GetEnderecoById_RetornaEndereco_SeEnderecoExiste()
     {
         // Gera o token
@@ -267,6 +277,25 @@ public class EnderecoTest
 
         // Assert
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+    }
+    
+    [Fact]
+    public async Task DeletaEndereco_RetornaForbidden_SeNaoForAdmin()
+    {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenUserJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
+        // Arrange
+        int enderecoId = 999; 
+
+        // Act
+        var response = await _client.DeleteAsync($"/enderecos/{enderecoId}");
+
+        // Assert
+        Assert.Equal(HttpStatusCode.Forbidden, response.StatusCode);
     }
 
 }

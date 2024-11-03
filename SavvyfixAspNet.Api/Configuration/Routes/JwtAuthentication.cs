@@ -17,11 +17,11 @@ public static class JwtAuthentication
         {
             // Busca o cliente com as roles associadas
             var cliente = await dbContext.Clientes
-                .Include(c => c.ClienteRoles) // Inclui a tabela de relacionamento
-                .ThenInclude(cr => cr.Roles) // Inclui a entidade Role através de ClienteRole
+                .Include(c => c.ClienteRoles)
+                .ThenInclude(cr => cr.Roles)
                 .FirstOrDefaultAsync(u => u.CpfClie == cpf);
 
-            if (cliente == null || cliente.SenhaClie != senha) // Aqui idealmente a senha deve ser verificada com hash
+            if (cliente == null || cliente.SenhaClie != senha)
             {
                 return Results.Unauthorized();
             }
@@ -29,15 +29,13 @@ public static class JwtAuthentication
             // Configura a chave e credenciais para gerar o token
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["Jwt:Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-            // Cria os claims do token, incluindo os papéis do cliente
+            
             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Sub, cliente.CpfClie),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
-
-            // Adiciona um claim para cada role associada ao cliente
+            
             claims.AddRange(cliente.ClienteRoles.Select(cr => new Claim(ClaimTypes.Role, cr.Roles.NomeRole)));
 
             // Gera o token JWT
