@@ -41,6 +41,8 @@ public class Program
             };
         });
 
+       // builder.Services.AddScoped<IModeloService, ModeloService>();
+        
         // Adiciona autorização
         builder.Services.AddAuthorization();
 

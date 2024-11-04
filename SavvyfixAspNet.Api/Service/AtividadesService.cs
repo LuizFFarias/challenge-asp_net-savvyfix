@@ -9,13 +9,14 @@ public static class AtividadesService
     {
         return new Atividades()
         {
-            ClimaAtual = atividadeModel.ClimaAtual,
+            ClimaAtual = atividadeModel.ClimaAtual.ToString(),
             DemandaProduto = atividadeModel.DemandaProduto,
             HorarioAtual = atividadeModel.HorarioAtual,
             LocalizacaoAtual = atividadeModel.LocalizacaoAtual,
             PrecoVariado = atividadeModel.PrecoVariado,
             QntdProcura = atividadeModel.QntdProcura,
-            IdCliente = atividadeModel.IdCliente
+            IdCliente = atividadeModel.IdCliente,
+            IdProduto = atividadeModel.IdProduto
 
         };
     }

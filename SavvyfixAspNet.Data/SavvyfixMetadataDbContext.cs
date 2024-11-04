@@ -42,6 +42,11 @@ public class SavvyfixMetadataDbContext : DbContext
             .WithMany(p => p.Atividades)          
             .HasForeignKey(c => c.IdCliente); 
         
+        modelBuilder.Entity<Atividades>()
+            .HasOne(c => c.Produto)           
+            .WithMany(p => p.Atividades)          
+            .HasForeignKey(c => c.IdProduto); 
+        
         modelBuilder.Entity<Cliente>()
             .HasOne(c => c.Endereco)           
             .WithMany(p => p.Clientes)          

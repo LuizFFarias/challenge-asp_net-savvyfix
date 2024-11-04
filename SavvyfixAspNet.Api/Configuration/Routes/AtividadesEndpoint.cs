@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.ML;
 using SavvyfixAspNet.Api.Models;
 using SavvyfixAspNet.Api.Service;
 using SavvyfixAspNet.Data;
+using SavvyfixAspNet.ML;
 using SavvyfixAspNet.Domain.Entities;
 
 namespace SavvyfixAspNet.Api.Configuration.Routes;
@@ -70,6 +72,55 @@ public static class AtividadesEndpoint
                 return Results.BadRequest("Cliente não encontrado");
             }
             
+            Produto produto = await dbContext.Produtos.FindAsync(atividadeModel.IdProduto);
+            if (produto is null)
+            {
+                return Results.BadRequest("Produtp não encontrado");
+            }
+            
+            // Criação do contexto ML
+            var contexto = new MLContext();
+
+            // Obter a raiz do projeto
+            var projectRoot = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\SavvyfixAspNet.ML\\bin\\Debug\\net8.0"));
+
+            // Definir o caminho para o modelo
+            var modeloPath = Path.Combine(projectRoot, "modelo.zip");
+
+            ITransformer modelo;
+            try
+            {
+                using (var stream = new FileStream(modeloPath, FileMode.Open, FileAccess.Read, FileShare.Read))
+                {
+                    modelo = contexto.Model.Load(stream, out var schema);
+                }
+            }
+            catch (FileNotFoundException ex)
+            {
+                return Results.BadRequest($"Modelo não encontrado: {ex.Message}");
+            }
+            
+            // Criar critérios
+            var criterios = new PorcentagemCriterios();
+
+            // Criar um objeto de entrada para a previsão
+            var atividadeInput = new AtividadeInputModel
+            {
+                Nome = cliente.NmClie,
+                Produto = produto.NmProd,
+                Localizacao = atividadeModel.LocalizacaoAtual,
+                Horario = atividadeModel.HorarioAtual.ToString(),
+                Clima = atividadeModel.ClimaAtual,
+                Procura = atividadeModel.QntdProcura,
+                Demanda = atividadeModel.DemandaProduto,
+                PrecoBase = (float)produto.PrecoFixo
+            };
+
+            // Chamar o método para adicionar porcentagens e calcular o preço final
+            var atividadeComPorcentagens = PrevisaoService.AdicionarPorcentagens(atividadeInput, criterios);
+            
+            atividadeModel.PrecoVariado = (decimal)atividadeComPorcentagens;
+            
             dbContext.Atividades.Add(atividadeModel.MapToAtv());
             await dbContext.SaveChangesAsync();
 
@@ -97,7 +148,7 @@ public static class AtividadesEndpoint
                 return Results.NotFound();
             }
 
-            existingAtividade.ClimaAtual = updateModel.ClimaAtual ?? existingAtividade.ClimaAtual;
+            existingAtividade.ClimaAtual = updateModel.ClimaAtual.ToString() ?? existingAtividade.ClimaAtual; ;
             existingAtividade.DemandaProduto = updateModel.DemandaProduto ?? existingAtividade.DemandaProduto;
             existingAtividade.HorarioAtual = updateModel.HorarioAtual ?? existingAtividade.HorarioAtual;
             existingAtividade.LocalizacaoAtual = updateModel.LocalizacaoAtual ?? existingAtividade.LocalizacaoAtual;

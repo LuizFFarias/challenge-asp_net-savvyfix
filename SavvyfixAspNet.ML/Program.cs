@@ -5,12 +5,13 @@ using Microsoft.ML;
 using Microsoft.ML.Data; // Para IDataView e outras classes
 using SavvyfixAspNet.ML;
 
-namespace Projeto.Api
+namespace SavvyfixAspNet.ML
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
+            
             var context = new MLContext();
 
             // Caminho para o arquivo de dados
@@ -24,7 +25,8 @@ namespace Projeto.Api
             float precoBase = 100.0f; // Preço base como float
 
             // Converter IDataView para IEnumerable
-            var dadosComoEnumerable = context.Data.CreateEnumerable<AtividadesDataComPorcentagem>(data, reuseRowObject: false);
+            var dadosComoEnumerable =
+                context.Data.CreateEnumerable<AtividadesDataComPorcentagem>(data, reuseRowObject: false);
 
             // Criar critérios de porcentagem
             var criterios = new PorcentagemCriterios();
@@ -50,33 +52,58 @@ namespace Projeto.Api
             var trainingData = context.Data.LoadFromEnumerable(dadosLimpos);
 
             // Pipeline de treinamento
-            var pipeline = context.Transforms.Concatenate("Features", 
-                    nameof(AtividadesDataComPorcentagem.PorcentagemLocalizacao), 
+            var pipeline = context.Transforms.Concatenate("Features",
+                    nameof(AtividadesDataComPorcentagem.PorcentagemLocalizacao),
                     nameof(AtividadesDataComPorcentagem.PorcentagemHorario),
                     nameof(AtividadesDataComPorcentagem.PorcentagemClima),
                     nameof(AtividadesDataComPorcentagem.PorcentagemProcura),
                     nameof(AtividadesDataComPorcentagem.PorcentagemDemanda))
-                .Append(context.Regression.Trainers.Sdca(labelColumnName: nameof(AtividadesDataComPorcentagem.PrecoFinal), maximumNumberOfIterations: 100));
+                .Append(context.Regression.Trainers.Sdca(
+                    labelColumnName: nameof(AtividadesDataComPorcentagem.PrecoFinal), maximumNumberOfIterations: 100));
 
             // Treinar o modelo
             var model = pipeline.Fit(trainingData);
+            
+            // Salvar o modelo treinado na raiz do projeto
+            var projectRoot = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\")); // Ajuste conforme necessário
+            var modelPath = Path.Combine(projectRoot, "modelo.zip");
+            
+            // Salvar o modelo treinado
+            context.Model.Save(model, trainingData.Schema, modelPath);
+
+            // Verificar se o arquivo foi criado
+            if (File.Exists(modelPath))
+            {
+                Console.WriteLine("O modelo foi salvo com sucesso em: " + modelPath);
+                Console.WriteLine($"Diretório atual: {Directory.GetCurrentDirectory()}");
+                Console.WriteLine($"Caminho completo do modelo: {modelPath}");
+
+            }
+            else
+            {
+                Console.WriteLine("Erro ao salvar o modelo.");
+            }
+
 
             // Fazer previsões
             var previsoes = model.Transform(trainingData);
 
             // Exibir resultados
-            var resultados = context.Data.CreateEnumerable<ResultadoPrevisao>(previsoes, reuseRowObject: false).ToList();
+            var resultados = context.Data.CreateEnumerable<ResultadoPrevisao>(previsoes, reuseRowObject: false)
+                .ToList();
 
             foreach (var resultado in resultados)
             {
-                Console.WriteLine($"Nome: {resultado.Nome}, Preço Final Previsto: {resultado.PrecoFinal}");
+                var precoFinalArredondado = Math.Round(resultado.PrecoFinal, 2);
+                Console.WriteLine($"Nome: {resultado.Nome}, Preço Final Previsto: {precoFinalArredondado}");
             }
         }
 
-        public static AtividadesDataComPorcentagem PreencherPorcentagens(AtividadesDataComPorcentagem data, PorcentagemCriterios criterios)
+        public static AtividadesDataComPorcentagem PreencherPorcentagens(AtividadesDataComPorcentagem data,
+            PorcentagemCriterios criterios)
         {
             string intervaloHorario = ObterIntervaloHorario(data.Horario);
-            int climaInt = (int)data.Clima; 
+            int climaInt = (int)data.Clima;
             int procuraInt = (int)data.Procura;
             string intervaloClima = ObterIntervaloClima(climaInt);
             string intervaloProcura = ObterIntervaloProcura(procuraInt);
@@ -90,22 +117,22 @@ namespace Projeto.Api
                 Clima = data.Clima,
                 Procura = data.Procura,
                 Demanda = data.Demanda,
-                PorcentagemLocalizacao = criterios.PorcentagemLocalizacao.ContainsKey(data.Localizacao) 
-                    ? (float)criterios.PorcentagemLocalizacao[data.Localizacao] 
+                PorcentagemLocalizacao = criterios.PorcentagemLocalizacao.ContainsKey(data.Localizacao)
+                    ? (float)criterios.PorcentagemLocalizacao[data.Localizacao]
                     : 0f,
-                PorcentagemHorario = criterios.PorcentagemHorario.ContainsKey(intervaloHorario) 
-                    ? (float)criterios.PorcentagemHorario[intervaloHorario] 
+                PorcentagemHorario = criterios.PorcentagemHorario.ContainsKey(intervaloHorario)
+                    ? (float)criterios.PorcentagemHorario[intervaloHorario]
                     : 0f,
-                PorcentagemClima = criterios.PorcentagemClima.ContainsKey(intervaloClima) 
-                    ? (float)criterios.PorcentagemClima[intervaloClima] 
+                PorcentagemClima = criterios.PorcentagemClima.ContainsKey(intervaloClima)
+                    ? (float)criterios.PorcentagemClima[intervaloClima]
                     : 0f,
-                PorcentagemProcura = criterios.PorcentagemProcura.ContainsKey(intervaloProcura) 
-                    ? (float)criterios.PorcentagemProcura[intervaloProcura] 
+                PorcentagemProcura = criterios.PorcentagemProcura.ContainsKey(intervaloProcura)
+                    ? (float)criterios.PorcentagemProcura[intervaloProcura]
                     : 0f,
-                PorcentagemDemanda = criterios.PorcentagemDemanda.ContainsKey(data.Demanda) 
-                    ? (float)criterios.PorcentagemDemanda[data.Demanda] 
+                PorcentagemDemanda = criterios.PorcentagemDemanda.ContainsKey(data.Demanda)
+                    ? (float)criterios.PorcentagemDemanda[data.Demanda]
                     : 0f,
-                PrecoFinal = 0f // Inicializando como float
+                PrecoFinal = 0f 
             };
         }
 
@@ -137,7 +164,7 @@ namespace Projeto.Api
             if (clima >= 37 && clima <= 39) return "37º a 39º";
             return "+40º";
         }
-        
+
         private static string ObterIntervaloProcura(int numeroProcura)
         {
             if (numeroProcura == 1) return "1x";
@@ -177,11 +204,6 @@ namespace Projeto.Api
         }
 
     }
-
-    // Classe para armazenar os resultados da previsão
-    public class ResultadoPrevisao
-    {
-        public string Nome { get; set; }
-        public float PrecoFinal { get; set; }
-    }
 }
+
+

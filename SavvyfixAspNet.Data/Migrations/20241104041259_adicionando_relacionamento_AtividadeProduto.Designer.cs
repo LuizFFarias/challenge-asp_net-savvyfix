@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Oracle.EntityFrameworkCore.Metadata;
 using SavvyfixAspNet.Data;
@@ -11,9 +12,11 @@ using SavvyfixAspNet.Data;
 namespace SavvyfixAspNet.Data.Migrations
 {
     [DbContext(typeof(SavvyfixMetadataDbContext))]
-    partial class SavvyfixMetadataDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241104041259_adicionando_relacionamento_AtividadeProduto")]
+    partial class adicionando_relacionamento_AtividadeProduto
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,8 +43,8 @@ namespace SavvyfixAspNet.Data.Migrations
                         .HasColumnType("NVARCHAR2(2000)")
                         .HasColumnName("demanda_produto");
 
-                    b.Property<string>("HorarioAtual")
-                        .HasColumnType("NVARCHAR2(2000)")
+                    b.Property<DateTime?>("HorarioAtual")
+                        .HasColumnType("TIMESTAMP(7)")
                         .HasColumnName("horario_atual");
 
                     b.Property<long?>("IdCliente")
