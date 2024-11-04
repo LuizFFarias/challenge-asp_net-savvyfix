@@ -12,7 +12,7 @@ public class Atividades
     public long IdAtividades { get; set; }
 
     [Column("clima_atual")]
-    public string? ClimaAtual { get; set; }
+    public int ClimaAtual { get; set; }
 
     [Column("demanda_produto")]
     public string DemandaProduto { get; set; }

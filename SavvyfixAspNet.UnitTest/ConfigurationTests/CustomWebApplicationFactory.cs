@@ -100,10 +100,11 @@ public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<TStar
                 DemandaProduto = "Al",
                 QntdProcura = 12,
                 PrecoVariado = 233,
-                ClimaAtual = "Calor",
-                HorarioAtual = DateTime.Now,
+                ClimaAtual = 22,
+                HorarioAtual = DateTime.Now.ToString(),
                 LocalizacaoAtual = "Av Paulista",
-                IdCliente = 1
+                IdCliente = 1,
+                IdProduto = 1
                 
             });
             dbContext.Atividades.Add(new Atividades()
@@ -112,10 +113,11 @@ public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<TStar
                 DemandaProduto = "Al",
                 QntdProcura = 25,
                 PrecoVariado = 150.50m, 
-                ClimaAtual = "Frio",
-                HorarioAtual = DateTime.Now, 
+                ClimaAtual = 21,
+                HorarioAtual = DateTime.Now.ToString(), 
                 LocalizacaoAtual = "Rua da Consolação",
-                IdCliente = 2 
+                IdCliente = 2,
+                IdProduto = 2
             });
             dbContext.Compras.Add(new Compra()
             {

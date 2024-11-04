@@ -148,7 +148,7 @@ public static class AtividadesEndpoint
                 return Results.NotFound();
             }
 
-            existingAtividade.ClimaAtual = updateModel.ClimaAtual.ToString() ?? existingAtividade.ClimaAtual; ;
+            existingAtividade.ClimaAtual = updateModel.ClimaAtual;
             existingAtividade.DemandaProduto = updateModel.DemandaProduto ?? existingAtividade.DemandaProduto;
             existingAtividade.HorarioAtual = updateModel.HorarioAtual ?? existingAtividade.HorarioAtual;
             existingAtividade.LocalizacaoAtual = updateModel.LocalizacaoAtual ?? existingAtividade.LocalizacaoAtual;

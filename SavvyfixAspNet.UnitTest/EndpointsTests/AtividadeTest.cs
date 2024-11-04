@@ -111,13 +111,13 @@ public class AtividadeTest
         // Arrange
         var novaAtividade = new AtividadesAddOrUpdateModel()
         {
-            ClimaAtual = "Calor",
+            ClimaAtual = 22,
             DemandaProduto = "Al",
-            HorarioAtual = DateTime.Now,
+            HorarioAtual = DateTime.Now.ToString(),
             LocalizacaoAtual = "Av Paulista",
-            PrecoVariado = 233.00m,
             QntdProcura = 12,
-            IdCliente = 1 
+            IdCliente = 1,
+            IdProduto = 2
         };
 
         // Act
@@ -133,7 +133,7 @@ public class AtividadeTest
         Assert.Equal(novaAtividade.DemandaProduto, atividadeCadastrada.DemandaProduto);
         Assert.Equal(novaAtividade.HorarioAtual, atividadeCadastrada.HorarioAtual);
         Assert.Equal(novaAtividade.LocalizacaoAtual, atividadeCadastrada.LocalizacaoAtual);
-        Assert.Equal(novaAtividade.PrecoVariado, atividadeCadastrada.PrecoVariado);
+        Assert.Equal(750, atividadeCadastrada.PrecoVariado);
         Assert.Equal(novaAtividade.QntdProcura, atividadeCadastrada.QntdProcura);
         Assert.Equal(novaAtividade.IdCliente, atividadeCadastrada.IdCliente);
     }
@@ -141,11 +141,11 @@ public class AtividadeTest
 
     
     [Theory]
-    [InlineData("Calor", "Al", -1.00, "Av Paulista", 12, 1L)] // PrecoVariado negativo
-    [InlineData("Calor", "Al", 233.00, "Av Paulista", 12, null)] // IdCliente nulo
-    [InlineData("Calor", "Al", 233.00, "Av Paulista", 12, 999L)] // IdCliente inexistente
+    [InlineData(22, "Al", -1.00, "Av Paulista", 12, 1L)] // PrecoVariado negativo
+    [InlineData(22, "Al", 233.00, "Av Paulista", 12, null)] // IdCliente nulo
+    [InlineData(22, "Al", 233.00, "Av Paulista", 12, 999L)] // IdCliente inexistente
     public async Task CriaAtividade_RetornaErro_SeVariosAtributosInvalidos(
-        string climaAtual, 
+        int climaAtual, 
         string demandaProduto, 
         decimal precoVariado, 
         string localizacaoAtual, 
@@ -163,7 +163,7 @@ public class AtividadeTest
         // Arrange
         var novaAtividade = new AtividadesAddOrUpdateModel()
         {
-            ClimaAtual = climaAtual,
+            ClimaAtual = Convert.ToInt32(climaAtual),
             DemandaProduto = demandaProduto,
             PrecoVariado = precoVariado,
             LocalizacaoAtual = localizacaoAtual,
@@ -227,12 +227,13 @@ public class AtividadeTest
         int atividadeId = 1; 
         var atualizarAtividade = new Atividades()
         {
-            ClimaAtual = "Ensolarado", 
+            ClimaAtual = 22, 
             DemandaProduto = "Al",
             PrecoVariado = 250.00m,
             LocalizacaoAtual = "Centro da Cidade",
             QntdProcura = 15,
-            IdCliente = 1
+            IdCliente = 1,
+            IdProduto = 1
         };
 
         // Act

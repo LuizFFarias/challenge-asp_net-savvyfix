@@ -9,7 +9,7 @@ public static class AtividadesService
     {
         return new Atividades()
         {
-            ClimaAtual = atividadeModel.ClimaAtual.ToString(),
+            ClimaAtual = atividadeModel.ClimaAtual,
             DemandaProduto = atividadeModel.DemandaProduto,
             HorarioAtual = atividadeModel.HorarioAtual,
             LocalizacaoAtual = atividadeModel.LocalizacaoAtual,
