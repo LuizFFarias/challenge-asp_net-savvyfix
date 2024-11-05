@@ -131,31 +131,39 @@ http://localhost:5255/swagger/index.html
 
 ## Teste da API
 
-![image](https://github.com/user-attachments/assets/ab5e23eb-8813-431c-b073-2a93d63fbf68)
+![image](https://github.com/user-attachments/assets/c1cb9de4-c21f-4fa5-8272-29cd0a151142)
 
-<p>Essa é a página inicial da documentação do projeto, para realizar testes basta apenas clicar na seta. </p>
 
-![image](https://github.com/user-attachments/assets/f59d75ba-beb7-4e33-b76b-d4e2b95735a8)
+<p>Essa é a página inicial da documentação do projeto, para realizar a autenticação pelo Token gerado. </p>
 
-<p>Depois em "Try it out". </p>
+![image](https://github.com/user-attachments/assets/814d0cdb-c036-4f4d-be91-4cf8cd4afee5)
 
-![image](https://github.com/user-attachments/assets/a8b7eceb-a5ba-481d-9cc3-7153338cd470)
 
-<p>Execute e temos nossa resposta da API.</p>
+<p>Depois copiar o token gerado e autenticar. </p>
 
-![image](https://github.com/user-attachments/assets/72b8137e-0b6c-4c92-bda8-07b00eff68ca)
+![image](https://github.com/user-attachments/assets/ee43cd99-0671-4e32-a930-8b64c2b473be)
+
+<p>Agora podemos utilizar a API.</p>
+
+![image](https://github.com/user-attachments/assets/c134f568-970e-448b-b837-18ad0dca5e6a)
+
+<p>Resposta do get</p>
+
+![image](https://github.com/user-attachments/assets/0c5c3b60-33b4-42f9-a200-d29c27f86aec)
+
 
 <p>Para fazer uma inserção, vá em POST e altere o JSON para inserir as informações que deseja cadastrar no banco de dados.</p>
 
-![image](https://github.com/user-attachments/assets/7183eeee-d834-470f-8af5-ee600f31862b)
+![image](https://github.com/user-attachments/assets/65b06dc9-3566-4bb7-8d3a-7cd67292f8d5)
 
-<p>Para editar, vá em PUT e informe o id e os dados que serão alterados.</p>
 
-![image](https://github.com/user-attachments/assets/47cb5a01-3935-463b-8503-663631a530f3)
+<p>Para editar, vá em PUT e informe o id e os dados que serão alterados. Lembrando que para editar e deletar produto o role do usuário deve ser ROLE_ADMIN</p>
+
+![image](https://github.com/user-attachments/assets/43850f32-e293-42d3-bdf7-91e40e05cf6b)
 
 <p>Para deletar, vá em DELETE e informe o id.</p>
 
-![image](https://github.com/user-attachments/assets/0c45ac38-3412-469a-ae3f-9d6b584545f3)
+![image](https://github.com/user-attachments/assets/19484a2e-ac24-4561-b351-c7722af69a01)
 
 
 
