@@ -15,7 +15,8 @@ public static class AtividadesService
             LocalizacaoAtual = atividadeModel.LocalizacaoAtual,
             PrecoVariado = atividadeModel.PrecoVariado,
             QntdProcura = atividadeModel.QntdProcura,
-            IdCliente = atividadeModel.IdCliente
+            IdCliente = atividadeModel.IdCliente,
+            IdProduto = atividadeModel.IdProduto
 
         };
     }

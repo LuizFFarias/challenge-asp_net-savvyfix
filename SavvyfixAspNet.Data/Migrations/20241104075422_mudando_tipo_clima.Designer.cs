@@ -12,8 +12,8 @@ using SavvyfixAspNet.Data;
 namespace SavvyfixAspNet.Data.Migrations
 {
     [DbContext(typeof(SavvyfixMetadataDbContext))]
-    [Migration("20240916130551_arrumando_relacionamentos")]
-    partial class arrumando_relacionamentos
+    [Migration("20241104075422_mudando_tipo_clima")]
+    partial class mudando_tipo_clima
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,8 +34,8 @@ namespace SavvyfixAspNet.Data.Migrations
 
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdAtividades"));
 
-                    b.Property<string>("ClimaAtual")
-                        .HasColumnType("NVARCHAR2(2000)")
+                    b.Property<int>("ClimaAtual")
+                        .HasColumnType("NUMBER(10)")
                         .HasColumnName("clima_atual");
 
                     b.Property<string>("DemandaProduto")
@@ -43,14 +43,19 @@ namespace SavvyfixAspNet.Data.Migrations
                         .HasColumnType("NVARCHAR2(2000)")
                         .HasColumnName("demanda_produto");
 
-                    b.Property<DateTime?>("HorarioAtual")
-                        .HasColumnType("TIMESTAMP(7)")
+                    b.Property<string>("HorarioAtual")
+                        .HasColumnType("NVARCHAR2(2000)")
                         .HasColumnName("horario_atual");
 
                     b.Property<long?>("IdCliente")
                         .IsRequired()
                         .HasColumnType("NUMBER(19)")
                         .HasColumnName("id_cliente");
+
+                    b.Property<long?>("IdProduto")
+                        .IsRequired()
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("id_produto");
 
                     b.Property<string>("LocalizacaoAtual")
                         .HasColumnType("NVARCHAR2(2000)")
@@ -67,6 +72,8 @@ namespace SavvyfixAspNet.Data.Migrations
                     b.HasKey("IdAtividades");
 
                     b.HasIndex("IdCliente");
+
+                    b.HasIndex("IdProduto");
 
                     b.ToTable("Atividades");
                 });
@@ -106,6 +113,21 @@ namespace SavvyfixAspNet.Data.Migrations
                     b.HasIndex("IdEndereco");
 
                     b.ToTable("Clientes");
+                });
+
+            modelBuilder.Entity("SavvyfixAspNet.Domain.Entities.ClienteRole", b =>
+                {
+                    b.Property<long>("IdCliete")
+                        .HasColumnType("NUMBER(19)");
+
+                    b.Property<long>("IdRole")
+                        .HasColumnType("NUMBER(19)");
+
+                    b.HasKey("IdCliete", "IdRole");
+
+                    b.HasIndex("IdRole");
+
+                    b.ToTable("ClienteRoles");
                 });
 
             modelBuilder.Entity("SavvyfixAspNet.Domain.Entities.Compra", b =>
@@ -157,7 +179,7 @@ namespace SavvyfixAspNet.Data.Migrations
 
                     b.HasIndex("IdProd");
 
-                    b.ToTable("Compra");
+                    b.ToTable("Compras");
                 });
 
             modelBuilder.Entity("SavvyfixAspNet.Domain.Entities.Endereco", b =>
@@ -249,6 +271,24 @@ namespace SavvyfixAspNet.Data.Migrations
                     b.ToTable("Produtos");
                 });
 
+            modelBuilder.Entity("SavvyfixAspNet.Domain.Entities.Roles", b =>
+                {
+                    b.Property<long>("IdRole")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("id_role");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdRole"));
+
+                    b.Property<string>("NomeRole")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.HasKey("IdRole");
+
+                    b.ToTable("Roles");
+                });
+
             modelBuilder.Entity("SavvyfixAspNet.Domain.Entities.Atividades", b =>
                 {
                     b.HasOne("SavvyfixAspNet.Domain.Entities.Cliente", "Cliente")
@@ -257,7 +297,15 @@ namespace SavvyfixAspNet.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("SavvyfixAspNet.Domain.Entities.Produto", "Produto")
+                        .WithMany("Atividades")
+                        .HasForeignKey("IdProduto")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Cliente");
+
+                    b.Navigation("Produto");
                 });
 
             modelBuilder.Entity("SavvyfixAspNet.Domain.Entities.Cliente", b =>
@@ -269,6 +317,25 @@ namespace SavvyfixAspNet.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Endereco");
+                });
+
+            modelBuilder.Entity("SavvyfixAspNet.Domain.Entities.ClienteRole", b =>
+                {
+                    b.HasOne("SavvyfixAspNet.Domain.Entities.Cliente", "Cliente")
+                        .WithMany("ClienteRoles")
+                        .HasForeignKey("IdCliete")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SavvyfixAspNet.Domain.Entities.Roles", "Roles")
+                        .WithMany("ClienteRoles")
+                        .HasForeignKey("IdRole")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cliente");
+
+                    b.Navigation("Roles");
                 });
 
             modelBuilder.Entity("SavvyfixAspNet.Domain.Entities.Compra", b =>
@@ -305,6 +372,8 @@ namespace SavvyfixAspNet.Data.Migrations
                 {
                     b.Navigation("Atividades");
 
+                    b.Navigation("ClienteRoles");
+
                     b.Navigation("Compras");
                 });
 
@@ -315,7 +384,14 @@ namespace SavvyfixAspNet.Data.Migrations
 
             modelBuilder.Entity("SavvyfixAspNet.Domain.Entities.Produto", b =>
                 {
+                    b.Navigation("Atividades");
+
                     b.Navigation("Compras");
+                });
+
+            modelBuilder.Entity("SavvyfixAspNet.Domain.Entities.Roles", b =>
+                {
+                    b.Navigation("ClienteRoles");
                 });
 #pragma warning restore 612, 618
         }

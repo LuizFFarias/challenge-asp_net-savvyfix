@@ -1,6 +1,10 @@
 using System.Net;
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using SavvyfixAspNet.Domain.Entities;
+using SavvyfixAspNet.UnitTest;
 using Xunit;
 using static System.Net.HttpStatusCode;
 
@@ -8,15 +12,25 @@ using static System.Net.HttpStatusCode;
 public class ProdutosUnitTest
 {
     private readonly HttpClient _client;
+    private readonly IConfiguration? _config;
+    private readonly TokenService _tokenService;
 
     public ProdutosUnitTest(CustomWebApplicationFactory<Program> factory)
     {
         _client = factory.CreateClient();
+        _config = factory.Services.GetService<IConfiguration>();
+        _tokenService = new TokenService(_config);
     }
 
     [Fact]
     public async Task GetProdutos_RetornaListaDeProdutos()
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenUserJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+        
         // Act
         var response = await _client.GetAsync("/produtos");
 
@@ -29,8 +43,24 @@ public class ProdutosUnitTest
     }
     
     [Fact]
+    public async Task GetProdutosSemAutorizacao_RetornaUnauthorized()
+    {
+        // Act
+        var response = await _client.GetAsync("/produtos");
+
+        // Assert
+        Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
+    }
+    
+    [Fact]
     public async Task GetProdutoById_RetornaProduct_SeProdutoExiste()
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenUserJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
         // Arrange
         int produtoId = 1;
 
@@ -47,6 +77,12 @@ public class ProdutosUnitTest
     [Fact]
     public async Task GetProdutoById_RetornaStatus404_SeProdutoNaoExiste()
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenUserJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
         // Arrange
         int produtoId = 999; 
 
@@ -60,6 +96,12 @@ public class ProdutosUnitTest
     [Fact]
     public async Task CriaProduto_RetornaProdutoCadastrado()
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenAdminJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
         // Arrange
         var novoProduto = new Produto()
         {
@@ -94,6 +136,12 @@ public class ProdutosUnitTest
     [InlineData("Tenis Nike", "Tenis para corrida", "Nike", -1, "Teste")] // Preço negativo
     public async Task CriaProduto_RetornaErro_SeVariosAtributosInvalidos( string nome, string descricao, string marca, decimal preco, string imagem)
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenAdminJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
         // Arrange
         var novoProduto = new Produto()
         {
@@ -115,6 +163,12 @@ public class ProdutosUnitTest
     [Fact]
     public async Task AtualizaProduto_RetornaProdutoAtualizado_SeProdutoExiste()
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenAdminJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
         // Arrange
         int produtoId = 1;
         var atualizarProduto = new Produto()
@@ -145,6 +199,12 @@ public class ProdutosUnitTest
     [Fact]
     public async Task AtulizaProduto_RetornaProdutoStatus404_SeProdutoNaoExiste()
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenAdminJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
         // Arrange
         int produtoId = 999;
         var atualiazaProduto = new Produto()
@@ -167,6 +227,12 @@ public class ProdutosUnitTest
     [Fact]
     public async Task DeletaProduto_RetornaNoContent_SeProdutoExiste()
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenAdminJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
         // Arrange
         int produtoId = 2;
 
@@ -180,6 +246,12 @@ public class ProdutosUnitTest
     [Fact]
     public async Task DeletaProduto_RetornaStatus404_SeProdutoNaoExiste()
     {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenAdminJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
         // Arrange
         int produtoId = 999;
 
@@ -188,6 +260,25 @@ public class ProdutosUnitTest
 
         // Assert
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+    }
+    
+    [Fact]
+    public async Task DeletaProduto_RetornaForbidden_SeNaoForAdmin()
+    {
+        // Gera o token
+        string userToken = _tokenService.GerarTokenUserJwtDeTeste();
+
+        // Adiciona o token ao cabeçalho de autorização
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userToken);
+
+        // Arrange
+        int produtoId = 999;
+
+        // Act
+        var response = await _client.DeleteAsync($"/produtos/{produtoId}");
+
+        // Assert
+        Assert.Equal(HttpStatusCode.Forbidden, response.StatusCode);
     }
 
 }

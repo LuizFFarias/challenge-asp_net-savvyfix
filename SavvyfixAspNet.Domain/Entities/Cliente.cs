@@ -27,8 +27,10 @@ public class Cliente
     [Column("id_endereco")]
     public long? IdEndereco { get; set; }
     
-    
     public Endereco Endereco { get; set; }
+    
+    [JsonIgnore]
+    public ICollection<ClienteRole> ClienteRoles { get; set; } = new List<ClienteRole>();
     
     [JsonIgnore]
     public ICollection<Compra> Compras { get; set; }

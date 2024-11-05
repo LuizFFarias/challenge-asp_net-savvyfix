@@ -1,10 +1,10 @@
 public class AtividadesAddOrUpdateModel
 {
-    public string? ClimaAtual { get; set; }
+    public int ClimaAtual { get; set; }
     
     public string DemandaProduto { get; set; }
     
-    public DateTime? HorarioAtual { get; set; }
+    public string HorarioAtual { get; set; }
     
     public string? LocalizacaoAtual { get; set; }
     
@@ -13,6 +13,8 @@ public class AtividadesAddOrUpdateModel
     public int QntdProcura { get; set; }
     
     public long? IdCliente { get; set; }
+    
+    public long? IdProduto { get; set; }
 
     // Validação do modelo
     public bool IsValid(out List<string> validationErrors)

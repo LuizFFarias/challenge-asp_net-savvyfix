@@ -12,13 +12,13 @@ public class Atividades
     public long IdAtividades { get; set; }
 
     [Column("clima_atual")]
-    public string? ClimaAtual { get; set; }
+    public int ClimaAtual { get; set; }
 
     [Column("demanda_produto")]
     public string DemandaProduto { get; set; }
 
     [Column("horario_atual")]
-    public DateTime? HorarioAtual { get; set; }
+    public string? HorarioAtual { get; set; }
 
     [Column("localizacao_atual")]
     public string? LocalizacaoAtual { get; set; }
@@ -35,6 +35,12 @@ public class Atividades
     public long? IdCliente { get; set; }
     
     public Cliente Cliente { get; set; }
+    
+    [Required(ErrorMessage = "O produto é obrigatório.")]
+    [Column("id_produto")]
+    public long? IdProduto { get; set; }
+    
+    public Produto Produto { get; set; }
     
     [JsonIgnore]
     public ICollection<Compra> Compras { get; set; }

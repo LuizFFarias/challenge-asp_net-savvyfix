@@ -1,7 +1,10 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.ML;
 using SavvyfixAspNet.Api.Models;
 using SavvyfixAspNet.Api.Service;
 using SavvyfixAspNet.Data;
+using SavvyfixAspNet.ML;
 using SavvyfixAspNet.Domain.Entities;
 
 namespace SavvyfixAspNet.Api.Configuration.Routes;
@@ -20,12 +23,13 @@ public static class AtividadesEndpoint
                 .ToListAsync();
             return atividades.Any() ? Results.Ok(atividades) : Results.NotFound();
         })
+        .RequireAuthorization(new AuthorizeAttribute(){Roles = "ROLE_ADMIN"})
         .WithName("Buscar atividades")
         .WithOpenApi(operation => new(operation)
         {
             OperationId = "GetAtividades",
             Summary = "Retorna todas as atividades",
-            Description = "Retorna todas as atividades do banco de dados",
+            Description = "Retorna todas as atividades do banco de dados. **É necessário ser um administrador**",
             Deprecated = false
         })
         .Produces<List<Atividades>>()
@@ -40,12 +44,13 @@ public static class AtividadesEndpoint
 
             return atividade is not null ? Results.Ok(atividade) : Results.NotFound();
         })
+        .RequireAuthorization(new AuthorizeAttribute(){Roles = "ROLE_ADMIN"})
         .WithName("Buscar atividade pelo id")
         .WithOpenApi(operation => new(operation)
         {
             OperationId = "GetAtividadesById",
             Summary = "Retorna uma atividade pelo ID",
-            Description = "Retorna a atividade pelo ID do banco de dados",
+            Description = "Retorna a atividade pelo ID do banco de dados. **É necessário ser um administrador**",
             Deprecated = false
         })
         .Produces<Atividades>()
@@ -67,17 +72,67 @@ public static class AtividadesEndpoint
                 return Results.BadRequest("Cliente não encontrado");
             }
             
+            Produto produto = await dbContext.Produtos.FindAsync(atividadeModel.IdProduto);
+            if (produto is null)
+            {
+                return Results.BadRequest("Produtp não encontrado");
+            }
+            
+            // Criação do contexto ML
+            var contexto = new MLContext();
+
+            // Obter a raiz do projeto
+            var projectRoot = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\SavvyfixAspNet.ML\\bin\\Debug\\net8.0"));
+
+            // Definir o caminho para o modelo
+            var modeloPath = Path.Combine(projectRoot, "modelo.zip");
+
+            ITransformer modelo;
+            try
+            {
+                using (var stream = new FileStream(modeloPath, FileMode.Open, FileAccess.Read, FileShare.Read))
+                {
+                    modelo = contexto.Model.Load(stream, out var schema);
+                }
+            }
+            catch (FileNotFoundException ex)
+            {
+                return Results.BadRequest($"Modelo não encontrado: {ex.Message}");
+            }
+            
+            // Criar critérios
+            var criterios = new PorcentagemCriterios();
+
+            // Criar um objeto de entrada para a previsão
+            var atividadeInput = new AtividadeInputModel
+            {
+                Nome = cliente.NmClie,
+                Produto = produto.NmProd,
+                Localizacao = atividadeModel.LocalizacaoAtual,
+                Horario = atividadeModel.HorarioAtual.ToString(),
+                Clima = atividadeModel.ClimaAtual,
+                Procura = atividadeModel.QntdProcura,
+                Demanda = atividadeModel.DemandaProduto,
+                PrecoBase = (float)produto.PrecoFixo
+            };
+
+            // Chamar o método para adicionar porcentagens e calcular o preço final
+            var atividadeComPorcentagens = PrevisaoService.AdicionarPorcentagens(atividadeInput, criterios);
+            
+            atividadeModel.PrecoVariado = (decimal)atividadeComPorcentagens;
+            
             dbContext.Atividades.Add(atividadeModel.MapToAtv());
             await dbContext.SaveChangesAsync();
 
             return Results.Created($"/atividades", atividadeModel);
         })
+        .RequireAuthorization()
         .WithName("Adicionar nova atividade")
         .WithOpenApi(operation => new(operation)
         {
             OperationId = "AddAtividades",
             Summary = "Adiciona uma nova atividade",
-            Description = "Adiciona uma nova atividade ao banco de dados",
+            Description = "Adiciona uma nova atividade ao banco de dados. **É necessário estar autenticado**",
             Deprecated = false
         })
         .Accepts<AtividadesAddOrUpdateModel>("application/json")
@@ -93,7 +148,7 @@ public static class AtividadesEndpoint
                 return Results.NotFound();
             }
 
-            existingAtividade.ClimaAtual = updateModel.ClimaAtual ?? existingAtividade.ClimaAtual;
+            existingAtividade.ClimaAtual = updateModel.ClimaAtual;
             existingAtividade.DemandaProduto = updateModel.DemandaProduto ?? existingAtividade.DemandaProduto;
             existingAtividade.HorarioAtual = updateModel.HorarioAtual ?? existingAtividade.HorarioAtual;
             existingAtividade.LocalizacaoAtual = updateModel.LocalizacaoAtual ?? existingAtividade.LocalizacaoAtual;
@@ -113,12 +168,13 @@ public static class AtividadesEndpoint
 
             return Results.Ok(existingAtividade);
         })
+        .RequireAuthorization(new AuthorizeAttribute(){Roles = "ROLE_ADMIN"})
         .WithName("Atualizar atividade")
         .WithOpenApi(operation => new(operation)
         {
             OperationId = "UpdateAtividades",
             Summary = "Atualiza uma atividade existente",
-            Description = "Atualiza uma atividade existente no banco de dados pelo ID",
+            Description = "Atualiza uma atividade existente no banco de dados pelo ID. **É necessário ser um administrador**",
             Deprecated = false
         })
         .Accepts<AtividadesAddOrUpdateModel>("application/json")
@@ -140,12 +196,13 @@ public static class AtividadesEndpoint
 
             return Results.NoContent();
         })
+        .RequireAuthorization(new AuthorizeAttribute(){Roles = "ROLE_ADMIN"})
         .WithName("Deletar atividade")
         .WithOpenApi(operation => new(operation)
         {
             OperationId = "DeleteAtividades",
             Summary = "Deleta uma atividade existente",
-            Description = "Deleta uma atividade existente no banco de dados pelo ID",
+            Description = "Deleta uma atividade existente no banco de dados pelo ID. **É necessário ser um administrador**",
             Deprecated = false
         })
         .Produces(StatusCodes.Status204NoContent)

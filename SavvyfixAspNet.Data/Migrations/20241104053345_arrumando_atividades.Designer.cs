@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Oracle.EntityFrameworkCore.Metadata;
 using SavvyfixAspNet.Data;
@@ -11,9 +12,11 @@ using SavvyfixAspNet.Data;
 namespace SavvyfixAspNet.Data.Migrations
 {
     [DbContext(typeof(SavvyfixMetadataDbContext))]
-    partial class SavvyfixMetadataDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241104053345_arrumando_atividades")]
+    partial class arrumando_atividades
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,8 +34,8 @@ namespace SavvyfixAspNet.Data.Migrations
 
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdAtividades"));
 
-                    b.Property<int>("ClimaAtual")
-                        .HasColumnType("NUMBER(10)")
+                    b.Property<string>("ClimaAtual")
+                        .HasColumnType("NVARCHAR2(2000)")
                         .HasColumnName("clima_atual");
 
                     b.Property<string>("DemandaProduto")

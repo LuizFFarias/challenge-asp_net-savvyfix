@@ -34,4 +34,7 @@ public class Produto
     
     [JsonIgnore]
     public ICollection<Compra> Compras { get; set; }
+    
+    [JsonIgnore]
+    public ICollection<Atividades> Atividades { get; set; }
 }

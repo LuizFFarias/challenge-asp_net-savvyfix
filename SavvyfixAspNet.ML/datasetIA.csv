@@ -1,0 +1,1003 @@
+Nome;Produto;Localizacao;Horario;Clima;Procura;Demanda 
+Ana Clara Silva;Kappa;TO;07:38;-14;27;M�dia
+Pedro Henrique Oliveira;Converse;PR;18:23;25;24;Baixa
+Maria Fernanda Santos;Oakley;AP;02:38;30;24;M�dia
+Jo�o Vitor Almeida;Havaianas;SP;05:50;-12;17;M�dia
+Carla Rodrigues Costa;Piccadilly;SC;04:39;32;26;Alta
+Lucas Gabriel Pereira;Colcci;RR;22:06;40;27;Alta
+Juliana Martins Souza;Vans;TO;10:23;28;15;Alta
+Thiago Lima Ferreira;Converse;RR;15:46;35;25;Baixa
+Fernanda Almeida Rocha;Converse;AP;15:33;-10;12;M�dia
+Gabriel Andrade Lima;Piccadilly;RR;16:39;22;29;M�dia
+Patr�cia Costa Silva;Olympikus;RJ;18:24;29;4;Alta
+Roberto Carvalho Costa;New Balance;AM;22:10;33;7;Baixa
+Larissa Oliveira Santos;Puma;MS;18:01;45;4;Baixa
+Diego Henrique Almeida;Lacoste;DF;07:04;26;10;Alta
+Camila Nascimento Oliveira;Rider;SP;01:01;-15;17;Alta
+Eduardo Silva Rocha;Fila;MA;14:05;38;19;Alta
+Vanessa Cardoso Lima;Lacoste;MT;08:01;24;1;M�dia
+Felipe Santos Almeida;Fila;DF;23:56;27;27;M�dia
+Mariana Lima Costa;Piccadilly;DF;10:04;31;25;M�dia
+Rafael Oliveira Martins;Nike;AP;10:52;20;27;Alta
+Beatriz Santos Rodrigues;Olympikus;CE;03:40;37;1;M�dia
+Andr� Souza Lima;Lacoste;SC;18:15;42;27;Alta
+J�lia Gomes Pereira;Rider;PB;21:19;-13;29;Alta
+Gustavo Almeida Silva;Fila;MS;14:33;21;30;M�dia
+Isabela Fernandes Lima;Mizuno;AP;19:44;41;29;M�dia
+Carlos Eduardo Andrade;Havaianas;MG;13:29;44;19;M�dia
+Mariana Silva Souza;Adidas;MT;02:24;23;10;Alta
+Lucas Fernandes Rocha;Oakley;DF;21:19;34;18;M�dia
+Tatiane Santos Oliveira;Mizuno;AM;18:45;-8;20;M�dia
+Bruno Carvalho Pereira;Puma;PR;01:07;19;4;Alta
+Raquel Costa Almeida;Converse;SP;13:05;30;22;M�dia
+Igor Lima Martins;New Balance;PA;09:38;26;13;Alta
+Sofia Costa Pereira;Le Coq Sportif;RR;01:06;27;29;Alta
+Rodrigo Oliveira Santos;Reebok;AM;13:16;43;8;Baixa
+Larissa Costa Rocha;Umbro;SP;22:34;32;10;Baixa
+Felipe Cardoso Almeida;Umbro;RS;06:02;-7;2;Baixa
+Aline Souza Oliveira;Grendene;DF;12:45;36;15;M�dia
+Victor Hugo Almeida;Grendene;RS;06:14;28;20;Alta
+Ana Paula Costa;Grendene;RS;18:01;40;18;M�dia
+Gabriel Rocha Lima;Kappa;CE;05:38;22;9;M�dia
+Luana Oliveira Martins;Puma;PE;18:09;33;25;Alta
+Marcelo Silva Santos;Vans;RR;23:36;24;15;M�dia
+Claudia Rodrigues Lima;Asics;MS;17:48;29;29;Alta
+Daniel Pereira Souza;New Balance;MG;21:02;-11;6;Baixa
+Juliana Cardoso Silva;Melissa;ES;23:38;21;9;Alta
+Rafael Martins Oliveira;Vans;SP;13:31;25;2;M�dia
+Carla Costa Pereira;Le Coq Sportif;SE;10:11;31;24;M�dia
+Lucas Almeida Rodrigues;Cartago;PA;15:51;20;4;M�dia
+Simone Lima Rocha;Oakley;DF;22:05;39;21;M�dia
+Diego Santos Ferreira;Asics;TO;15:36;45;16;Alta
+Amanda Silva Costa;Asics;AL;23:12;34;13;Baixa
+Bruno Santos Lima;Olympikus;PB;01:59;37;24;M�dia
+Vanessa Oliveira Pereira;Adidas;AM;14:19;-9;26;Baixa
+Matheus Almeida Rocha;Lacoste;AC;19:20;42;3;Baixa
+Fabiana Costa Silva;New Balance;AP;10:13;43;11;M�dia
+Thiago Santos Almeida;Le Coq Sportif;SE;06:05;26;23;Baixa
+Bruna Silva Costa;Puma;RJ;18:23;30;30;Alta
+Eduardo Lima Rodrigues;Piccadilly;CE;03:07;35;3;Alta
+Paula Souza Rocha;Colcci;SE;23:30;41;20;Alta
+F�bio Oliveira Lima;Grendene;AC;08:16;28;7;M�dia
+Let�cia Santos Pereira;Rider;ES;10:16;21;6;M�dia
+Andr�ia Martins Silva;Nike;RO;19:19;44;29;Alta
+Rodrigo Costa Almeida;Rider;CE;02:33;23;14;Baixa
+Gisele Silva Rocha;Rider;MG;02:28;27;17;M�dia
+Jorge Almeida Santos;Vans;RO;05:23;-15;9;Alta
+Cristina Souza Lima;Lacoste;SC;01:47;32;29;M�dia
+Pedro Martins Costa;Havaianas;AM;22:26;40;8;Alta
+Mariana Lima Oliveira;Melissa;AM;19:54;24;27;Baixa
+Felipe Souza Almeida;Havaianas;RJ;12:52;39;18;Alta
+Raiane Costa Silva;Fila;RO;11:04;22;22;Baixa
+Carlos Lima Pereira;Grendene;PI;18:31;28;12;M�dia
+Roberta Rodrigues Silva;Melissa;AP;07:27;31;8;Alta
+Victor Almeida Rocha;Adidas;SP;11:26;36;14;Alta
+Priscila Santos Costa;Melissa;RS;23:48;-12;7;Baixa
+Alan Pereira Martins;Le Coq Sportif;RS;00:29;30;11;M�dia
+Karen Costa Oliveira;Ipanema;RS;09:57;45;18;M�dia
+Lucas Cardoso Silva;Nike;RR;21:10;37;11;M�dia
+Ana Carolina Almeida;Reebok;SC;15:45;33;29;Alta
+Gustavo Silva Ferreira;Nike;RR;16:35;25;23;M�dia
+Amanda Martins Souza;Melissa;PE;12:52;27;30;Alta
+Ricardo Costa Lima;Asics;MT;13:53;23;12;Baixa
+Nat�lia Oliveira Santos;Le Coq Sportif;PE;01:46;-6;20;M�dia
+Jorge Lima Almeida;Havaianas;AL;01:34;12;27;M�dia
+Fabiana Silva Rocha;Adidas;RO;21:40;34;6;Alta
+Eduardo Santos Oliveira;Piccadilly;AL;13:34;19;16;M�dia
+Raquel Almeida Pereira;Converse;AC;10:37;-8;12;M�dia
+Douglas Costa Lima;Ipanema;MS;13:04;27;12;M�dia
+Larissa Santos Oliveira;Colcci;ES;09:46;7;8;M�dia
+Marcos Silva Pereira;Vans;MS;12:50;40;22;Baixa
+Talita Costa Almeida;Melissa;PB;06:29;5;19;M�dia
+Henrique Oliveira Rocha;New Balance;ES;20:02;-4;11;Alta
+Samara Martins Silva;New Balance;SC;18:26;30;13;M�dia
+Adriano Santos Costa;Nike;AC;10:03;21;19;M�dia
+Silvia Oliveira Almeida;Reebok;PR;04:10;16;12;M�dia
+Fernando Souza Lima;Lacoste;CE;23:16;-10;9;M�dia
+Isabelly Costa Pereira;Puma;SE;17:09;35;8;M�dia
+Sergio Lima Rodrigues;Melissa;PR;01:59;9;5;M�dia
+Ver�nica Silva Rocha;Umbro;SE;02:19;43;24;M�dia
+M�rcio Santos Almeida;Fila;PI;03:38;-2;10;Alta
+Daniela Oliveira Costa;New Balance;MG;03:14;18;23;Alta
+Adilson Goncalves Junior;Colcci;TO;14:20;14;3;Alta
+Alexandre Silva;Rider;RJ;00:40;-12;16;M�dia
+Juliana Pereira Santos;Puma;PB;08:16;22;9;M�dia
+Ricardo Almeida Costa;Havaianas;ES;12:41;8;14;M�dia
+Luciana Oliveira Rodrigues;Lacoste;BA;01:59;26;30;Baixa
+Roberto Martins Lima;Colcci;RN;13:33;45;19;Alta
+Patr�cia Nascimento Silva;Lacoste;AC;01:17;-7;9;M�dia
+Guilherme Souza Almeida;Rider;SP;20:31;15;3;M�dia
+Mariana Costa Fernandes;Oakley;ES;12:31;29;28;Alta
+Anderson Oliveira Lima;Lacoste;SC;05:13;-5;13;Alta
+Tatiane Almeida Rocha;Mizuno;ES;00:02;31;1;Alta
+Leonardo Silva Santos;Grendene;PA;09:58;6;25;Alta
+Danielle Costa Pereira;Kappa;GO;16:00;20;27;Baixa
+Rafael Souza Rocha;Rider;PE;11:17;-1;14;Baixa
+J�ssica Lima Santos;Havaianas;SC;03:29;33;12;M�dia
+Victor Hugo Silva;Lacoste;AC;20:03;17;14;Baixa
+Sandra Oliveira Martins;Adidas;TO;00:16;-15;5;Baixa
+Tiago Rodrigues Pereira;Olympikus;DF;21:32;28;23;Alta
+Ana Carolina Lima;New Balance;SE;18:28;11;21;Baixa
+Rodrigo Costa Silva;Asics;PI;14:16;42;11;M�dia
+Gisele Almeida Lima;Le Coq Sportif;PR;19:56;-3;4;Baixa
+Felipe Souza Martins;Le Coq Sportif;PB;12:26;24;6;Baixa
+Beatriz Oliveira Santos;Adidas;MA;07:33;13;9;M�dia
+Eduardo Pereira Rocha;Rider;MT;22:18;39;15;Alta
+Let�cia Costa Almeida;Mizuno;RJ;11:36;10;9;Alta
+Gabriel Lima Ferreira;Lacoste;MS;09:01;-11;20;M�dia
+Vanessa Silva Pereira;Oakley;DF;08:53;25;2;Baixa
+Carlos Henrique Santos;Ipanema;SC;19:15;32;30;Baixa
+Simone Almeida Costa;New Balance;SP;14:27;4;28;Alta
+Ricardo Fernandes Lima;Adidas;AC;23:28;-9;28;M�dia
+Larissa Silva Oliveira;Asics;CE;19:32;37;18;M�dia
+Daniela Rodrigues Rocha;Puma;MG;05:46;2;19;Alta
+Jo�o Paulo Almeida;Reebok;MG;00:08;41;26;Alta
+Mariana Silva Lima;Ipanema;AP;04:19;3;20;M�dia
+Andr� Costa Pereira;Ipanema;SP;02:06;46;1;Baixa
+Aline Oliveira Martins;Converse;GO;21:45;-13;6;M�dia
+Victor Santos Almeida;Puma;BA;18:56;38;20;M�dia
+Fernanda Lima Costa;Le Coq Sportif;AP;21:38;1;15;M�dia
+Gustavo Silva Rodrigues;Havaianas;DF;06:18;44;29;M�dia
+Claudia Pereira Almeida;Kappa;MS;22:38;0;5;Baixa
+Jorge Santos Silva;Asics;RJ;19:01;26;3;Baixa
+Patr�cia Lima Rocha;Melissa;BA;07:43;-14;11;Alta
+Eduardo Almeida Santos;Le Coq Sportif;BA;02:25;17;19;M�dia
+Amanda Oliveira Pereira;Rider;PE;13:04;13;9;M�dia
+Lucas Silva Ferreira;Asics;RS;12:27;20;25;Alta
+Renata Costa Lima;New Balance;MG;03:03;-6;9;Alta
+Thiago Rodrigues Martins;New Balance;PE;17:11;23;18;M�dia
+Juliana Santos Costa;Rider;AM;19:14;27;11;M�dia
+Roberta Oliveira Rocha;Fila;SE;21:35;7;2;Alta
+Marcos Pereira Almeida;Piccadilly;BA;15:38;34;27;Alta
+Ana Paula Silva;Ipanema;DF;13:20;10;8;Baixa
+F�bio Souza Lima;New Balance;GO;15:40;-8;19;Alta
+Ver�nica Costa Oliveira;Melissa;RO;03:07;29;1;Alta
+Ricardo Lima Rocha;Olympikus;SC;13:20;14;28;M�dia
+Sofia Silva Santos;Fila;TO;06:45;-4;12;Baixa
+Andr�ia Pereira Costa;Nike;TO;10:19;18;14;Alta
+Tiago Lima Martins;Umbro;ES;02:18;30;18;M�dia
+Tatiane Costa Oliveira;Havaianas;RN;00:27;6;14;M�dia
+Rafael Silva Almeida;Havaianas;RS;16:21;-3;15;Alta
+Camila Oliveira Santos;Converse;PA;19:09;22;30;M�dia
+Lucas Cardoso Rocha;Oakley;PE;07:47;15;20;M�dia
+Isabella Rodrigues Lima;Adidas;CE;23:52;-2;14;M�dia
+Diego Almeida Santos;Cartago;TO;08:21;25;28;M�dia
+Carla Souza Pereira;Mizuno;RJ;21:26;32;2;M�dia
+Gustavo Oliveira Rocha;Oakley;TO;13:06;8;2;Alta
+Felipe Silva Costa;Vans;PR;20:29;11;2;Baixa
+Mariana Lima Almeida;Vans;RR;16:14;35;24;M�dia
+Marcelo Costa Silva;Grendene;RR;20:16;-1;3;Alta
+Juliana Rodrigues Santos;Nike;SE;22:12;17;3;Alta
+Eduardo Lima Pereira;Havaianas;RO;09:02;24;6;M�dia
+Gabriela Oliveira Martins;Vans;DF;20:16;-7;9;M�dia
+Rodrigo Silva Rocha;Oakley;RR;01:56;26;15;Alta
+Danielle Santos Almeida;Asics;CE;19:29;20;10;M�dia
+Victor Ferreira Lima;Oakley;RO;05:34;12;19;Alta
+Fernanda Silva Costa;Puma;AC;12:26;40;17;M�dia
+Roberto Rodrigues Pereira;Melissa;DF;01:15;-5;7;Alta
+Tatiane Almeida Silva;Havaianas;SE;12:08;19;12;M�dia
+Ana Carolina Santos;Melissa;SC;11:20;13;23;M�dia
+Lucas Lima Rocha;Kappa;TO;01:20;28;26;Baixa
+J�ssica Costa Pereira;Reebok;PE;04:28;21;19;Alta
+Ricardo Oliveira Almeida;Colcci;RS;01:52;33;26;M�dia
+Camila Silva Santos;Asics;SC;16:28;-4;2;Alta
+Jo�o Henrique Lima;Piccadilly;GO;01:17;18;29;Baixa
+Beatriz Pereira Silva;Melissa;PA;19:40;27;4;Baixa
+Matheus Costa Rocha;Fila;MG;01:04;-12;17;Alta
+Isabela Souza Almeida;Olympikus;DF;00:04;21;12;M�dia
+Patr�cia Santos Oliveira;Converse;PE;00:44;37;24;Baixa
+Eduardo Silva Ferreira;Reebok;AP;06:11;11;20;M�dia
+Larissa Oliveira Lima;Adidas;AC;01:14;-8;26;M�dia
+Henrique Almeida Costa;Vans;PI;08:31;40;10;Alta
+Mariana Rodrigues Silva;Piccadilly;ES;05:54;6;12;Alta
+F�bio Pereira Santos;Fila;PR;10:26;23;28;Baixa
+Amanda Costa Rocha;Umbro;PE;07:13;-2;11;Baixa
+Bruno Lima Almeida;Olympikus;PI;03:53;25;20;M�dia
+Vanessa Silva Santos;Colcci;RJ;23:59;29;9;M�dia
+Ricardo Costa Lima;Reebok;CE;05:08;45;19;M�dia
+Juliana Oliveira Rocha;Kappa;MS;04:41;-7;11;M�dia
+Adriano Ferreira Leme;Puma;SE;02:58;32;26;Baixa
+Ana J�lia Barbosa;Umbro;SC;03:33;9;9;Baixa
+Carlos Augusto Almeida;Le Coq Sportif;BA;12:18;20;28;M�dia
+Gabriela Silva Rocha;New Balance;RS;02:02;-15;6;M�dia
+Fernando Santos Lima;Oakley;RJ;12:24;14;13;Alta
+Juliana Martins Almeida;Le Coq Sportif;AP;21:02;31;28;Alta
+Bruno Oliveira Costa;Piccadilly;MS;07:04;4;30;Baixa
+Mariana Costa Silva;Oakley;MS;04:36;24;17;M�dia
+Jorge Silva Santos;Oakley;SE;11:35;-5;12;Alta
+Priscila Souza Lima;Kappa;GO;19:53;22;19;Alta
+Lucas Pereira Almeida;New Balance;PI;23:06;38;8;M�dia
+Roberta Lima Rocha;Nike;PR;13:29;7;17;Alta
+Tiago Santos Costa;Rider;RR;05:56;13;23;Alta
+Amanda Oliveira Lima;Vans;ES;01:14;-3;15;M�dia
+Ricardo Lima Santos;Nike;DF;14:09;26;6;M�dia
+Juliana Costa Almeida;Melissa;AM;13:01;19;2;M�dia
+Eduardo Silva Pereira;Reebok;CE;03:34;41;30;Alta
+Isabel Santos Rodrigues;Colcci;PI;11:52;-9;16;M�dia
+Pedro Henrique Lima;Le Coq Sportif;BA;21:55;30;30;Alta
+Sofia Oliveira Rocha;Melissa;PR;16:07;8;17;M�dia
+Gustavo Lima Santos;Lacoste;SC;04:03;17;3;M�dia
+Tatiane Silva Almeida;Olympikus;MG;04:28;35;12;M�dia
+Felipe Costa Lima;New Balance;MG;15:05;-10;7;Baixa
+Ana Carolina Rocha;Grendene;RJ;03:47;43;26;M�dia
+Daniela Santos Oliveira;Adidas;SE;01:12;12;8;M�dia
+Henrique Silva Lima;Reebok;PA;06:47;16;13;Alta
+Raquel Almeida Pereira;Kappa;SC;08:19;28;29;M�dia
+Rodrigo Costa Rocha;Asics;DF;13:48;5;7;Alta
+Aline Oliveira Santos;Melissa;MT;20:50;-6;10;Alta
+Marcos Silva Almeida;Havaianas;TO;23:25;39;5;Baixa
+Beatriz Souza Costa;Lacoste;TO;01:44;15;15;M�dia
+Victor Hugo Pereira;Kappa;PB;00:30;24;18;Baixa
+Laura Costa Lima;Havaianas;AL;03:12;10;21;M�dia
+Alan Oliveira Rodrigues;Umbro;RO;09:10;-11;18;M�dia
+Mariana Souza Silva;Rider;BA;09:16;26;4;M�dia
+Roberto Lima Almeida;New Balance;SE;22:04;20;28;M�dia
+Simone Silva Rocha;Melissa;MA;04:45;33;25;M�dia
+F�bio Santos Pereira;Asics;MG;03:14;1;5;Alta
+Carla Rodrigues Lima;Cartago;ES;18:09;40;24;M�dia
+Lucas Silva Almeida;Reebok;DF;19:31;-13;13;Alta
+Gisele Oliveira Costa;Mizuno;GO;07:51;44;2;Alta
+Tiago Costa Lima;Reebok;PB;14:06;3;14;M�dia
+Andr�ia Silva Rocha;New Balance;RJ;19:18;30;18;Alta
+Fernanda Souza Almeida;Ipanema;RN;12:51;-2;5;Baixa
+Carlos Eduardo Lima;Puma;AL;15:16;27;3;Baixa
+Patr�cia Oliveira Silva;Adidas;RJ;05:59;22;23;Baixa
+Ricardo Silva Santos;Ipanema;PR;12:49;41;11;M�dia
+Juliana Almeida Rocha;Rider;PI;07:36;8;2;Alta
+Eduardo Costa Silva;New Balance;TO;11:32;17;12;Baixa
+Luciana Silva Pereira;Olympikus;RJ;19:23;-1;1;M�dia
+Gabriel Lima Costa;Mizuno;MS;00:58;34;9;Baixa
+Vanessa Souza Rocha;Nike;AP;15:26;12;29;Baixa
+Diego Martins Almeida;New Balance;SE;04:37;38;21;Baixa
+Ana Paula Santos;Olympikus;RR;16:52;2;16;Alta
+Rodrigo Oliveira Lima;Grendene;SE;15:18;14;22;M�dia
+Mariana Silva Pereira;Lacoste;ES;18:20;-15;28;Baixa
+Felipe Almeida Santos;Rider;GO;20:17;21;3;M�dia
+Bruna Costa Lima;Oakley;PB;08:33;29;13;Alta
+Gustavo Rodrigues Silva;Oakley;PB;10:15;16;5;M�dia
+Larissa Oliveira Almeida;Rider;MG;17:34;31;26;Baixa
+Thiago Santos Lima;Havaianas;MS;15:41;-7;14;M�dia
+Claudia Costa Rocha;Havaianas;SP;06:17;24;13;M�dia
+Victor Silva Santos;Vans;AL;05:32;11;12;Alta
+Danielle Souza Lima;Olympikus;SC;23:49;26;1;M�dia
+J�ssica Oliveira Rocha;Cartago;AP;12:39;-8;11;Baixa
+Fernando Almeida Pereira;Kappa;GO;08:47;35;16;Alta
+Let�cia Silva Costa;New Balance;SC;10:29;22;6;M�dia
+Gabriel Souza Almeida;Le Coq Sportif;DF;16:19;6;13;Baixa
+Marcelo Lima Pereira;Cartago;PR;00:53;18;3;M�dia
+Aline Costa Silva;Mizuno;RJ;07:32;27;3;M�dia
+Tatiane Santos Lima;Fila;TO;00:28;30;27;M�dia
+Lucas Oliveira Rocha;Colcci;RS;01:42;4;24;M�dia
+Juliana Costa Almeida;Ipanema;RR;05:05;39;28;Alta
+Pedro Lima Santos;New Balance;AM;03:06;-10;22;Baixa
+Fernanda Almeida Silva;Nike;AM;20:32;12;12;Baixa
+Roberta Silva Lima;Rider;SP;15:24;23;10;Baixa
+Eduardo Santos Rocha;Rider;MA;00:28;32;6;Baixa
+Laura Pereira Almeida;Rider;ES;23:19;5;24;M�dia
+Ricardo Costa Silva;Oakley;PA;06:16;-4;17;M�dia
+Vanessa Oliveira Santos;Nike;AL;21:18;14;7;M�dia
+Marcos Costa Lima;Lacoste;PI;12:37;28;6;M�dia
+Raquel Silva Almeida;Lacoste;RO;09:36;7;11;M�dia
+Felipe Rodrigues Rocha;Converse;SC;03:52;40;17;M�dia
+Patr�cia Souza Santos;Oakley;MT;12:14;22;23;Baixa
+Andr� Lima Almeida;Mizuno;PR;02:36;-3;18;M�dia
+Simone Oliveira Costa;Kappa;ES;00:29;31;25;M�dia
+Jorge Martins Lima;New Balance;CE;14:01;8;23;Alta
+Camila Silva Pereira;Umbro;PR;13:27;20;24;M�dia
+Gabriela Almeida Santos;Converse;AM;12:58;-11;21;Alta
+Ademir Balestrini;Kappa;SC;00:57;36;14;M�dia
+Alice Montgomery Smith;Oakley;RR;12:58;12;4;M�dia
+Ethan Carter O�Connor;Nike;RN;14:44;29;14;Alta
+Sophie Laurent Dubois;Reebok;PI;03:52;-7;21;M�dia
+Liam Johnson Anderson;Oakley;RS;19:48;23;15;Alta
+Ella Schmidt Becker;Piccadilly;AP;20:17;45;6;Alta
+Lucas Kim Park;Colcci;MT;18:02;4;9;Baixa
+Mia Johnson Lee;Lacoste;MT;03:58;17;15;M�dia
+Alexander M�ller Weber;Kappa;PR;17:44;-1;26;Alta
+Chloe Zhang Li;Rider;PR;21:15;39;25;M�dia
+Oliver Russo Romano;Fila;PE;19:35;6;16;M�dia
+Emily Robinson Clark;Converse;AL;18:32;25;24;Alta
+Henry Ivanov Petrov;Havaianas;GO;08:47;-8;28;M�dia
+Olivia Martinez Garcia;Ipanema;PR;16:37;13;25;Alta
+Noah Johansson Svensson;Havaianas;MG;03:47;13;23;Alta
+Isabella Ortiz Morales;Mizuno;AM;20:19;32;3;M�dia
+Benjamin Adams Cooper;Piccadilly;RS;03:09;2;2;M�dia
+Ava Murphy Sullivan;Vans;BA;04:15;21;2;M�dia
+Samuel Schneider Braun;Oakley;AP;02:19;-4;28;M�dia
+Charlotte Wilson Thompson;Fila;PB;00:30;28;8;Baixa
+James Martin Keller;Cartago;CE;16:42;10;25;M�dia
+Sophia Kimura Tanaka;Converse;SE;15:00;37;4;M�dia
+Elijah Murphy Brennan;Lacoste;AP;23:45;15;26;M�dia
+Amelia Smith Harris;Adidas;BA;19:46;-5;23;Alta
+William Garcia Lopez;Olympikus;RS;06:03;41;9;M�dia
+Grace Wang Liu;Ipanema;RO;20:03;7;1;Alta
+Michael Thompson Richards;Havaianas;AP;14:58;19;25;Alta
+Hannah Weber Fischer;Umbro;AL;20:01;-2;8;Baixa
+Daniel Klein Meyer;Oakley;RS;03:23;34;28;Baixa
+Aria Rossi Bianchi;Mizuno;MS;17:58;18;29;M�dia
+Andrew Brown Patel;Piccadilly;MA;01:35;43;22;M�dia
+Scarlett Clark Jameson;Lacoste;MS;03:29;-12;29;Alta
+John Kim Lee;Asics;AL;17:28;26;29;Alta
+Lily Romano Marchetti;Kappa;PB;17:24;5;17;Alta
+Ryan Davis Baker;Piccadilly;TO;22:20;22;21;M�dia
+Zoe Walker Robinson;Mizuno;TO;14:39;40;17;M�dia
+Isaac Andersson Larsson;Fila;RS;15:21;-9;15;M�dia
+Megan Turner Anderson;Lacoste;GO;04:26;14;11;Alta
+Matthew Kimura Suzuki;Mizuno;RO;23:12;27;12;Baixa
+Harper Gonzalez Rivera;Vans;BA;03:28;1;4;M�dia
+Jacob M�ller Schultz;Colcci;AP;03:25;33;23;M�dia
+Isabella Moreno Vasquez;Colcci;AL;18:31;-6;15;M�dia
+Aiden Murphy O'Neill;Melissa;RR;14:24;16;19;M�dia
+Charlotte Wilson Burke;Ipanema;MS;02:54;24;18;Alta
+Leo Collins Brooks;Melissa;MT;20:11;30;23;M�dia
+Eleanor Schmidt Meyer;Ipanema;RN;20:38;3;6;M�dia
+Ethan Johnson Clarke;Asics;PA;03:39;-10;4;Alta
+Emma Garc�a Hern�ndez;Puma;ES;04:41;42;6;Alta
+Henry Fischer Weber;Reebok;MG;21:38;11;17;Alta
+Nora Patel Shah;Melissa;SP;23:52;38;29;Alta
+Jameson Nguyen Huynh;Cartago;PA;01:09;6;17;Baixa
+Avery Cohen Levitt;Kappa;MG;16:52;20;30;M�dia
+Lucas Romano Verdi;Olympikus;AP;10:24;-15;1;M�dia
+Madison Kim Walker;Fila;MT;12:33;26;26;Alta
+Noah Green Barrett;Olympikus;AC;22:44;13;24;M�dia
+Olivia Garcia Perez;Reebok;SC;17:05;25;19;M�dia
+Jacob Fischer M�ller;Kappa;ES;10:30;7;6;Alta
+Sophia Dubois Martin;Cartago;AL;00:04;44;18;M�dia
+Jackson Tanaka Suzuki;Asics;TO;18:29;-8;3;M�dia
+Emily Wilson Bell;Piccadilly;DF;11:43;32;1;M�dia
+Leo Martinez Ruiz;Reebok;RO;20:12;12;23;M�dia
+Aubrey Brown Hayes;Grendene;RN;20:08;28;12;Alta
+Benjamin Carter DeVries;Le Coq Sportif;RR;04:25;21;20;M�dia
+Ella Robinson Kowalski;Nike;DF;11:09;-4;29;M�dia
+Lucas Moreno Reyes;Umbro;PE;20:58;34;15;M�dia
+Sofia Schmidt Meyer;Mizuno;PI;20:37;9;27;Baixa
+Jameson Reed Robinson;Colcci;PA;15:52;17;2;M�dia
+Harper O'Connor Connors;Adidas;AM;10:17;-3;7;Alta
+William Patel Mehta;Kappa;MS;22:16;27;26;Alta
+Chloe Evans Wright;Oakley;ES;09:25;19;4;M�dia
+Alexander Li Zhang;Ipanema;SC;05:50;23;1;Alta
+Mia Collins Murphy;Adidas;RN;14:46;11;21;M�dia
+Ethan Adams Schwartz;Cartago;RO;09:23;40;24;Baixa
+Grace Walker Holt;Kappa;RR;13:26;-7;14;M�dia
+John Ramirez Diaz;New Balance;MG;00:02;22;30;M�dia
+Ariana Nguyen Tran;Cartago;CE;16:17;33;13;M�dia
+Jacob Anderson Harris;Lacoste;ES;21:46;14;15;M�dia
+Eleanor Martin Rodriguez;Reebok;RO;00:45;42;22;M�dia
+Noah Patel Singh;Umbro;PA;07:29;-6;22;Baixa
+Charlotte Roberts Martinez;Umbro;PB;01:16;30;8;M�dia
+Henry Clark Peterson;Puma;RR;08:23;8;3;Baixa
+Emma Garcia Medina;Nike;SP;04:37;25;3;Baixa
+Ryan Davis O�Brien;Nike;SE;19:16;18;9;Alta
+Sophie Patel Kapoor;Olympikus;AL;08:22;37;10;Alta
+Oliver Williams Rossi;Cartago;BA;10:36;-12;13;Alta
+Amelia Lopez Diaz;Asics;AM;06:49;5;26;Alta
+Liam Thompson Castro;Ipanema;BA;09:23;31;30;Alta
+Adriel Faustino de Oliveira;Adidas;RS;02:50;13;11;M�dia
+Ana Beatriz Vilela;Asics;AP;07:00;44;14;Alta
+Carlos Eduardo Stenberg;Puma;MS;20:21;27;27;M�dia
+Gabriela Nascimento Soares;New Balance;PA;13:12;1;19;Baixa
+Fernando Magalh�es Cortes;Vans;RO;09:00;20;17;Alta
+Juliana Freitas Galv�o;Grendene;PB;12:26;-10;2;Baixa
+Bruno Bittencourt Oliveira;Rider;SC;08:34;38;18;Alta
+Mariana Azevedo Veiga;Melissa;RO;20:52;16;18;Alta
+Jorge Cunha Lobo;Le Coq Sportif;DF;05:52;28;14;M�dia
+Priscila Diniz Albuquerque;Reebok;AM;20:32;-9;8;M�dia
+Lucas Furtado Paiva;Melissa;AL;10:24;12;5;Baixa
+Roberta Pimentel Caldas;Kappa;AL;07:59;33;22;M�dia
+Tiago Saldanha Cardoso;Ipanema;DF;02:15;-6;6;Baixa
+Amanda Albuquerque Ramos;Mizuno;PI;20:43;19;23;Alta
+Ricardo Cordeiro Dias;New Balance;ES;09:37;40;9;Alta
+Juliana Antunes Ribeiro;Nike;PR;17:30;8;13;M�dia
+Eduardo Sampaio Arag�o;Piccadilly;PA;03:04;27;3;Baixa
+Isabel Ribeiro Nogueira;Havaianas;SE;17:55;-3;27;Baixa
+Pedro Henrique Salgado;Olympikus;AM;17:39;16;10;M�dia
+Sofia Tavares Nascimento;Melissa;CE;12:58;21;30;M�dia
+Gustavo Mascarenhas Lima;Rider;DF;05:47;45;17;M�dia
+Tatiane Menezes Rios;Colcci;ES;07:25;-11;13;M�dia
+Felipe Chaves Cunha;Cartago;RN;03:02;30;17;Baixa
+Ana Carolina Albuquerque;Grendene;MT;13:15;14;4;Baixa
+Daniela Santos Amorim;New Balance;SE;06:10;38;21;M�dia
+Henrique Siqueira Saldanha;Melissa;SC;00:15;5;30;M�dia
+Raquel Carvalho Prado;Nike;CE;05:53;-7;22;M�dia
+Rodrigo Diniz Brito;Reebok;PE;19:34;23;28;Alta
+Aline Lima Vasconcelos;Ipanema;GO;16:15;37;9;Baixa
+Marcos Antunes Reis;Havaianas;RN;10:04;9;6;M�dia
+Beatriz Rodrigues Barreto;Lacoste;RR;19:17;26;22;Baixa
+Victor Hugo Santoro;Piccadilly;PE;21:18;-5;23;M�dia
+Laura Lima Moura;New Balance;AC;17:58;4;18;Baixa
+Alan Ribeiro Amorim;Fila;RO;04:03;29;5;M�dia
+Mariana Lobo Costa;Kappa;MT;06:41;18;3;Alta
+Roberto Silva Murilo;Vans;AP;00:23;42;29;Baixa
+Simone Almeida Freitas;Le Coq Sportif;DF;06:28;-12;22;Alta
+F�bio Barreto Neves;Nike;ES;06:12;1;13;M�dia
+Carla Costa Barreto;Oakley;RJ;03:04;22;20;Baixa
+Lucas Monteiro Azevedo;Piccadilly;RS;19:36;31;13;Baixa
+Gisele Cavalcante Soares;Havaianas;MT;20:20;-2;29;M�dia
+Tiago Rocha Freitas;Le Coq Sportif;AC;01:28;20;12;M�dia
+Ana Paula Franco;Fila;AL;10:44;24;22;M�dia
+Daniela Cruz Barros;Ipanema;CE;21:08;35;15;Alta
+Ricardo Freitas Vieira;Ipanema;AM;14:45;-10;17;M�dia
+Vanessa Castro Pinheiro;Piccadilly;AM;08:20;6;22;M�dia
+Diego Reis Alvarenga;Mizuno;TO;04:33;17;29;M�dia
+Juliana Martins Leite;Lacoste;ES;01:04;25;4;M�dia
+Felipe Costa Braga;Grendene;AP;16:09;34;21;M�dia
+Bruna Pinto Mendes;Mizuno;PI;19:00;-4;5;Alta
+Eduardo Silva Castilho;Piccadilly;SP;00:12;43;8;M�dia
+Larissa Almeida Cunha;Olympikus;PI;17:43;15;4;Alta
+Andr�ia Costa Bittencourt;Nike;PI;13:05;32;6;M�dia
+Fernando Castro Lima;Kappa;AP;06:47;7;16;M�dia
+Ana J�lia Lemos;Rider;AL;04:28;-8;20;Baixa
+Lucas Santana Ara�jo;Vans;BA;03:14;41;30;M�dia
+Eliane Gomes Pereira;Olympikus;MS;16:08;2;15;Alta
+Roberto Barros Pinto;Asics;RN;10:06;19;17;Alta
+Let�cia Ara�jo Diniz;Reebok;GO;13:20;27;24;M�dia
+Gustavo Tavares Mello;New Balance;GO;10:04;10;23;M�dia
+Camila Oliveira Muniz;Le Coq Sportif;PB;20:11;-1;23;Alta
+J�lio Almeida Ribeiro;Nike;PI;14:14;26;23;Alta
+Mariana Lacerda Pinto;Reebok;RR;10:04;30;17;M�dia
+Rodrigo Castro Almeida;Rider;RN;23:17;14;24;Alta
+Nat�lia Almeida Moreira;Kappa;MT;04:59;33;4;Baixa
+Gabriel Dantas Farias;Ipanema;RS;03:26;-13;28;M�dia
+Laura Barros Lima;Le Coq Sportif;BA;03:53;13;3;Alta
+Hugo Lima Siqueira;Converse;MA;15:30;18;30;Alta
+Raquel Santos Vasconcelos;Olympikus;BA;03:51;24;5;Baixa
+Marcelo Pinto Cardoso;Puma;TO;02:06;39;11;M�dia
+Ana Beatriz Nunes;Lacoste;PE;20:25;12;13;M�dia
+Felipe Carvalho Teixeira;Grendene;RJ;18:14;22;20;Baixa
+Tatiane Costa Barreto;Mizuno;AL;20:39;8;14;Baixa
+Daniela Soares Albuquerque;Lacoste;RS;17:48;28;10;Baixa
+Rafael Pereira Farias;Nike;PR;15:46;-14;10;M�dia
+Juliana Magalh�es Pinto;Rider;PB;13:37;32;18;M�dia
+Eduardo Oliveira Silva;Asics;RS;17:56;6;17;Alta
+Carla Santana Oliveira;Umbro;AC;16:04;21;23;M�dia
+Lucas Almeida Guimar�es;Havaianas;MA;06:54;35;19;M�dia
+Sofia Fernandes Muniz;Lacoste;GO;15:10;-5;27;M�dia
+Jorge Costa Silva;Puma;GO;16:07;17;20;Baixa
+Beatriz Ramos Alvarenga;Asics;MG;12:21;40;18;Alta
+Andr� Santos Cunha;Nike;AM;03:51;27;17;M�dia
+Fernanda Ribeiro Cardoso;Havaianas;AP;15:33;3;4;Alta
+Bruno Mota Almeida;Vans;SP;05:33;43;27;M�dia
+Gabriela Melo Dias;Fila;PR;08:09;-6;12;Alta
+Rodrigo Freitas Soares;Olympikus;DF;14:54;26;8;Alta
+Juliana Barreto Furtado;Olympikus;GO;05:22;19;22;Alta
+Daniel Pereira Santana;Ipanema;MG;23:11;20;28;M�dia
+Mariana Cavalcante Pimentel;Olympikus;PB;03:42;7;5;M�dia
+Ricardo Almeida Teixeira;Cartago;RS;11:32;29;1;M�dia
+Patr�cia Freitas Lima;Nike;RO;22:16;-8;26;Baixa
+Gustavo Oliveira Amaral;Colcci;RJ;21:58;23;30;M�dia
+Amanda Tavares Silva;Piccadilly;CE;21:25;14;8;Alta
+Fernando Martins Cunha;Asics;MA;14:03;31;28;Baixa
+Roberta Souza Freitas;Umbro;MT;20:21;-2;7;Alta
+Lucas Braga Costa;Mizuno;AC;19:44;32;28;Baixa
+Simone Fernandes Lima;Mizuno;RO;03:57;16;1;Alta
+Henrique Rodrigues Almeida;Havaianas;AM;10:59;22;12;Baixa
+Let�cia Santana Rodrigues;Grendene;RR;00:13;25;26;Alta
+Felipe Almeida Soares;Colcci;PI;05:07;-11;9;Baixa
+Alan Camargo Fiebig;Converse;TO;05:15;12;6;M�dia
+Ana Maria Silva;Melissa;MS;21:44;38;1;Baixa
+Jos� Carlos Santos;Havaianas;PR;17:04;8;27;Alta
+Francisca Rodrigues;Kappa;ES;13:20;27;10;M�dia
+Jo�o Pedro Oliveira;Ipanema;MG;00:16;41;18;Baixa
+Luiz Ant�nio Almeida;Havaianas;MT;07:42;19;10;M�dia
+Elena Ferreira;Adidas;BA;03:12;-7;10;M�dia
+Paulo C�sar Lima;Colcci;PR;17:39;32;20;M�dia
+Carmen Souza;Le Coq Sportif;RO;08:05;-5;1;M�dia
+Francisco de Assis Costa;Piccadilly;MA;02:38;15;5;M�dia
+Ant�nio da Silva;Olympikus;PI;16:31;24;15;M�dia
+Joana Pereira;Grendene;SP;03:03;41;17;Baixa
+Jorge Henrique Gomes;Piccadilly;CE;20:42;-12;12;Alta
+Maria Aparecida Pereira;Puma;ES;19:45;19;13;Alta
+Eduardo Santos;Nike;TO;09:54;27;18;Baixa
+Carlos Alberto Martins;Rider;RR;18:23;8;15;Baixa
+Dona Maria Barbosa;Vans;GO;09:05;-7;18;M�dia
+Silvia Costa;Le Coq Sportif;MS;12:06;38;16;M�dia
+Manoel Pereira;Havaianas;AP;22:56;3;19;Alta
+Vera L�cia Rocha;New Balance;ES;17:12;21;16;Alta
+Margarida Alves;Ipanema;AL;01:02;30;20;M�dia
+Henrique dos Reis;Adidas;MA;10:53;-1;25;M�dia
+Sofia Almeida;Le Coq Sportif;SE;05:13;17;1;M�dia
+Raul Oliveira;Mizuno;RJ;16:42;44;12;Alta
+Helena Almeida;Vans;TO;01:17;10;1;Baixa
+Aparecida Silva;Lacoste;PA;05:40;22;29;Baixa
+Roberto Fernandes;Le Coq Sportif;ES;03:48;-8;21;M�dia
+Am�lia Sousa;Cartago;SP;13:02;25;20;M�dia
+Leonardo Cardoso;Nike;SC;05:23;5;21;M�dia
+L�cia Vieira;Le Coq Sportif;GO;19:50;37;30;Baixa
+Luana Santos;Havaianas;PI;12:15;6;1;M�dia
+Em�lia Nascimento;Umbro;SP;11:59;13;4;Alta
+Fernando Cruz;Lacoste;PA;23:31;-6;8;Baixa
+Maria Clara Lima;Asics;GO;21:44;29;8;Baixa
+T�nia Silva;Le Coq Sportif;RN;07:10;12;9;Baixa
+Ricardo Freitas;Converse;ES;02:10;33;17;M�dia
+Estela Santana;Asics;TO;14:36;-3;29;M�dia
+Augusto Campos;Converse;RS;09:47;20;6;M�dia
+Ana Paula Ribeiro;Olympikus;AL;03:11;40;23;Baixa
+Valter Nunes;Converse;AM;23:32;7;16;Baixa
+Marina Silva;Cartago;PE;16:24;26;8;Alta
+Isabel Oliveira;Havaianas;PB;10:04;-10;17;Alta
+Lu�s Augusto Silva;Havaianas;PR;11:24;-14;22;M�dia
+Ana Carolina Almeida;Reebok;RS;05:33;25;26;Baixa
+Ot�vio Fernandes;Cartago;PE;01:16;30;13;Baixa
+Mariana Costa;Kappa;SP;02:36;-12;9;Alta
+Artur Pereira;Olympikus;AP;18:27;32;17;M�dia
+Gilberto Castro;Le Coq Sportif;AM;14:08;40;8;M�dia
+Jos� Carlos Fernandes;Kappa;GO;11:07;28;11;Baixa
+Martha Rodrigues;Vans;SC;17:30;35;9;Baixa
+Gustavo Almeida;Grendene;SE;18:11;-10;22;Baixa
+Cleusa Carvalho;Colcci;SE;16:46;22;15;M�dia
+Alexandre Pereira;Rider;MT;23:48;29;25;M�dia
+Rita Oliveira;Kappa;MG;07:27;33;28;Alta
+Alfredo Souza;Reebok;PE;09:17;45;9;Alta
+Joana de Souza;Rider;AM;12:33;26;27;Baixa
+Antonio Marcos Silva;Ipanema;SE;04:54;-15;19;Baixa
+Eliane Costa;Piccadilly;PI;04:51;38;19;Baixa
+Jos� Eduardo Lima;Cartago;MA;18:51;24;26;Baixa
+L�cia Helena Almeida;Kappa;BA;18:16;27;16;M�dia
+Marcio Santos;Vans;RJ;16:06;31;11;M�dia
+Aline Souza;Ipanema;AC;21:46;20;15;Baixa
+Carlos Henrique da Silva;Puma;MG;03:16;37;25;Baixa
+Mar�lia Costa;Colcci;MG;18:08;42;30;Alta
+Roberto Silva;Cartago;SE;10:48;-13;20;M�dia
+Maria de Lourdes Freitas;Piccadilly;ES;06:01;21;20;Alta
+Gilmar Oliveira;Melissa;AM;12:20;41;8;Baixa
+C�lia Pereira;Fila;MT;06:16;44;12;M�dia
+Jos� Ant�nio Martins;Melissa;TO;21:51;23;9;Alta
+Carmen Lucia Silva;Vans;DF;06:29;34;19;M�dia
+Rog�rio Almeida;New Balance;PI;00:52;-8;29;M�dia
+Silvana Campos;Le Coq Sportif;SC;03:12;19;22;M�dia
+M�rio Ferreira;Havaianas;CE;22:06;30;19;Alta
+Ana Cl�udia Ribeiro;Reebok;ES;03:08;26;7;M�dia
+Daniela Souza;Rider;RJ;20:33;27;23;M�dia
+Luis Carlos Santos;Fila;AM;07:15;43;2;M�dia
+Nair Fernandes;Grendene;RR;23:59;32;22;M�dia
+Ricardo Lima;Colcci;MG;13:04;-7;5;Baixa
+Sandra Rodrigues;Mizuno;PI;03:57;36;21;M�dia
+Felipe Almeida;Asics;RN;02:32;28;6;M�dia
+Marisa Oliveira;Kappa;RS;07:12;40;15;Baixa
+Fernando Silva;Le Coq Sportif;PR;00:29;22;13;M�dia
+Eliana Martins;Lacoste;BA;06:01;33;7;Alta
+Jo�o Batista Lima;Umbro;AP;19:55;24;28;Alta
+Ana Lucia Santos;Reebok;SC;05:50;29;6;M�dia
+Marcelo Fernandes;Cartago;CE;00:53;-11;30;M�dia
+Renata Lima;Fila;PI;12:17;21;16;M�dia
+Rui Oliveira;Rider;MT;18:14;25;5;Alta
+Silvia Almeida;Piccadilly;AL;14:20;31;17;Alta
+Helena Costa;Cartago;SE;22:51;20;2;Alta
+Gilmar Fernandes;Nike;DF;21:15;39;24;M�dia
+Elza Ribeiro;Cartago;ES;07:47;45;21;M�dia
+Jorge Silva;Havaianas;MS;06:03;34;14;M�dia
+Alan Peterman Muller Monteiro;Adidas;SE;15:31;37;18;M�dia
+Ana Clara Souza;Asics;DF;16:15;-9;19;Baixa
+Miguel Oliveira;Olympikus;RR;14:32;42;19;M�dia
+Sofia Silva;Ipanema;MS;02:16;43;1;M�dia
+Arthur Santos;Mizuno;MS;11:42;26;13;M�dia
+Isabella Lima;Reebok;PE;20:23;30;25;M�dia
+Davi Almeida;Piccadilly;PI;13:09;35;14;M�dia
+Laura Pereira;Melissa;MG;12:47;41;24;Baixa
+Gabriel Costa;Havaianas;BA;15:28;28;19;Baixa
+Alice Fernandes;Mizuno;RR;23:24;21;30;Alta
+Lucas Rodrigues;Olympikus;SC;12:39;44;16;Baixa
+Mariana Silva;Nike;DF;07:43;23;5;M�dia
+Matheus Oliveira;Asics;RS;06:57;27;16;Alta
+Giovanna Santos;Nike;CE;04:59;-15;29;M�dia
+Pedro Henrique Lima;Puma;DF;07:42;32;5;Baixa
+L�via Costa;Reebok;SP;07:58;40;23;M�dia
+Jo�o Pedro Almeida;Vans;TO;23:49;24;13;M�dia
+Beatriz Silva;Olympikus;PA;13:02;39;15;M�dia
+Henrique Lima;Nike;BA;22:54;22;3;Alta
+Ana Julia Santos;Fila;PE;04:39;28;23;Alta
+Eduardo Pereira;Piccadilly;RR;19:01;31;24;Alta
+Camila Costa;Le Coq Sportif;AL;00:10;36;27;Alta
+Thiago Martins;Piccadilly;PB;23:45;-12;25;Alta
+Valentina Rodrigues;Nike;PI;14:27;30;8;Alta
+Rafael Silva;New Balance;PB;10:53;45;3;M�dia
+Larissa Almeida;Adidas;DF;05:34;37;26;Alta
+Felipe Souza;Oakley;ES;18:06;33;1;M�dia
+Let�cia Pereira;Mizuno;PA;04:42;25;9;Baixa
+Gustavo Costa;Asics;GO;04:35;27;6;M�dia
+Juliana Lima;Reebok;RR;16:34;23;8;M�dia
+Samuel Santos;Grendene;AM;18:01;-6;8;Alta
+Marta Oliveira;Puma;RS;12:11;12;10;Alta
+Luana Rodrigues;Mizuno;SP;15:43;34;4;Alta
+Daniela Silva;Adidas;BA;21:32;19;21;Alta
+Ot�vio Almeida;Reebok;AL;11:07;-8;3;Alta
+Fernanda Costa;Melissa;SE;21:42;27;18;Alta
+Jos� Gabriel Silva;Grendene;RO;22:49;7;20;Alta
+Mar�lia Santos;Converse;AL;20:19;40;3;Alta
+Nicolas Oliveira;Lacoste;MA;06:07;5;10;M�dia
+Priscila Almeida;Adidas;MT;00:42;-4;5;Alta
+Lucas Costa;Lacoste;MT;09:27;30;25;M�dia
+C�ntia Rodrigues;Oakley;PA;03:29;21;10;M�dia
+Henrique Silva;Rider;SP;04:26;16;5;M�dia
+Sophia Lima;Grendene;SP;16:01;-10;16;Alta
+Andr� Costa;Nike;GO;20:51;35;30;M�dia
+Amanda Pereira;Converse;DF;07:24;9;19;M�dia
+Bruno Silva;Reebok;PB;14:42;43;23;Alta
+Renata Santos;Fila;DF;08:39;-2;5;Baixa
+V�tor Oliveira;New Balance;RN;09:02;18;8;Baixa
+Marina Costa;Umbro;DF;03:55;14;10;Alta
+Ricardo Lima;Fila;RR;14:28;-12;16;Alta
+Samantha Silva;Fila;MT;20:38;22;9;Baixa
+Eduarda Almeida;Mizuno;RO;06:59;8;21;M�dia
+Leonardo Pereira;Fila;RO;17:29;26;29;Alta
+Sabrina Costa;Lacoste;SE;03:55;45;8;Alta
+Vin�cius Santos;Fila;RS;23:45;-7;17;M�dia
+Camila Oliveira;Le Coq Sportif;PE;00:38;15;29;M�dia
+Ronan Silva;Olympikus;RR;21:34;29;7;M�dia
+Tatiane Almeida;Vans;ES;20:52;-5;9;M�dia
+Aline Costa;Grendene;SE;16:25;31;29;M�dia
+Pedro Silva;Asics;RJ;07:00;6;5;M�dia
+L�cia Lima;Adidas;DF;19:16;20;17;Alta
+J�lio Santos;Reebok;RN;04:28;-1;21;Alta
+Michele Costa;Olympikus;MG;03:36;33;28;M�dia
+Joana Oliveira;New Balance;PI;02:31;17;23;Baixa
+Douglas Pereira;Mizuno;MA;10:33;-15;29;M�dia
+Aline Santos;Converse;SC;19:03;28;5;M�dia
+Rafael Almeida;Grendene;SC;01:38;11;11;Alta
+Michele Silva;Nike;RJ;23:27;42;17;M�dia
+Carlos Henrique Costa;Cartago;DF;21:03;-3;29;M�dia
+Eliane Pereira;Converse;AC;10:39;24;9;Alta
+Rodrigo Oliveira;Havaianas;AC;06:07;13;18;Alta
+Thais Santos;Adidas;PE;23:29;39;23;M�dia
+Bruno Costa;Grendene;GO;15:16;10;12;Alta
+Raquel Silva;Melissa;SE;12:20;-11;16;M�dia
+Vin�cius Almeida;Reebok;PE;23:30;25;10;Alta
+Viviane Costa;Adidas;DF;20:07;32;20;M�dia
+Marcelo Silva;Lacoste;MS;13:04;4;13;Alta
+Marcela Oliveira;Fila;RS;17:35;-9;10;Baixa
+Tiago Santos;Reebok;CE;12:19;37;8;M�dia
+Ana Beatriz Pereira;Puma;MG;17:43;2;13;M�dia
+Maur�cio Silva;Kappa;CE;12:01;41;5;M�dia
+Bruna Costa;Kappa;RR;08:56;3;28;M�dia
+J�lia Almeida;Adidas;PA;23:08;46;25;Alta
+Felipe Pereira;Le Coq Sportif;MT;11:11;-13;6;M�dia
+Daniele Costa;Mizuno;SE;02:24;38;1;M�dia
+Jo�o Silva;Adidas;MT;23:07;1;26;M�dia
+Marcela Almeida;Piccadilly;PR;14:03;44;15;M�dia
+Luiz Fernando Oliveira;Piccadilly;AM;11:40;0;5;Alta
+Amanda Silva;Asics;PI;01:18;26;8;Alta
+Carla Pereira;Cartago;AP;08:20;-14;14;M�dia
+C�sar Santos;Melissa;BA;04:29;17;23;M�dia
+Emanuelle Costa;Vans;GO;20:09;13;21;M�dia
+Juliano Silva;Le Coq Sportif;PR;02:32;20;1;M�dia
+Silvia Almeida;Ipanema;AL;10:11;-6;7;Baixa
+Alanys Gonzales Fusse;Melissa;ES;20:29;23;14;M�dia
+Felipe Tierno Silva Martins;Nike;MS;08:10;27;14;Alta
+Maria Eduarda Moura do Nascimento;Mizuno;SP;09:17;7;8;Alta
+Rafaela Oliveira Granja;Havaianas;PR;12:33;34;1;Alta
+Vinicius Rickelme Pereira dos Santos;Adidas;PB;07:10;10;26;Alta
+Welter Ximenes Cantanh�de Filho;Vans;TO;17:10;-8;21;Alta
+Andre Gustavo de Oliveira Picussa;Lacoste;GO;05:33;29;3;Alta
+Anna Vit�ria Rocha Gon�alves;Le Coq Sportif;GO;18:58;14;9;Alta
+Anne �lise Berteli Spindola;Olympikus;PA;23:36;-4;2;Alta
+B�rbara Luiza Furtado Rodrigues;Grendene;AC;19:09;18;19;Baixa
+Dandara Ara�jo Dantas;Umbro;BA;18:02;30;25;Alta
+Eduarda Carvalho da Silva;Oakley;GO;03:18;6;10;M�dia
+Eduarda Conestabile Perrone;Kappa;RR;21:23;-3;10;M�dia
+Emanuel Pedro Brocal Neves;Le Coq Sportif;PA;03:08;22;7;Baixa
+Emanuelly Aparecida da Silveira Santos;Vans;AM;05:51;15;21;Alta
+Ester Crespo Maciel;Havaianas;SC;14:42;-2;6;M�dia
+Esthefany Carolayne Cruz Mendon�a;Lacoste;PB;03:34;25;25;Baixa
+Isabel Cristina Paiva da Silva;Ipanema;PE;14:44;32;8;Baixa
+Isabelle Ayumi Moreira Yoshioka;Adidas;AL;12:50;8;16;Baixa
+Jo�o Lucas Ferreira D�Ornellas;Grendene;MG;02:46;11;10;Alta
+Luana Dias da Silva;Cartago;SE;20:20;35;27;Alta
+Lucas Nery Farias;Adidas;ES;03:05;-1;15;M�dia
+Luma Rios Ferreira;Reebok;AC;20:28;17;22;Baixa
+Maria Clara Marques Martins;Vans;GO;09:50;24;5;M�dia
+Nathalia Catharina Antonia Mariana Ribeiro Mascarenhas;Vans;RO;15:08;-7;23;M�dia
+Vitor Almeida de Sousa;Olympikus;CE;18:30;26;26;Alta
+Ana Laura Castro Nicoli;Kappa;MT;12:54;20;1;M�dia
+Laura Furieri Cani;Vans;AM;21:25;12;8;Alta
+Let�cia Eufrosino Seixas;Reebok;PR;06:38;40;11;M�dia
+Mariana Catarina Fernandes Davi;Vans;RJ;07:59;-5;26;M�dia
+Pietra Barbosa Paschoal;Cartago;PA;03:14;19;26;M�dia
+Taynara Gabrieli dos Santos;Grendene;AM;05:54;13;17;Alta
+Guilherme Cortez Bueno;Adidas;BA;17:25;28;22;Alta
+Hudson Rodrigues de Souza;Mizuno;PB;23:38;21;24;M�dia
+Izabelle Victoria Lima Cardoso;Fila;RJ;00:59;33;28;Alta
+Jordania Leal da Luz;New Balance;RN;23:12;-4;23;M�dia
+Kalena Bianca Ogg;Melissa;PA;12:26;18;1;Alta
+Maria Clara de Souza Camilo;New Balance;MA;10:59;27;25;M�dia
+Rafaella Oliveira Dias Andrade;Grendene;PI;16:52;-12;16;M�dia
+Ana Laura dos Santos Mariano;Olympikus;AC;21:56;21;19;Alta
+Diego Paulo Neto Toscano;Mizuno;MG;05:07;37;1;M�dia
+Felipe Storace Ferraro;Nike;RS;17:02;11;23;Alta
+Ingrid Belloni Della Colletta;Converse;RR;00:47;-8;28;Alta
+Isabela Rodrigues Severo Aversa;Ipanema;AM;11:18;40;12;Baixa
+Mateus Stenico dos Santos;Converse;MT;04:07;6;1;M�dia
+Rafael Doneda Gomes de Borba;Havaianas;AP;01:13;23;15;Baixa
+Rafael Kenzo Higa;Lacoste;RO;18:47;-2;22;Alta
+Rafael Missagia;Reebok;SP;11:15;25;25;M�dia
+Rafael Queiroz Brand�o;Cartago;MG;16:27;29;5;M�dia
+Suellen Cristina de Jesus Marques;Oakley;BA;03:41;45;11;M�dia
+Victor Cardoso Bertin;Olympikus;SC;18:43;-7;30;M�dia
+Vitor Mendon�a de Assis;Oakley;RJ;23:14;32;15;M�dia
+Jean Carlos de Oliveira Carniel;Havaianas;DF;12:20;9;23;M�dia
+Julia Aparecida Nunes de Melo;Puma;MT;10:22;20;7;Baixa
+Lucas Oliveira Galindo Almeida;Ipanema;SC;05:42;-15;7;Baixa
+Maria Cec�lia de Sousa Muniz Lopes;Vans;PE;21:37;14;25;Baixa
+Maria Clara da Silva Cruz;Fila;PI;01:56;31;3;Alta
+Maria Fernanda Paulino de Lima;Colcci;MT;16:10;4;29;M�dia
+Pedro Spotti de Oliveira;Ipanema;SC;00:28;24;23;Baixa
+Yasmin Ara�jo Matias;Rider;RS;13:16;-5;21;Alta
+Alexandre Lima Silva;Colcci;AM;04:26;22;23;Alta
+Allan Coutinho Lancioni;Rider;CE;11:28;38;28;M�dia
+Amanda Rocha Vilas Boas;Olympikus;RJ;16:11;7;13;M�dia
+Arthur Herrera;Melissa;PB;19:33;13;11;Baixa
+Caique Gon�alves Gouveia;Puma;ES;16:28;-3;29;Alta
+Danielle Concei��o Menezes;Puma;MS;23:11;26;1;M�dia
+Estela de Souza Bonilha;Olympikus;ES;04:23;19;10;Alta
+Henrique Monteiro de Carvalho Alborguete;Havaianas;PE;23:30;41;24;Alta
+Igor Jos� dos Santos Cam�lo;Grendene;PA;10:52;-9;22;Alta
+Juan Diego dos Santos Viana;Adidas;PE;02:22;30;28;Baixa
+L�via Brand�o de Souza;New Balance;PI;17:24;8;16;M�dia
+Lucas Jos� dos Santos Gomes;Le Coq Sportif;RN;18:49;17;28;M�dia
+Mari Christine Yui Barros;Rider;RS;09:41;35;6;M�dia
+Mateus Henrique Monteiro Lima;Nike;DF;08:24;-10;17;Baixa
+Roberta Freire Cunha Cardoso;Rider;RR;06:35;43;2;M�dia
+Amanda Gabrielle de Souza;Nike;BA;23:53;12;25;Baixa
+Caio Neves Ribeiro;Rider;MS;16:30;16;27;M�dia
+Frederico Stefan Ara�jo Lopes Fischer;Cartago;PA;13:40;28;9;M�dia
+Jo�o Pedro Silva de Sousa Santos;Adidas;SC;20:58;5;14;M�dia
+Mateus de Oliveira Salamargo;Rider;CE;17:00;-6;25;M�dia
+Pedro Eduardo Rabelo dos Santos;Mizuno;TO;10:22;39;10;M�dia
+Arthur Karsburg;Lacoste;AL;17:15;15;16;M�dia
+Idryane Santos Arag�o;Olympikus;MA;17:08;24;19;Alta
+Raquel Souza Barroso;Melissa;RR;14:11;10;23;Baixa
+Ana J�lia Aguirre Amo Santos;Rider;TO;12:40;-11;16;M�dia
+Anna L�vya da Silva Queiroz;Olympikus;RJ;20:59;26;7;M�dia
+�rica Henrique de Lima;Cartago;GO;07:28;20;10;Baixa
+Marcella Rodrigues Cheli Gaion;Havaianas;AM;08:41;33;28;M�dia
+The�ssa Menon;Reebok;AC;18:15;1;17;Alta
+Beatriz da Silva Nunes;Kappa;AM;02:22;40;28;Baixa
+Beatriz Isabelle Lopes Ferreira;Ipanema;AL;13:00;-13;5;M�dia
+Diego Fernandes Santiago Ribeiro;Kappa;AL;05:49;44;24;M�dia
+Ian Vasconcelos Lotufo;Vans;AL;07:13;3;3;Alta
+Joaquim Teodoro Murara;Rider;SP;19:56;30;30;M�dia
+Lucas Soares de Oliveira;Olympikus;RR;23:49;-2;9;M�dia
+Maria Karolina Santos da Silva;Asics;AL;17:34;27;3;M�dia
+Rodrigo Antunes de Paula e Silva;Converse;MS;19:19;22;11;Baixa
+Rodrigo Sampaio Medeiros;Vans;AM;22:18;41;28;M�dia
+Gabriel Hupfer Righi;Olympikus;CE;16:24;8;28;Alta
+Henrique Mouta Pereira Pinheiro;Colcci;MT;02:32;17;30;M�dia
+Andrei Quaresma Pinto;Havaianas;RN;11:12;-1;30;Alta
+Amanda dos Santos Perillo;Cartago;RS;13:49;34;21;M�dia
+Alice Bartholomeu de Souza;Adidas;PI;11:39;12;11;Alta
+Alfredo Rogerio Dias Dalcomuni;Reebok;DF;17:22;38;9;M�dia
+Beatriz Cardoso Aivalis;Asics;PA;21:05;2;23;M�dia
+Artur Domitti Camargo;Rider;MS;18:52;14;29;Baixa
+Bernardo Pereira Silva;Melissa;CE;03:46;-15;2;M�dia
+Caio Petroncini;Olympikus;AC;21:07;21;2;Baixa
+Enrico Gaetano Corr�a Portolann;Mizuno;MG;13:28;29;18;Alta
+Gabriel Bezerra Moraes;Ipanema;PR;20:32;16;10;Baixa
+Gabriel Oliveira Fernandes;Umbro;PA;06:18;31;9;Alta
+Kauan Karlinski Rakoski;Kappa;MA;02:21;-7;10;M�dia
+Leonardo Verissimo;Adidas;MA;00:26;24;28;M�dia
+Styves Barros Miranda;Piccadilly;ES;17:52;11;2;Alta
+Janaina Lopes Marin;Puma;SE;17:31;26;24;Alta
+Lucas Nascimento de Oliveira;Olympikus;PA;09:39;-8;26;M�dia
+Luma Martins Ferreira;Umbro;AL;12:13;35;28;M�dia
+Marco Ant�nio Robles Molinari;Havaianas;MS;10:31;22;24;M�dia
+Marina Oliveira Santos;Mizuno;MT;05:42;6;28;M�dia
+Matheus de Souza Campassi;Umbro;PE;20:34;18;16;M�dia
+Barbara de Freitas Oliveira Lopes;Ipanema;PB;17:11;27;2;Alta
+Caroline Beatriz Corr�a;Mizuno;PB;13:29;30;27;M�dia
+Ivander Isaias Marques;Ipanema;ES;05:27;4;9;Alta
+Kal�o Gabaldi Ferreira;Oakley;MG;19:56;39;23;Baixa
+Lu�sa Quezado Palvarini;Vans;MG;06:35;-10;4;M�dia
+Sarah Marinho Figueiredo;Umbro;TO;16:18;12;17;M�dia
+Arthur Bona;Vans;SP;13:16;23;13;M�dia
+Camila Haddad Segato Liguori Gaia;Colcci;SE;22:59;32;27;Baixa
+Gustavo Gon�alves Souza;Oakley;RO;06:29;5;28;Alta
+Isaac Vieira de Souza;Oakley;PB;00:21;-4;30;M�dia
+Izabella Sousa Camargo;Colcci;MS;02:13;14;3;M�dia
+Kauan Gomes Vieira;Fila;ES;12:53;28;22;M�dia
+Lamoni Marvin Vieira de Queiroz;Havaianas;SE;12:33;7;13;Alta
+Lucas Castro Orbite;Ipanema;SP;15:53;40;13;Baixa
+Lucas Mattoso Couto de Magalh�es;Cartago;PR;17:07;22;14;Baixa
+Lucas Silva dos Santos;Puma;SC;18:54;-3;6;M�dia
+Luisa Lage Barbosa;Melissa;PB;13:53;31;9;M�dia
+Marcelo de Oliveira Gigier;Reebok;TO;15:23;8;16;Baixa
+Matheus Ver�ssimo Sarraf de Oliveira;Piccadilly;MS;15:54;20;8;M�dia
+Monalisa Silva de Lucena;Kappa;SP;06:18;-11;18;Alta
+Muller de Jesus Marques;Umbro;PB;19:33;36;18;M�dia
+Paulo Roberto de Freitas Filho;Havaianas;TO;00:22;12;2;M�dia
+Rafael Franklin Gomes Muniz;Ipanema;RO;10:55;29;6;M�dia
+Rodrigo de Almeida Souza;New Balance;PB;12:03;-7;13;M�dia
+Ryan Donato Perrela Ferreira;Kappa;PE;07:33;23;29;Baixa
+Wallace Fortes Cruz;Fila;DF;01:25;45;13;Baixa
+Davi Carvalho de Souza;Melissa;DF;10:51;4;23;M�dia
+Gabriel Lopes de Barros;Havaianas;MA;14:50;17;5;Alta
+Guilherme Faria da Silva;Havaianas;RS;19:05;-1;11;Baixa
+Guilherme Ryuji Osato;Asics;SC;08:52;39;28;Baixa
+Guilherme Saraiva Medeiros Barbosa;Olympikus;PR;01:05;6;3;Alta
+Juan Marques Junqueira;Kappa;GO;04:22;25;13;Baixa
+Lucas Leimig Piquet;Puma;SE;02:35;-8;11;Baixa
+Ra� Fernando Dal Pr�;Le Coq Sportif;ES;03:57;13;5;M�dia
+Sara Miyuka Abe;Asics;SE;10:54;13;29;M�dia
+Suellen Teodorico dos Santos Silva;Reebok;AM;01:03;32;23;M�dia
+Vin�cius Leandro Vieira Almeida;Kappa;MG;12:55;2;23;Alta
+Bernardo Siqueira Batista;Converse;CE;04:50;21;25;M�dia
+Ant�nio Pacheco de Carvalho;Converse;PI;09:53;-4;20;Baixa
+Bernardo Pavesi de Oliveira;Rider;BA;01:22;28;15;Alta
+Douglas Aparecido Pinheiro Ferreira;Converse;PB;12:42;10;26;M�dia
+Gabriel Ferreira Silvano;Lacoste;PB;19:34;37;5;M�dia
+Gabriel Pegoraro Vieira;Adidas;MG;06:55;15;29;M�dia
+Jeorge Gomes Pinheiro;Rider;AP;00:13;-5;9;Baixa
+Jo�o Henrique N�brega Silva;Kappa;RS;06:35;41;7;M�dia
+Jo�o Pedro Miyake;Reebok;MS;22:00;7;9;M�dia
+Jos� Carlos Lima Rocha Junior;Kappa;DF;17:33;19;28;M�dia
+Luiz Afonso Martins da Silva;Kappa;TO;10:13;-2;6;M�dia
+Mariana Beatriz Camp�lo Ferreira;Fila;RR;02:23;34;4;Alta
+Vitor Ricardo Hladczuk;Piccadilly;SE;21:06;18;30;M�dia
+Ana Beatriz Santos da Silva;Le Coq Sportif;TO;01:47;43;18;Alta
+Brenda Rodrigues da Silva Caldas;Piccadilly;RR;03:21;-12;13;Alta
+Bruno da Silva Macedo;Asics;ES;05:30;26;25;M�dia
+Caio C�sar Pereira Aguiar;Ipanema;AL;08:48;5;4;M�dia
+C�ssio Kiliano M�ller;New Balance;TO;09:25;22;3;Baixa
+Dora Botelho de Faria;Nike;AM;16:54;40;25;M�dia
+Isaque de Queiroz;Oakley;AC;02:10;-9;27;M�dia
+Maria Rayssa Lima da Silva;Lacoste;MT;10:22;14;10;M�dia
+Mateus Lafet� de Miranda Mello;Grendene;ES;07:49;27;3;Alta
+N�colas Marques Preto;Melissa;PB;21:21;1;28;M�dia
+Pedro Tarpani Berrettini;Puma;CE;07:10;33;14;Alta
+Renato Timoteo Wanderley;Lacoste;BA;01:15;-6;16;Baixa
+Augusto Cesar de Almeida;Cartago;SC;10:29;16;13;Alta
+Clarice Machado Junqueira Reis;Umbro;AP;21:53;24;6;M�dia
+Davi Xavier Pinto;Reebok;TO;20:58;30;4;Alta
+Jo�o Pedro Alckmin Jord�o Cunha;Oakley;SE;01:23;3;13;Baixa
+Kain� da Silva dos Santos;Olympikus;MT;13:00;-10;8;M�dia
+Kristhel Masterson de Lima Concei��o;Vans;DF;02:14;42;5;M�dia
+Pedro Henrique Quintino;Vans;RO;07:19;11;1;Alta
+Pedro Lima Guimar�es;Converse;PE;15:05;38;23;M�dia
+Ana Luiza Poletto Loss;Ipanema;PB;18:38;6;14;Alta
+Elias Pires dos Santos Junior;Melissa;MG;19:12;20;5;Baixa
+Gabriel Santos Pereira;New Balance;RJ;04:25;-15;18;Alta
+Rodrigo Pereira Villaschi;Asics;MG;16:23;26;14;Alta
+Samuel das Virgens Pereira Junior;Mizuno;RJ;16:23;13;29;Alta
+Aline Sayuri Sueto Hirakawa;New Balance;SE;23:23;25;26;M�dia
+Gabriela Rocha Nangino;Colcci;MS;15:38;7;2;M�dia
+Iara Pedrosa de Souza;Rider;RR;13:16;44;21;Alta
+Gabriel Abucater Wal Menin;New Balance;RO;14:55;-8;8;M�dia
+Igor Tavernaro Vieira;Havaianas;RS;14:19;32;15;M�dia
+Jefferson Sousa da Silva;Nike;MA;09:28;12;30;M�dia
+Kaio Vieira Rocha;Mizuno;PI;15:09;28;30;M�dia
+Vinicius Silva Alves;Cartago;MA;00:40;21;8;M�dia
+Ana Claudia Vieira Caetano;Oakley;MT;07:39;-4;22;M�dia
+Beatriz Ara�jo Ornelas Fran�a;Ipanema;AL;08:51;34;27;Alta
+Daniel Nunes de Brito;Oakley;AM;15:10;9;27;Alta
+Gabriela Marchini Gon�alves;Melissa;BA;19:01;17;6;Baixa
+Gustavo Germano dos Santos;Reebok;PA;01:15;-3;16;Baixa
+Isabella de Moura Catal� Magalh�es;Puma;PA;00:55;27;13;M�dia
+Jo�o Vitor Oliveira da Silva;Grendene;CE;06:34;19;29;Alta
+Mikaele da Silva Pontes Ferreira;New Balance;BA;12:30;23;7;M�dia
+Beatriz Ferreira Gonzaga;Reebok;SP;08:30;11;16;M�dia
+Bianca Castineiras Lopes;Ipanema;PE;12:11;40;5;Alta
+Caio Henrique Nonato Queiroz;Umbro;MG;04:01;-7;12;Alta
+Carolina Rando;Puma;PE;19:42;22;6;M�dia
+Caio Joia Duque;Lacoste;PB;19:38;33;25;M�dia
+Carlos Gomes Figueira Neto;Havaianas;ES;04:00;14;3;Alta
+Carolina Augusto Euphrosino;Cartago;RS;08:18;42;20;Alta
+Giovanna de Avila Santos;Fila;RJ;22:05;-6;30;Alta
+Julia Chirnev Sackis;Olympikus;RR;18:59;30;11;M�dia
+Kamily In�z da Silva;Rider;PE;17:01;8;12;Alta
+Laura Costa Perez;Converse;MS;05:24;25;19;Alta
+Nat�lia Pereira Junqueira;Adidas;ES;07:19;18;9;M�dia
+Pedro Gon�alves Nogueira Neto;Asics;MS;16:23;37;15;Alta
+Rodrigo da Silva Santos;Grendene;AM;14:54;-12;29;M�dia
+Vit�ria Machado Soares da Silva;Melissa;PE;21:52;5;2;Alta
+Ydlorena de Souza;Mizuno;BA;11:27;31;12;Alta
+Kauan Aprigio Estev�o;Reebok;DF;15:02;13;26;Alta
+Mateus Alves Martins Claudino;Kappa;RS;12:15;44;18;M�dia
+Matheus Dias Queiroz;Colcci;SE;02:32;27;16;Baixa
+Nat�lia Carvalho;Ipanema;SC;11:01;1;3;Baixa
+Sthephany de F�tima de Oliveira;Adidas;SP;22:14;20;7;M�dia
+Francisco Louren�o Scatolino;Asics;RO;15:51;-10;1;M�dia
+Jo�o Vitor Hipolito Penha;Kappa;RO;17:19;38;21;Alta
+Kau� dos Santos Ramos;Havaianas;SE;08:25;16;5;Alta
+Lot�rio K�hnlein Neto;Reebok;TO;22:39;28;10;Baixa
+Maria Laura Guimar�es Melo;Olympikus;TO;14:39;-9;4;Alta
+Maria Luiza Gon�alves Campos;Ipanema;PB;21:27;12;29;Alta
+Ryan Tarasco dos Santos;Rider;RJ;23:41;33;24;Alta
+Breno Costa Ponce;Oakley;SE;16:11;-6;6;Alta
+Edson da Silva Lira Junior;Umbro;MG;17:32;19;27;Alta
+Felipe Nascimento Ferreira;Mizuno;BA;03:21;40;18;M�dia
+Jo�o Pedro Tilmann de Souza;Vans;MS;13:31;8;6;M�dia
+Matheus Mariano de Souza;Lacoste;MG;06:30;27;10;Baixa
+Henrique Ponce de Leon Camargos;New Balance;BA;00:41;-3;22;Baixa
+Laiane Pereira;Lacoste;RN;16:59;16;3;M�dia
+Lu�za Jalles Romagnollo;Piccadilly;MS;17:07;21;1;Alta
+Rodrigo Silva Fortes;Olympikus;PI;23:02;45;16;M�dia
+Sophia Nascimento Silva;Rider;RN;21:59;-11;23;M�dia
+Arthur Furieri;Asics;MA;15:23;30;2;Alta
+Emmily Evelyn Andrade Silva;Puma;PE;10:20;14;22;M�dia
+Leandro Marcellus Gomes Casteliano;Vans;MA;17:10;38;26;M�dia
+Lucas Daniel da Costa Rabaquim;Colcci;AP;09:29;5;8;M�dia
+Ana Camilly Santos Costa;Reebok;BA;05:41;-7;9;M�dia
+Beatriz Lobato;Grendene;ES;02:55;23;3;Alta
+Esther Rodrigues;Melissa;RJ;10:49;37;7;Baixa
+Gabriela Barbosa Siriaco;Mizuno;PE;10:33;9;27;M�dia
+Giovana Diogo Alcaraz Lopez;Lacoste;SE;14:37;26;4;Alta
+Let�cia Contente Pinheiro;Grendene;AL;17:45;-5;13;Baixa
+Maycon Douglas de Figueiredo;Fila;PA;02:27;4;17;M�dia
+Milena Esposte;Puma;AP;06:13;29;10;Baixa
+Raquel Caprioli Giovanetti;Ipanema;AM;17:52;18;12;M�dia
+Amanda Almeida Mattos;Piccadilly;SP;18:20;42;20;M�dia
+Amanda Fernandes dos Santos;Nike;PR;19:47;-12;3;Alta
+Ananda Novais Moreira;Fila;AL;17:06;1;30;Alta
+Annalayza Costa Barbosa;Grendene;AC;11:29;22;29;M�dia
+Camila de Lana Santos;Fila;PB;09:45;31;21;M�dia
+Gabriela Carneiro Farto de Barros;Converse;MT;14:52;-2;15;Alta
+Guilherme Cavalheiro de Jesus Souza;Rider;RO;08:23;20;13;Alta
+Pedro Paulo Salvador;Ipanema;PA;03:23;24;11;Baixa
+Sophia Machado Leal;Lacoste;SC;06:06;35;23;Baixa
+Andressa da Silva Sim�es;Lacoste;PI;18:35;-10;10;M�dia
+J�lia Arruda Lima;Ipanema;TO;00:23;6;9;Alta
+Leticia Soares Fumes;Fila;PB;02:48;17;9;Alta
+Rafael Braz Dourador;Grendene;RN;19:14;25;16;Alta
+Joao Vitor Ferreira Santos;Ipanema;PA;12:35;34;30;Baixa
+Arthur Bambini dos Santos;Adidas;SC;01:20;-4;6;Alta
+Clara Viterbo Nery;Vans;PB;05:40;43;22;M�dia
+Fernanda Nogueira Martins;Mizuno;CE;21:43;15;26;Alta
+Luiza Gabriela Silva dos Santos;Cartago;PI;01:49;32;25;M�dia
+Pedro Miqueias Pessoa Fran�a;Reebok;MS;16:21;7;7;M�dia
+Agnes Fernanda Delphino de Souza Costa;Melissa;GO;04:21;-8;19;Baixa
+Ana Beatriz de Souza Silva;Nike;CE;23:25;41;5;Alta
+Emilly Franciny Silva Valad�o;Piccadilly;RR;08:51;2;4;Alta
+Gabriella da Silva Eva;Vans;CE;03:22;19;5;Alta
+Guilherme Nathan Figueredo;Kappa;AL;04:17;27;25;Baixa
+L�via Batista Galv�o;Colcci;RS;19:51;10;2;Baixa
+Lorena de Andrade Silva;Oakley;RN;06:23;-1;9;M�dia
+Nivea Harue Camargo Kamimura;Adidas;AP;01:11;26;6;M�dia
+Rodrigo Miranda Silva;Colcci;SC;02:55;30;1;M�dia
+Ana Clara Santoro Henrique;Puma;PR;16:56;14;22;Alta
+Bianca Yuri Okahisa;Fila;GO;15:04;33;29;Baixa
+Estela Adriane Aleixo Nascimento;Kappa;AM;10:44;-13;25;M�dia
+Guilherme Viana de Oliveira;Havaianas;ES;00:32;13;14;M�dia
+Ingred Larissa Ochoa da Silva Campos;Lacoste;AM;10:40;18;21;M�dia
+Julia Moutinho de Carvalho;Converse;PI;02:41;24;4;Alta
+Maria Ant�nia de Paiva Villa?Forte Machado;Mizuno;CE;00:41;39;9;Alta
+Samarah Lima Spricigo;Reebok;TO;13:41;12;11;M�dia
+Thayane Correa da Silva;Rider;AM;05:43;22;25;Alta
+Daniela Canh�te Brand�o;Grendene;MA;11:09;8;14;M�dia
+Felipe dos Reis Garcez;Colcci;AC;04:36;28;6;Alta
+Joaquim Antonio Luna Paiva;Vans;MG;06:00;-14;26;M�dia
+Nalbert Seiji Kikuti Moura;Ipanema;DF;07:53;32;11;Alta
+N�colas Calegario Travaglia;Umbro;RN;20:52;6;30;M�dia
+Victor Julius Torres Confessor;Vans;PE;19:24;21;8;M�dia
+Jo�o Marcelo Maciel Messias;Converse;RN;10:03;35;14;Alta
+Yasmin Monteiro e Silva;Piccadilly;PB;18:28;-5;9;M�dia
+Alice Alves Bozzi;Melissa;RN;03:24;17;2;M�dia
+Cristiano Rezende S� Miranda Gon�alves;Lacoste;PR;21:09;40;23;M�dia
+Danilo Yuzo Nishimoto;Grendene;RJ;01:08;27;7;Baixa
+Heitor Leite de Almeida;Rider;PB;15:27;3;14;M�dia
+Isaque Sathler Sulz;Asics;MT;17:05;43;12;Alta
+Lucas Cabral Senno;Rider;DF;10:56;-6;6;Alta
+Luiz Carlos Sousa da Silva;Oakley;RO;23:00;26;28;Alta
+Camilla Cristina Alves Nogueira;Colcci;DF;06:42;19;9;M�dia
+Kleber Alves de Souza;Umbro;DF;20:56;20;8;Alta
+Ana Carolina Silva;Havaianas;RR;15:03;7;11;M�dia
+Lucas Gabriel Oliveira;Havaianas;AP;18:19;29;13;M�dia
+Juliana Costa Pereira;Converse;SE;04:38;-8;19;M�dia
+Eduardo Martins Souza;Nike;PE;21:21;23;10;M�dia
+Camila Rodrigues Lima;Rider;PI;19:43;14;10;Alta
+Felipe Santos Almeida;Colcci;CE;13:20;31;27;Alta
+Mariana Fernandes Gomes;Reebok;GO;12:18;-2;29;M�dia
+Ricardo Almeida Castro;Ipanema;RR;06:53;32;22;M�dia
+Isabela Nascimento Alves;Lacoste;SC;17:52;16;18;M�dia
+Gabriel Mendes Pereira;New Balance;PB;11:57;22;27;M�dia
+Larissa Duarte Ribeiro;Umbro;RO;08:18;25;22;Alta
+Bruno Henrique Lima;Oakley;SP;07:29;-11;2;Baixa
+Tatiane Oliveira Carvalho;Umbro;PE;17:58;12;13;M�dia
+Leonardo Ferreira Santos;Umbro;PI;16:09;38;11;M�dia
+Nat�lia Costa Barbosa;Reebok;CE;07:08;8;7;Alta
+Thiago Costa Almeida;Converse;AM;18:34;27;16;M�dia
+Amanda Silva Cardoso;Le Coq Sportif;TO;11:02;41;1;M�dia
+Pedro Henrique Souza;Asics;AL;06:39;19;27;Alta
+Viviane Gomes da Silva;Nike;ES;02:38;-7;1;Baixa
+Claudia Regina Martins;Converse;RR;08:05;32;30;Alta
+Jo�o Vitor Carvalho;Cartago;PA;00:04;-5;20;Baixa
+Sofia Andrade Lima;Adidas;AC;12:46;15;3;M�dia
+;;;;;;
+;;;;e;;

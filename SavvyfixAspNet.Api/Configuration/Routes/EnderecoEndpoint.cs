@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using SavvyfixAspNet.Api.Models;
 using SavvyfixAspNet.Api.Service;
@@ -18,12 +19,13 @@ public static class EnderecoEndpoint
                 var enderecos = await dbContext.Enderecos.ToListAsync();
                 return enderecos.Any() ? Results.Ok(enderecos) : Results.NotFound();
             })
+            .RequireAuthorization()
             .WithName("Buscar endereços")
             .WithOpenApi(operation => new(operation)
             {
                 OperationId = "GetEnderecos",
                 Summary = "Retorna todos os endereços",
-                Description = "Retorna todos os endereços do banco de dados",
+                Description = "Retorna todos os endereços do banco de dados. **É necessário estar autenticado**",
                 Deprecated = false
             })
             .Produces<List<Endereco>>()
@@ -35,12 +37,13 @@ public static class EnderecoEndpoint
                 var endereco = await dbContext.Enderecos.FindAsync(id);
                 return endereco is not null ? Results.Ok(endereco) : Results.NotFound();
             })
+            .RequireAuthorization()
             .WithName("Buscar endereço pelo id")
             .WithOpenApi(operation => new(operation)
             {
                 OperationId = "GetEnderecoById",
                 Summary = "Retorna o endereço buscado pelo ID",
-                Description = "Retorna o endereço buscado pelo ID do banco de dados",
+                Description = "Retorna o endereço buscado pelo ID do banco de dados. **É necessário estar autenticado**",
                 Deprecated = false
             })
             .Produces<Endereco>()
@@ -79,7 +82,7 @@ public static class EnderecoEndpoint
                 {
                     OperationId = "AddEndereco",
                     Summary = "Adiciona um novo endereço",
-                    Description = "Adiciona um novo endereço ao banco de dados",
+                    Description = "Adiciona um novo endereço ao banco de dados.",
                     Deprecated = false
                 })
                 .Accepts<EnderecoAddOrUpdateModel>("application/json")
@@ -107,12 +110,13 @@ public static class EnderecoEndpoint
 
                 return Results.Ok(existingEndereco);
             })
+            .RequireAuthorization(new AuthorizeAttribute(){Roles = "ROLE_ADMIN"})
             .WithName("Atualizar endereço")
             .WithOpenApi(operation => new(operation)
             {
                 OperationId = "UpdateEndereco",
                 Summary = "Atualiza um endereço existente",
-                Description = "Atualiza um endereço existente no banco de dados pelo ID",
+                Description = "Atualiza um endereço existente no banco de dados pelo ID. **É necessário ser um administrador**",
                 Deprecated = false
             })
             .Accepts<EnderecoAddOrUpdateModel>("application/json")
@@ -134,12 +138,13 @@ public static class EnderecoEndpoint
 
                 return Results.NoContent();
             })
+            .RequireAuthorization(new AuthorizeAttribute(){Roles = "ROLE_ADMIN"})
             .WithName("Deletar endereço")
             .WithOpenApi(operation => new(operation)
             {
                 OperationId = "DeleteEndereco",
                 Summary = "Deleta um endereço existente",
-                Description = "Deleta um endereço existente no banco de dados pelo ID",
+                Description = "Deleta um endereço existente no banco de dados pelo ID. **É necessário ser um administrador**",
                 Deprecated = false
             })
             .Produces(StatusCodes.Status204NoContent)

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.WebEncoders.Testing;
 using SavvyfixAspNet.Api.Models;
@@ -7,7 +8,7 @@ using SavvyfixAspNet.Domain.Entities;
 
 namespace SavvyfixAspNet.Api.Configuration.Routes;
 
-public static class  ProdutoEndpoint
+public static class  ProdutoEndpoint 
 {
     public static void MapProdutoEndpoints(this WebApplication app)
     {
@@ -19,12 +20,13 @@ public static class  ProdutoEndpoint
                 var produtos = await dbcontext.Produtos.ToListAsync();
                 return produtos.Any() ? Results.Ok(produtos) : Results.NotFound();
             })
+            .RequireAuthorization()
             .WithName("Buscar produtos")
             .WithOpenApi(operation => new(operation)
             {
                 OperationId = "GetProdutos",
                 Summary = "Retorna todos os produtos",
-                Description = "Retorna todos os produtos",
+                Description = "Retorna todos os produtos. **É necessário estar autenticado**",
                 Deprecated = false
             })
             .Produces<List<Produto>>()
@@ -37,12 +39,13 @@ public static class  ProdutoEndpoint
 
                 return produto is not null ? Results.Ok(produto) : Results.NotFound();
             })
+            .RequireAuthorization()
             .WithName("Buscar produtos pelo id")
             .WithOpenApi(operation => new(operation)
             {
                 OperationId = "GetProdutosById",
                 Summary = "Retorna o produto buscado pelo id",
-                Description = "Retorna o produto buscado pelo id",
+                Description = "Retorna o produto buscado pelo id. **É necessário estar autenticado**",
                 Deprecated = false
             })
             .Produces<Produto>()
@@ -64,12 +67,13 @@ public static class  ProdutoEndpoint
     
                 return Results.Created("/produtos", produtoModel);
             })
+            .RequireAuthorization(new AuthorizeAttribute(){Roles = "ROLE_ADMIN"})
             .WithName("Adicionar novo produto")
             .WithOpenApi(operation => new(operation)
             {
                 OperationId = "AddProduto",
                 Summary = "Adiciona um novo produto",
-                Description = "Adiciona um novo produto ao banco de dados",
+                Description = "Adiciona um novo produto ao banco de dados. **É necessário ser um administrador**",
                 Deprecated = false
             })
             .Accepts<Produto>("application/json")
@@ -96,12 +100,13 @@ public static class  ProdutoEndpoint
                 
                 return Results.Ok(existingProduto);
             })
+            .RequireAuthorization(new AuthorizeAttribute(){Roles = "ROLE_ADMIN"})
             .WithName("Atualizar produto")
             .WithOpenApi(operation => new(operation)
             {
                 OperationId = "UpdateProduto",
                 Summary = "Atualiza um produto existente",
-                Description = "Atualiza um produto existente no banco de dados pelo ID",
+                Description = "Atualiza um produto existente no banco de dados pelo ID. **É necessário ser um administrador**",
                 Deprecated = false
             })
             .Accepts<ProdutoAddOrUpdateModel>("application/json")
@@ -122,12 +127,13 @@ public static class  ProdutoEndpoint
                 
                 return Results.NoContent();
             })
+            .RequireAuthorization(new AuthorizeAttribute(){Roles = "ROLE_ADMIN"})
             .WithName("Deletar produto")
             .WithOpenApi(operation => new(operation)
             {
                 OperationId = "DeleteProduto",
                 Summary = "Deleta um produto existente",
-                Description = "Deleta um produto existente no banco de dados pelo ID",
+                Description = "Deleta um produto existente no banco de dados pelo ID. **É necessário ser um administrador**",
                 Deprecated = false
             })
             .Produces(StatusCodes.Status204NoContent)
